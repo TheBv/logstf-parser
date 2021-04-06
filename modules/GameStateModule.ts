@@ -110,6 +110,7 @@ class GameStateModule implements events.IStats {
             timeInSeconds: time,
             team: event.team,
             pointId: event.pointId,
+            playerIds: event.playerIds
         })
     }
 

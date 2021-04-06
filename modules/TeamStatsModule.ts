@@ -1,9 +1,11 @@
+import { stat } from "fs"
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../LogParser'
 
 interface ITeamPlayerStats {
     team: string | null
     kills: number
+    deaths: number
     damage: number
     charges: number
     drops: number
@@ -11,6 +13,7 @@ interface ITeamPlayerStats {
 
 interface ITeamStats {
     kills: number
+    deaths: number
     damage: number
     charges: number
     drops: number
@@ -49,6 +52,7 @@ class TeamStatsModule implements events.IStats {
 
     private defaultTeam = (): ITeamStats => ({
         kills: 0,
+        deaths: 0,
         damage: 0,
         charges: 0,
         drops: 0,
@@ -59,6 +63,7 @@ class TeamStatsModule implements events.IStats {
     private defaultPlayer = (): ITeamPlayerStats => ({
         team: null,
         kills: 0,
+        deaths: 0,
         damage: 0,
         charges: 0,
         drops: 0,
@@ -68,6 +73,8 @@ class TeamStatsModule implements events.IStats {
         if (!this.gameState.isLive) return
         const attacker: ITeamPlayerStats = this.getOrCreatePlayer(event.attacker)
         attacker.kills += 1
+        const victim: ITeamPlayerStats = this.getOrCreatePlayer(event.victim)
+        victim.deaths += 1
     }
 
     onDamage(event: events.IDamageEvent) {
@@ -107,6 +114,7 @@ class TeamStatsModule implements events.IStats {
             const teamStats = this.teams[stats.team]
             if (!teamStats) return
             teamStats.kills += stats.kills
+            teamStats.deaths += stats.deaths
             teamStats.damage += stats.damage
             teamStats.charges += stats.charges
             teamStats.drops += stats.drops

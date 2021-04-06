@@ -13,17 +13,17 @@ interface IPvCStats {
 class PvCModule implements events.IStats {
     public identifier: string
     private players: Map<string, Map<events.Role, IPvCStats>>
-    private currentRoles: Map<string, string>
+    private currentRoles: Map<string, events.Role>
     private gameState: IGameState
 
     constructor(gameState: IGameState) {
         this.identifier = 'PvC'
         this.gameState = gameState
         this.players = new Map<string, Map<events.Role, IPvCStats>>()
-        this.currentRoles = new Map<string, string>()
+        this.currentRoles = new Map<string, events.Role>()
     }
 
-    private getStats(player: string, role: string): IPvCStats {
+    private getStats(player: string, role: events.Role): IPvCStats {
         if (!this.players.has(player)) {
             this.players.set(player, new Map<events.Role, IPvCStats>())
         }

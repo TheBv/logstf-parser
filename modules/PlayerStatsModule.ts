@@ -77,7 +77,7 @@ class PlayerStatsModule implements events.IStats {
 
         if (event.headshot) attacker.headshots++
         if (event.backstab) attacker.backstabs++
-
+        
         victim.deaths++
         victim.longestKillStreak = Math.max(victim.currentKillStreak, victim.longestKillStreak)
         victim.currentKillStreak = 0
@@ -89,6 +89,7 @@ class PlayerStatsModule implements events.IStats {
 
         attacker.damage += event.damage
         if (event.headshot) attacker.headshots += 1
+        if (event.airshot) attacker.airshots++
 
         if (event.victim) {
             const victim: IPlayerStats = this.getOrCreatePlayer(event.victim)

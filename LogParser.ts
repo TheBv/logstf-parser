@@ -11,7 +11,7 @@ import PvCModule from './modules/PvCModule'
 import ChatModule from './modules/ChatModule'
 import RealDamageModule from './modules/RealDamageModule'
 import PlayerClassStatsModule from './modules/PlayerClassStatsModule'
-
+import KillstreakModule from './modules/KillstreakModule'
 
 // TODO: MedicStats
 // TODO: HighlightsModule
@@ -94,6 +94,7 @@ export class Game {
             new PvCModule(this.gameState),
             new RealDamageModule(this.gameState),
             new ChatModule(this.gameState),
+            new KillstreakModule(this.gameState)
         ]
         this.events = new Map<string, IEventDefinition>()
         this.events.set("onDamage", {
@@ -104,7 +105,7 @@ export class Game {
                 const damage = parseInt(props.get('damage') || '0')
                 const weapon = props.get('weapon')
                 const headshot = parseInt(props.get('headshot') || '0') ? true : false
-
+                const airshot = props.get("airshot") === '1' ? true : false;
                 if (!attacker) return null
                 return {
                     timestamp: time,
@@ -112,7 +113,8 @@ export class Game {
                     victim: victim,
                     damage: damage,
                     weapon: weapon,
-                    headshot: headshot
+                    headshot: headshot,
+                    airshot: airshot
                 }
             }
         });
@@ -171,7 +173,7 @@ export class Game {
                 const weapon = regexpMatches.weapon
                 const isHeadshot = props.get("headshot") === '1' ? true : false
                 const isBackstab = props.get("ubercharge") === '1' ? true : false
-
+                const isAirshot = props.get("airshot") === '1' ? true : false;
                 if (!attacker || !victim) return null
 
                 return {
@@ -181,6 +183,7 @@ export class Game {
                     weapon: weapon,
                     headshot: isHeadshot,
                     backstab: isBackstab,
+                    airshot: isAirshot,
                 }
             }
         });
@@ -261,13 +264,24 @@ export class Game {
             regexp: XRegExp('^Team "(?P<team>(Red|Blue)?)" triggered "pointcaptured'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ICaptureEvent | null {
                 const pointId = parseInt(props.get('cp') || '-1') + 1
+                const pointName = props.get('cpname') || '';
+                const input = regexpMatches.input + " "; //This is needed to avoid inconsistencies
+                const CAPTURE_PLAYERS = /\(player\d{1,2} "(?<name>.{0,80}?)<\d{1,4}><(?<steamid>.{1,40})><(?<team2>(Red|Blue|Spectator|Console))>"\) \(position\d{1,2} ".{1,30}"\) /g;
+                const matches = [...input.matchAll(CAPTURE_PLAYERS)];
+                const players:string[] = [];
+                if (parseInt(props.get('numcappers') || '0') !== matches.length) {
+                    return null;   
+                }
+                for (const match of matches) {
+                    players.push(getFromPlayerString(match[0])?.id || "");
+                }
                 return {
                     timestamp: time,
                     team: regexpMatches.team,
                     pointId: pointId,
-                    pointName: '',
-                    numCappers: 0,
-                    playerIds: [],
+                    pointName: pointName,
+                    numCappers: parseInt(props.get('numcappers')|| '0'),
+                    playerIds: players,
                 }
             }
         });

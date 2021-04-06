@@ -59,6 +59,7 @@ export interface IKillEvent extends IEvent {
     weapon: string | undefined
     headshot: boolean
     backstab: boolean
+    airshot: boolean
 }
 
 
@@ -68,6 +69,7 @@ export interface IDamageEvent extends IEvent {
     damage: number
     weapon: string | undefined
     headshot: boolean
+    airshot: boolean
 }
 
 export interface IHealEvent extends IEvent {
