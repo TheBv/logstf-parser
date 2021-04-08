@@ -1,6 +1,4 @@
-*.log
 node_modules
 temp
-build
 package-lock.json
 .vscode/launch.json
