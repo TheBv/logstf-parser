@@ -2,14 +2,23 @@
   "name": "logstf-parser",
   "version": "0.0.2",
   "description": "TF2 log parser",
-  "main": "ParseFile.js",
+  "main": "./lib/cjs/LogParser.js",
+  "module": "./lib/esm/LogParser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./tests.js",
+    "prepublish": "npm run tsc"
   },
+  "keywords": [
+    "logs.tf",
+    "tf2"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/TheBv/logstf-parser.git"
   },
+  "files": [
+    "lib/"
+  ],
   "author": "zoob",
   "maintainers": ["Bv"],
   "license": "AGPL",
