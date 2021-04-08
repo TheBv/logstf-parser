@@ -8,7 +8,7 @@ This parser is currently being used for demoticks.tf
 
 Install it from npm:
 
-    $ npm install steamid
+    $ npm install logstf-parser
 
 # Brief Example
     const parser = require("logstf-parser");
