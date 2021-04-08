@@ -1,5 +1,5 @@
 import * as events from '../events'
-import { IGameState, PlayerInfo } from '../LogParser'
+import { IGameState, PlayerInfo } from '../Game'
 
 interface IClassStats {
     playtimeInSeconds: number

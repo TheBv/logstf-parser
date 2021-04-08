@@ -1,5 +1,5 @@
 import * as events from '../events'
-import { IGameState } from '../LogParser'
+import { IGameState } from '../Game'
 
 
 export default class RealDamageModule implements events.IStats {

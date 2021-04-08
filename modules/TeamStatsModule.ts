@@ -1,6 +1,6 @@
 import { stat } from "fs"
 import * as events from '../events'
-import { IGameState, PlayerInfo } from '../LogParser'
+import { IGameState, PlayerInfo } from '../Game'
 
 interface ITeamPlayerStats {
     team: string | null

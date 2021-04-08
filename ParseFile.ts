@@ -2,11 +2,12 @@ const start_time = new Date().getTime();
 
 import program = require('commander')
 import fs = require('fs')
-import { parseLines } from './LogParser'
+import { LogParser } from './LogParser'
 
 function parseFile(path: string) {
     const lines = fs.readFileSync(path, "UTF-8").split("\n");
-    return parseLines(lines);
+    const logParser = new LogParser()
+    return logParser.parseLines(lines)
 }
 
 program

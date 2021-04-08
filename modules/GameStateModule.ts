@@ -1,5 +1,5 @@
 import * as events from '../events'
-import { IGameState } from '../LogParser'
+import { IGameState } from '../Game'
 
 interface Round {
     lengthInSeconds: number

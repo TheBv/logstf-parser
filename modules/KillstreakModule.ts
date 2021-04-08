@@ -1,6 +1,6 @@
 import { throws } from "assert"
 import * as events from '../events'
-import { IGameState, PlayerInfo } from '../LogParser'
+import { IGameState, PlayerInfo } from '../Game'
 
 //TODO Logs.tf might use respawn times to determine killstreaks
 
