@@ -3,7 +3,7 @@ import {Game} from './Game';
 
 
 export class LogParser {
-    modules : events.IStats[]
+    private modules : events.IStats[]
     constructor(){
         this.modules = []
     }

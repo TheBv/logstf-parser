@@ -1,6 +1,6 @@
 {
   "name": "logstf-parser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "TF2 log parser",
   "main": "./lib/cjs/LogParser.js",
   "module": "./lib/esm/LogParser.js",
