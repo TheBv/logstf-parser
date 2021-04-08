@@ -51,6 +51,10 @@ Example:
         }
 
     }
+They can then be added to the pipeline like so:
+
+    const LogsParser = new parser.LogParser();
+    LogsParser.addModule(MyModule);
 
 # List of hooks
 - onDamage: [IDamageEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L66)

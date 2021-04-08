@@ -1,8 +1,10 @@
 import * as events from './events';
-import { Game } from './Game';
+import { Game, IGameState } from './Game';
 export declare class LogParser {
-    modules: events.IStats[];
+    private modules;
     constructor();
     parseLines(lines: string[]): Game;
-    addModule(moduleInstance: events.IStats): void;
+    addModule(moduleClass: {
+        new (gameState: IGameState): events.IStats;
+    }): void;
 }

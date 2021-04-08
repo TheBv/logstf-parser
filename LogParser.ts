@@ -1,22 +1,22 @@
 import * as events from './events'
-import {Game} from './Game';
+import {Game, IGameState} from './Game';
 
 
 export class LogParser {
-    private modules : events.IStats[]
+    private modules : {new(gameState: IGameState): events.IStats }[]
     constructor(){
         this.modules = []
     }
     parseLines(lines: string[]): Game {
         const game = new Game()
         for (const module of this.modules){
-            game.modules.push(module);
+            game.modules.push(new module(game.gameState));
         }
         lines.forEach(line => game.processLine(line))
         game.finish()
         return game
     }
-    addModule(moduleInstance: events.IStats) {
-        this.modules.push(moduleInstance);
+    addModule(moduleClass: {new(gameState: IGameState): events.IStats}) {
+        this.modules.push(moduleClass);
     }
 }
