@@ -1,0 +1,1291 @@
+L 04/03/2021 - 20:55:58: Log file started (file "logs/L0403007.log") (game "/home/tf2/tf2-16/tf") (version "6394067")
+L 04/03/2021 - 20:55:58: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:55:58: "anian<6><[U:1:101608870]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:55:58: "strauß<5><[U:1:82123920]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:55:58: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:55:58: "Bv<7><[U:1:88677982]><Blue>" say_team "[P-REC] Stop record."
+L 04/03/2021 - 20:55:58: "Charon<4><[U:1:101449025]><Red>" say_team "[P-REC] Stop record."
+L 04/03/2021 - 20:55:59: [TFTrue] The log might have not been uploaded. HTTP error 500
+L 04/03/2021 - 20:56:01: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "140") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:01: "Charon<4><[U:1:101449025]><Red>" killed "strauß<5><[U:1:82123920]><Blue>" with "tf_projectile_rocket" (attacker_position "128 -160 49") (victim_position "357 58 0")
+L 04/03/2021 - 20:56:01: "Charon<4><[U:1:101449025]><Red>" triggered "domination" against "strauß<5><[U:1:82123920]><Blue>"
+L 04/03/2021 - 20:56:01: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "strauß<5><[U:1:82123920]><Blue>" (damage "225") (realdamage "200") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:02: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "212 30 38") (victim_position "667 -183 153")
+L 04/03/2021 - 20:56:02: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "270") (realdamage "60") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:08: World triggered "Game_Over" reason "Reached Win Limit"
+L 04/03/2021 - 20:56:08: Team "Red" final score "25" with "2" players
+L 04/03/2021 - 20:56:08: Team "Blue" final score "13" with "2" players
+L 04/03/2021 - 20:56:08: Team "RED" triggered "Intermission_Win_Limit"
+L 04/03/2021 - 20:56:08: "strauß<5><[U:1:82123920]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:08: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:09: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:56:10: "Bv<7><[U:1:88677982]><Blue>" killed "anian<6><[U:1:101608870]><Red>" with "tf_projectile_rocket" (attacker_position "-101 196 0") (victim_position "-259 354 0")
+L 04/03/2021 - 20:56:10: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "anian<6><[U:1:101608870]><Red>" (damage "107") (realdamage "7") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:11: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "69") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:15: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "108") (weapon "quake_rl")
+L 04/03/2021 - 20:56:16: "strauß<5><[U:1:82123920]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "quake_rl" (attacker_position "112 -493 48") (victim_position "-261 -326 105")
+L 04/03/2021 - 20:56:16: "strauß<5><[U:1:82123920]><Blue>" triggered "revenge" against "Charon<4><[U:1:101449025]><Red>"
+L 04/03/2021 - 20:56:16: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "72") (realdamage "10") (weapon "quake_rl")
+L 04/03/2021 - 20:56:16: "anian<6><[U:1:101608870]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:18: "Bv<7><[U:1:88677982]><Blue>" committed suicide with "world" (attacker_position "662 -586 40")
+L 04/03/2021 - 20:56:21: "strauß<5><[U:1:82123920]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:56:23: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:23: "strauß<5><[U:1:82123920]><Blue>" killed "anian<6><[U:1:101608870]><Red>" with "quake_rl" (attacker_position "517 -265 45") (victim_position "-230 39 294")
+L 04/03/2021 - 20:56:23: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "anian<6><[U:1:101608870]><Red>" (damage "52") (realdamage "36") (weapon "quake_rl") (airshot "1")
+L 04/03/2021 - 20:56:24: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:26: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "48") (weapon "quake_rl")
+L 04/03/2021 - 20:56:28: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "71") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:29: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "104") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:30: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:30: "anian<6><[U:1:101608870]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:30: "strauß<5><[U:1:82123920]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "quake_rl" (attacker_position "333 -508 0") (victim_position "-232 -695 0")
+L 04/03/2021 - 20:56:30: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "-54 -1084 49") (attacker_position "333 -508 0") (victim_position "-232 -695 0")
+L 04/03/2021 - 20:56:30: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "47") (realdamage "33") (weapon "quake_rl")
+L 04/03/2021 - 20:56:32: "anian<6><[U:1:101608870]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "153 -928 20") (victim_position "-15 -539 46")
+L 04/03/2021 - 20:56:32: "anian<6><[U:1:101608870]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "80") (realdamage "31") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:32: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "anian<6><[U:1:101608870]><Red>" (damage "48") (weapon "quake_rl")
+L 04/03/2021 - 20:56:33: "strauß<5><[U:1:82123920]><Blue>" triggered "damage" against "anian<6><[U:1:101608870]><Red>" (damage "53") (weapon "quake_rl")
+L 04/03/2021 - 20:56:34: "anian<6><[U:1:101608870]><Red>" killed "strauß<5><[U:1:82123920]><Blue>" with "tf_projectile_rocket" (attacker_position "114 -948 153") (victim_position "369 -489 0")
+L 04/03/2021 - 20:56:34: "anian<6><[U:1:101608870]><Red>" triggered "damage" against "strauß<5><[U:1:82123920]><Blue>" (damage "86") (realdamage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:36: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:38: "strauß<5><[U:1:82123920]><Blue>" killed "anian<6><[U:1:101608870]><Red>" with "world" (attacker_position "369 -489 14") (victim_position "274 312 8")
+L 04/03/2021 - 20:56:39: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:39: "anian<6><[U:1:101608870]><Red>" joined team "Spectator"
+L 04/03/2021 - 20:56:39: "Bv<7><[U:1:88677982]><Blue>" committed suicide with "world" (attacker_position "-192 544 0")
+L 04/03/2021 - 20:56:39: "Bv<7><[U:1:88677982]><Blue>" joined team "Spectator"
+L 04/03/2021 - 20:56:40: "strauß<5><[U:1:82123920]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:41: "strauß<5><[U:1:82123920]><Blue>" joined team "Red"
+L 04/03/2021 - 20:56:41: "strauß<5><[U:1:82123920]><Red>" committed suicide with "world" (attacker_position "-256 544 0")
+L 04/03/2021 - 20:56:43: "anian<6><[U:1:101608870]><Spectator>" joined team "Blue"
+L 04/03/2021 - 20:56:43: "Bv<7><[U:1:88677982]><Spectator>" joined team "Blue"
+L 04/03/2021 - 20:56:44: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:46: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:47: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:49: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:49: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "38") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:50: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "69") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:50: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "56") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:50: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "48") (weapon "quake_rl")
+L 04/03/2021 - 20:56:51: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "64") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:51: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "46") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:51: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "58") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:51: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "-144 -596 33") (victim_position "-213 -490 50")
+L 04/03/2021 - 20:56:51: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "71") (realdamage "29") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:51: "Bv<7><[U:1:88677982]><Blue>" say_team "[P-REC] Recording..."
+L 04/03/2021 - 20:56:51: "Charon<4><[U:1:101449025]><Red>" say_team "[P-REC] Recording..."
+L 04/03/2021 - 20:56:51: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "-213 -490 64") (victim_position "-155 -601 41")
+L 04/03/2021 - 20:56:51: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "111") (realdamage "86") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:51: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:52: World triggered "Round_Start"
+L 04/03/2021 - 20:56:52: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: World triggered "Round_Start"
+L 04/03/2021 - 20:56:52: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:52: Tournament mode started
+Blue Team: BLU
+Red Team: RED
+L 04/03/2021 - 20:56:56: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "48") (weapon "quake_rl")
+L 04/03/2021 - 20:56:56: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "36") (weapon "quake_rl")
+L 04/03/2021 - 20:56:56: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:56: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "39") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:57: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:57: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 20:56:57: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:57: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "player" (attacker_position "125 -1055 193") (victim_position "192 543 0")
+L 04/03/2021 - 20:56:57: "strauß<5><[U:1:82123920]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "128 -1386 71") (attacker_position "125 -1055 193") (victim_position "192 543 0")
+L 04/03/2021 - 20:56:57: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:56:58: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:58: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:56:59: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "211 -349 129")
+L 04/03/2021 - 20:57:00: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "27") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:01: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "50") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:01: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "49") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:02: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "40") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:02: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "76") (weapon "quake_rl")
+L 04/03/2021 - 20:57:02: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "28") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:02: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "37") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:03: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "34 -1320 0")
+L 04/03/2021 - 20:57:03: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "34 -1320 0") (victim_position "586 -1157 32")
+L 04/03/2021 - 20:57:03: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "-115 -1130 35") (attacker_position "34 -1320 0") (victim_position "586 -1157 32")
+L 04/03/2021 - 20:57:03: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "586 -1157 32")
+L 04/03/2021 - 20:57:03: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "41") (realdamage "1") (weapon "quake_rl")
+L 04/03/2021 - 20:57:03: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "586 -1157 46") (victim_position "-113 -1153 3")
+L 04/03/2021 - 20:57:03: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "191 -701 0") (attacker_position "586 -1157 46") (victim_position "-113 -1153 3")
+L 04/03/2021 - 20:57:03: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "33") (realdamage "7") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:03: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "586 -1157 46") (victim_position "65 -1296 0")
+L 04/03/2021 - 20:57:03: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "67") (realdamage "54") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:06: "Bv<7><[U:1:88677982]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:57:06: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "558 -1088 0")
+L 04/03/2021 - 20:57:09: "Bv<7><[U:1:88677982]><Blue>" committed suicide with "tf_projectile_rocket" (attacker_position "277 -1122 67")
+L 04/03/2021 - 20:57:09: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "277 -1122 67")
+L 04/03/2021 - 20:57:09: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:09: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:09: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:11: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "212 -1192 0")
+L 04/03/2021 - 20:57:14: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "269 352 141")
+L 04/03/2021 - 20:57:14: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:14: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:14: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:14: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:17: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "235 116 113")
+L 04/03/2021 - 20:57:17: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:17: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:18: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "50") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:19: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "90") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:19: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "85") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:20: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "257 -988 0")
+L 04/03/2021 - 20:57:20: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "257 -988 0") (victim_position "336 -961 319")
+L 04/03/2021 - 20:57:20: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "336 -961 319")
+L 04/03/2021 - 20:57:20: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "102") (realdamage "40") (weapon "quake_rl") (airshot "1")
+L 04/03/2021 - 20:57:21: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "46") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:21: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "156 -1018 145") (victim_position "542 -986 69")
+L 04/03/2021 - 20:57:21: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "42") (realdamage "23") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:22: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "270 -1018 0")
+L 04/03/2021 - 20:57:22: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:57:23: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:57:27: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "captured") (position "236 366 151")
+L 04/03/2021 - 20:57:27: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:27: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:27: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:27: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:29: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "280 158 109")
+L 04/03/2021 - 20:57:30: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "49") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:30: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "46") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:30: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "50") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:31: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "89") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:31: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:31: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "76") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:32: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "20") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:32: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "defended") (position "230 -1282 513")
+L 04/03/2021 - 20:57:32: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "tf_projectile_rocket" (attacker_position "230 -1282 513") (victim_position "188 -1077 473")
+L 04/03/2021 - 20:57:32: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "188 -1077 473")
+L 04/03/2021 - 20:57:32: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "107") (realdamage "27") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 20:57:32: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "25") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:33: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "world" (attacker_position "290 -980 0") (victim_position "62 -1284 11")
+L 04/03/2021 - 20:57:33: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "62 -1285 14") (victim_position "265 -1005 0")
+L 04/03/2021 - 20:57:33: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "101") (realdamage "83") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:33: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:57:34: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "123 -1088 0")
+L 04/03/2021 - 20:57:36: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "player" (attacker_position "188 -1077 487") (victim_position "341 -818 0")
+L 04/03/2021 - 20:57:36: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "341 -818 0")
+L 04/03/2021 - 20:57:38: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:40: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:40: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:41: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "49") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:41: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "47") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:42: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "44") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:42: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "47") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:43: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "50") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "10") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:43: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "322 -862 24")
+L 04/03/2021 - 20:57:44: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "49") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:44: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "14") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:44: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "87") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:45: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "42") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:45: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "485 -1207 0")
+L 04/03/2021 - 20:57:45: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "485 -1207 0") (victim_position "265 -1156 307")
+L 04/03/2021 - 20:57:45: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "Bv<7><[U:1:88677982]><Blue>" (assister_position "100 -1299 0") (attacker_position "485 -1207 0") (victim_position "265 -1156 307")
+L 04/03/2021 - 20:57:45: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "265 -1156 307")
+L 04/03/2021 - 20:57:45: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "99") (realdamage "42") (weapon "quake_rl") (airshot "1")
+L 04/03/2021 - 20:57:46: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "475 -1086 0") (victim_position "544 -1212 0")
+L 04/03/2021 - 20:57:46: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "87") (realdamage "64") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:46: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:47: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "331 -1174 0")
+L 04/03/2021 - 20:57:47: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "defended") (position "130 -1170 0")
+L 04/03/2021 - 20:57:47: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "130 -1170 0") (victim_position "322 -1179 0")
+L 04/03/2021 - 20:57:47: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "322 -1179 0")
+L 04/03/2021 - 20:57:47: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "76") (realdamage "51") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:48: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "player" (attacker_position "298 -1188 14") (victim_position "171 -1226 0")
+L 04/03/2021 - 20:57:52: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:52: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:53: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "387 -1236 0")
+L 04/03/2021 - 20:57:53: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:57:54: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:57:55: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "37") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:57: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "45") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:57: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "84") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 20:57:58: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:57:58: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "28") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:57:59: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "world" (attacker_position "391 38 4") (victim_position "401 548 5")
+L 04/03/2021 - 20:57:59: "anian<6><[U:1:101608870]><Blue>" triggered "domination" against "strauß<5><[U:1:82123920]><Red>"
+L 04/03/2021 - 20:57:59: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "401 548 5")
+L 04/03/2021 - 20:57:59: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "27") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:00: "Bv<7><[U:1:88677982]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:58:00: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "341 478 0")
+L 04/03/2021 - 20:58:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "21") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:58:01: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "tf_projectile_rocket" (attacker_position "661 -663 0") (victim_position "630 -16 45")
+L 04/03/2021 - 20:58:01: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "48") (realdamage "6") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:05: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:05: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:05: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "65") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:05: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:58:06: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "defended") (position "656 -1039 8")
+L 04/03/2021 - 20:58:06: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "shotgun_soldier" (attacker_position "656 -1039 8") (victim_position "263 -1194 203")
+L 04/03/2021 - 20:58:06: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "263 -1194 203")
+L 04/03/2021 - 20:58:06: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "6") (realdamage "4") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:58:07: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:08: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "304 -1181 82")
+L 04/03/2021 - 20:58:10: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "41") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:11: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "32") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:13: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:13: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:14: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "20") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:58:14: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "100") (weapon "quake_rl")
+L 04/03/2021 - 20:58:14: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "27") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:15: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "253 224 47")
+L 04/03/2021 - 20:58:15: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "253 224 47") (victim_position "156 -104 15")
+L 04/03/2021 - 20:58:15: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "-49 293 70") (attacker_position "253 224 47") (victim_position "156 -104 15")
+L 04/03/2021 - 20:58:15: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "156 -104 15")
+L 04/03/2021 - 20:58:15: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "65") (realdamage "18") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:16: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "22") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:58:16: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:58:16: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "59") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:16: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "80") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:16: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "18") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:58:17: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "-63 -8 0") (victim_position "365 -885 159")
+L 04/03/2021 - 20:58:17: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "-96 -284 35") (attacker_position "-63 -8 0") (victim_position "365 -885 159")
+L 04/03/2021 - 20:58:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "10") (realdamage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:58:18: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "89 -94 0")
+L 04/03/2021 - 20:58:21: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:22: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "224 -1176 150")
+L 04/03/2021 - 20:58:22: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:22: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:22: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:22: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:24: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "305 -992 42")
+L 04/03/2021 - 20:58:27: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "223 359 150")
+L 04/03/2021 - 20:58:27: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:27: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:27: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:27: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:29: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "249 164 74")
+L 04/03/2021 - 20:58:31: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "73") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:31: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "110") (weapon "quake_rl")
+L 04/03/2021 - 20:58:31: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:31: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "world" (attacker_position "47 -869 8") (victim_position "-27 -753 10")
+L 04/03/2021 - 20:58:31: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "-27 -753 10")
+L 04/03/2021 - 20:58:32: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "68") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:34: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "56") (weapon "quake_rl")
+L 04/03/2021 - 20:58:34: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "56") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:34: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "tf_projectile_rocket" (attacker_position "110 -837 60") (victim_position "26 -829 84")
+L 04/03/2021 - 20:58:34: "strauß<5><[U:1:82123920]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "332 -1102 25") (attacker_position "110 -837 60") (victim_position "26 -829 84")
+L 04/03/2021 - 20:58:34: "strauß<5><[U:1:82123920]><Red>" triggered "revenge" against "anian<6><[U:1:101608870]><Blue>" (assist "1")
+L 04/03/2021 - 20:58:34: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "56") (realdamage "7") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:35: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "39 -757 0")
+L 04/03/2021 - 20:58:38: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:38: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "257 356 150")
+L 04/03/2021 - 20:58:38: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:38: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:38: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:38: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:40: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "212 156 13")
+L 04/03/2021 - 20:58:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "52") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "62") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "83") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:44: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "249 -1172 150")
+L 04/03/2021 - 20:58:44: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:44: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:44: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:44: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:47: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "242 -971 28")
+L 04/03/2021 - 20:58:47: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "98") (weapon "quake_rl")
+L 04/03/2021 - 20:58:48: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "190 -691 50") (victim_position "391 -387 22")
+L 04/03/2021 - 20:58:48: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "60") (realdamage "34") (weapon "quake_rl")
+L 04/03/2021 - 20:58:49: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "61") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:58:51: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "70") (weapon "quake_rl")
+L 04/03/2021 - 20:58:52: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "60") (weapon "quake_rl")
+L 04/03/2021 - 20:58:52: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "world" (attacker_position "301 301 101") (victim_position "253 330 14")
+L 04/03/2021 - 20:58:52: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "253 330 14")
+L 04/03/2021 - 20:58:52: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:58:53: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "296 369 21")
+L 04/03/2021 - 20:58:53: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "397 163 0")
+L 04/03/2021 - 20:58:53: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "397 163 0") (victim_position "374 311 68")
+L 04/03/2021 - 20:58:53: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "374 311 68")
+L 04/03/2021 - 20:58:53: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "77") (realdamage "70") (weapon "quake_rl")
+L 04/03/2021 - 20:58:55: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:58:55: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:58:55: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "440 262 0")
+L 04/03/2021 - 20:58:57: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "107") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 20:58:58: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:58:59: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "114 193 0")
+L 04/03/2021 - 20:58:59: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "114 193 0") (victim_position "242 274 475")
+L 04/03/2021 - 20:58:59: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "242 274 475")
+L 04/03/2021 - 20:58:59: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "37") (realdamage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:00: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:00: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "176 247 0")
+L 04/03/2021 - 20:59:01: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:02: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "50") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:04: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "20") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:05: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "37") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:06: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "373 -809 0") (victim_position "141 -1115 0")
+L 04/03/2021 - 20:59:06: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "43") (realdamage "29") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:06: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "75") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:06: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:07: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "250 -1190 149")
+L 04/03/2021 - 20:59:07: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:07: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:07: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:07: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:09: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "275 -952 8")
+L 04/03/2021 - 20:59:10: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "36") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:11: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:12: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "61") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 20:59:13: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "68") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:14: "strauß<5><[U:1:82123920]><Red>" committed suicide with "quake_rl" (attacker_position "74 452 32")
+L 04/03/2021 - 20:59:14: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "74 452 32")
+L 04/03/2021 - 20:59:15: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "56 383 0")
+L 04/03/2021 - 20:59:15: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "29") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:15: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "35") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "75") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:19: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "258 -1202 149")
+L 04/03/2021 - 20:59:19: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:19: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:19: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:19: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:21: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "315 -988 28")
+L 04/03/2021 - 20:59:22: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "32") (weapon "quake_rl")
+L 04/03/2021 - 20:59:22: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 20:59:22: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "25") (weapon "quake_rl")
+L 04/03/2021 - 20:59:23: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "52") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:25: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "7 400 0")
+L 04/03/2021 - 20:59:25: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "7 400 0") (victim_position "232 235 324")
+L 04/03/2021 - 20:59:25: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "232 235 324")
+L 04/03/2021 - 20:59:25: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "96") (realdamage "27") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 20:59:25: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "52") (weapon "quake_rl")
+L 04/03/2021 - 20:59:26: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "64") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:26: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "297 219 0")
+L 04/03/2021 - 20:59:26: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "65") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:26: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "-73 257 68") (victim_position "61 348 0")
+L 04/03/2021 - 20:59:26: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "284 223 0") (attacker_position "-73 257 68") (victim_position "61 348 0")
+L 04/03/2021 - 20:59:26: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "51") (realdamage "5") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:31: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "288 -1207 150")
+L 04/03/2021 - 20:59:31: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:31: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:31: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:31: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:33: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "322 -995 28")
+L 04/03/2021 - 20:59:36: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "92") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 20:59:36: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "52") (weapon "quake_rl")
+L 04/03/2021 - 20:59:37: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "52") (weapon "quake_rl")
+L 04/03/2021 - 20:59:37: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:38: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "23") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:38: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "269 375 146")
+L 04/03/2021 - 20:59:38: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:38: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:38: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:38: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:40: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "272 164 85")
+L 04/03/2021 - 20:59:43: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "403 -909 0")
+L 04/03/2021 - 20:59:43: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "403 -909 0") (victim_position "523 -829 87")
+L 04/03/2021 - 20:59:43: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "523 -829 87")
+L 04/03/2021 - 20:59:43: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "55") (realdamage "23") (weapon "quake_rl")
+L 04/03/2021 - 20:59:43: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "67") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "75") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:44: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "248 -927 0") (victim_position "372 -1099 0")
+L 04/03/2021 - 20:59:44: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "29 -1206 0") (attacker_position "248 -927 0") (victim_position "372 -1099 0")
+L 04/03/2021 - 20:59:44: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "108") (realdamage "51") (weapon "quake_rl")
+L 04/03/2021 - 20:59:46: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "459 -850 0")
+L 04/03/2021 - 20:59:49: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:51: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 20:59:52: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:52: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "78") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:53: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "44 423 0")
+L 04/03/2021 - 20:59:53: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "44 423 0") (victim_position "290 370 157")
+L 04/03/2021 - 20:59:53: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "290 370 157")
+L 04/03/2021 - 20:59:53: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "104") (realdamage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:53: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "49") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:54: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "62") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:55: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "94") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:55: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "222 313 100")
+L 04/03/2021 - 20:59:55: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 20:59:55: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "5") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:56: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "36") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:56: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:57: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "6") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:57: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 20:59:57: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "46 -232 0") (victim_position "740 98 49")
+L 04/03/2021 - 20:59:57: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "455 351 0") (attacker_position "46 -232 0") (victim_position "740 98 49")
+L 04/03/2021 - 20:59:57: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "12") (realdamage "3") (weapon "shotgun_soldier")
+L 04/03/2021 - 20:59:59: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 20:59:59: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "player" (attacker_position "759 160 134") (victim_position "344 -280 0")
+L 04/03/2021 - 21:00:02: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "player" (attacker_position "302 -728 50") (victim_position "572 559 0")
+L 04/03/2021 - 21:00:02: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "572 559 0")
+L 04/03/2021 - 21:00:03: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "43") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:03: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:06: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:00:06: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "535 518 22")
+L 04/03/2021 - 21:00:06: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:07: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "84") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:08: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "79") (weapon "quake_rl")
+L 04/03/2021 - 21:00:08: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "175 -111 49") (victim_position "39 389 0")
+L 04/03/2021 - 21:00:08: "strauß<5><[U:1:82123920]><Red>" triggered "kill assist" against "Bv<7><[U:1:88677982]><Blue>" (assister_position "107 323 112") (attacker_position "175 -111 49") (victim_position "39 389 0")
+L 04/03/2021 - 21:00:08: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "59") (realdamage "37") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:08: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:10: "strauß<5><[U:1:82123920]><Red>" committed suicide with "world" (attacker_position "235 183 0")
+L 04/03/2021 - 21:00:10: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "235 183 0")
+L 04/03/2021 - 21:00:10: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "67") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:11: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "66") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:12: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "67") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:12: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "73") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:12: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "386 157 0") (victim_position "400 -168 39")
+L 04/03/2021 - 21:00:12: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "76") (realdamage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:14: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:14: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:00:16: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:16: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "169 224 0")
+L 04/03/2021 - 21:00:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "90") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:18: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "61") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:19: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:19: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:19: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "-24 -969 50") (victim_position "400 -1023 0")
+L 04/03/2021 - 21:00:19: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "75") (realdamage "61") (weapon "quake_rl")
+L 04/03/2021 - 21:00:20: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "270 -1173 139")
+L 04/03/2021 - 21:00:20: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:20: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:20: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:20: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:23: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "241 -995 39")
+L 04/03/2021 - 21:00:24: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "107") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:24: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:26: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "71") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:26: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "world" (attacker_position "505 61 66") (victim_position "182 143 10")
+L 04/03/2021 - 21:00:26: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "182 143 10")
+L 04/03/2021 - 21:00:26: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "250 -353 0") (victim_position "504 68 63")
+L 04/03/2021 - 21:00:26: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "Bv<7><[U:1:88677982]><Blue>" (assister_position "183 141 14") (attacker_position "250 -353 0") (victim_position "504 68 63")
+L 04/03/2021 - 21:00:26: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "71") (realdamage "54") (weapon "quake_rl")
+L 04/03/2021 - 21:00:27: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:27: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:00:28: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "33") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:28: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "54") (weapon "quake_rl")
+L 04/03/2021 - 21:00:28: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "47") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:28: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "236 74 0")
+L 04/03/2021 - 21:00:29: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "230 90 0") (victim_position "51 362 0")
+L 04/03/2021 - 21:00:29: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "183 141 14") (attacker_position "230 90 0") (victim_position "51 362 0")
+L 04/03/2021 - 21:00:29: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "102") (realdamage "75") (weapon "quake_rl")
+L 04/03/2021 - 21:00:33: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:33: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:34: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "375 388 0")
+L 04/03/2021 - 21:00:34: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "375 388 0") (victim_position "277 402 276")
+L 04/03/2021 - 21:00:34: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "277 402 276")
+L 04/03/2021 - 21:00:34: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "104") (realdamage "45") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:35: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:35: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "319 398 125")
+L 04/03/2021 - 21:00:39: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "35") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:40: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "247 -1201 147")
+L 04/03/2021 - 21:00:40: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:40: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:40: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:40: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:42: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "253 -945 8")
+L 04/03/2021 - 21:00:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "36") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "29") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "32") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:44: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "49") (weapon "quake_rl")
+L 04/03/2021 - 21:00:44: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "74") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:45: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "78") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:45: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "70") (weapon "quake_rl")
+L 04/03/2021 - 21:00:45: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "76") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:45: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:46: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "23") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:46: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "56") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:46: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "36 -107 68")
+L 04/03/2021 - 21:00:46: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "36 -107 68") (victim_position "-219 -447 0")
+L 04/03/2021 - 21:00:46: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "225 -291 87") (attacker_position "36 -107 68") (victim_position "-219 -447 0")
+L 04/03/2021 - 21:00:46: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "-219 -447 0")
+L 04/03/2021 - 21:00:46: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "84") (realdamage "54") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:47: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "23") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:47: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "36") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:47: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "-132 -700 46") (victim_position "348 -576 70")
+L 04/03/2021 - 21:00:47: "strauß<5><[U:1:82123920]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "-219 -447 68") (attacker_position "-132 -700 46") (victim_position "348 -576 70")
+L 04/03/2021 - 21:00:47: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "43") (realdamage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:48: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "11") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:48: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "-182 -249 0") (victim_position "-252 -705 47")
+L 04/03/2021 - 21:00:48: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "337 -611 91") (attacker_position "-182 -249 0") (victim_position "-252 -705 47")
+L 04/03/2021 - 21:00:48: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "47") (realdamage "5") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:49: "Bv<7><[U:1:88677982]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:00:49: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "-221 -379 0")
+L 04/03/2021 - 21:00:51: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "252 -1191 151")
+L 04/03/2021 - 21:00:51: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:51: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:00:51: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:51: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:00:54: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "289 -942 8")
+L 04/03/2021 - 21:00:57: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "104") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:57: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "59") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:57: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "54") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:58: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "world" (attacker_position "183 142 0") (victim_position "503 -135 0")
+L 04/03/2021 - 21:00:58: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "503 -135 0")
+L 04/03/2021 - 21:00:58: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "56") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:59: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "46") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:00:59: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "40") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:00:59: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "412 43 0") (victim_position "243 -128 0")
+L 04/03/2021 - 21:00:59: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "-131 15 0") (attacker_position "412 43 0") (victim_position "243 -128 0")
+L 04/03/2021 - 21:00:59: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "82") (realdamage "49") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:00: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "569 -65 0")
+L 04/03/2021 - 21:01:01: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:01: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "player" (attacker_position "231 -144 68") (victim_position "515 -325 48")
+L 04/03/2021 - 21:01:01: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "515 -325 48")
+L 04/03/2021 - 21:01:02: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:02: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "450 -285 0")
+L 04/03/2021 - 21:01:04: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:05: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "65") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:05: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "274 -1203 146")
+L 04/03/2021 - 21:01:05: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:05: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:05: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:05: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:09: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "281 -952 28")
+L 04/03/2021 - 21:01:09: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "30") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:10: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "63") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:10: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "45") (weapon "quake_rl")
+L 04/03/2021 - 21:01:11: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "57") (weapon "quake_rl")
+L 04/03/2021 - 21:01:12: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "shotgun_soldier" (attacker_position "276 -649 0") (victim_position "266 -432 0")
+L 04/03/2021 - 21:01:12: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "83") (realdamage "33") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:12: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:12: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:12: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:13: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:14: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "14") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:14: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:14: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "36") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:14: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "11") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:15: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "16") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:15: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "11") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:16: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "251 -20 71")
+L 04/03/2021 - 21:01:16: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "251 -20 71") (victim_position "-150 -266 0")
+L 04/03/2021 - 21:01:16: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "-150 -266 0")
+L 04/03/2021 - 21:01:16: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "25") (realdamage "3") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:16: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "299 -24 33") (victim_position "214 -46 12")
+L 04/03/2021 - 21:01:16: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "-158 -231 68") (attacker_position "299 -24 33") (victim_position "214 -46 12")
+L 04/03/2021 - 21:01:16: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "112") (realdamage "18") (weapon "quake_rl")
+L 04/03/2021 - 21:01:17: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:18: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:19: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:19: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "-85 -255 0")
+L 04/03/2021 - 21:01:22: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "99 310 49")
+L 04/03/2021 - 21:01:22: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "99 310 49") (victim_position "323 311 0")
+L 04/03/2021 - 21:01:22: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "323 311 0")
+L 04/03/2021 - 21:01:22: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "72") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:22: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:22: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:23: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "256 374 0")
+L 04/03/2021 - 21:01:26: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "74") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:28: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "42") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:28: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:29: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "97 -946 0") (victim_position "58 -1121 0")
+L 04/03/2021 - 21:01:29: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "68") (realdamage "62") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:29: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "242 -1192 151")
+L 04/03/2021 - 21:01:29: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:29: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:29: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:29: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:32: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "266 -995 28")
+L 04/03/2021 - 21:01:32: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "29") (weapon "quake_rl")
+L 04/03/2021 - 21:01:33: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "98") (weapon "quake_rl") (airshot "1")
+L 04/03/2021 - 21:01:34: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "25") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:35: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "shotgun_soldier" (attacker_position "250 -516 0") (victim_position "518 -112 0")
+L 04/03/2021 - 21:01:35: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "37") (realdamage "34") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:35: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "43 366 0")
+L 04/03/2021 - 21:01:35: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "43 366 0") (victim_position "101 305 228")
+L 04/03/2021 - 21:01:35: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "101 305 228")
+L 04/03/2021 - 21:01:35: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "107") (realdamage "91") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:01:35: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "43 369 0")
+L 04/03/2021 - 21:01:36: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:36: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "14") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:36: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "47") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:38: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:38: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "164 -404 0")
+L 04/03/2021 - 21:01:38: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "164 -404 0") (victim_position "155 -72 66")
+L 04/03/2021 - 21:01:38: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "155 -72 66")
+L 04/03/2021 - 21:01:38: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "51") (realdamage "47") (weapon "quake_rl")
+L 04/03/2021 - 21:01:39: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "62") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:39: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "152 -140 0")
+L 04/03/2021 - 21:01:40: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:01:41: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:41: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:43: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "44 333 0")
+L 04/03/2021 - 21:01:43: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "44 333 0") (victim_position "236 105 77")
+L 04/03/2021 - 21:01:43: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "236 105 77")
+L 04/03/2021 - 21:01:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "74") (realdamage "25") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:45: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "198 129 22")
+L 04/03/2021 - 21:01:45: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:45: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "32") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:47: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "47") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:48: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "242 -1207 142")
+L 04/03/2021 - 21:01:48: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:48: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:48: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:48: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:51: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "250 -990 28")
+L 04/03/2021 - 21:01:51: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:53: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "78") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:53: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "59") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:53: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:55: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "70") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "110") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:01:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "71") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:56: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "17") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:56: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:01:56: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "243 348 150")
+L 04/03/2021 - 21:01:56: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:56: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:01:56: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:56: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:01:58: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "281 159 72")
+L 04/03/2021 - 21:02:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "75") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "44") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:00: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "defended") (position "198 -1149 71")
+L 04/03/2021 - 21:02:00: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "198 -1149 71") (victim_position "270 -1154 166")
+L 04/03/2021 - 21:02:00: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "270 -1154 166")
+L 04/03/2021 - 21:02:00: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "111") (realdamage "41") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:01: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "106") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:02: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "52") (weapon "quake_rl")
+L 04/03/2021 - 21:02:02: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "192 -1137 77") (victim_position "215 -1190 101")
+L 04/03/2021 - 21:02:02: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "89") (realdamage "21") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:02: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "204 -1088 0")
+L 04/03/2021 - 21:02:03: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "49") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:03: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:02:05: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "23") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:06: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "88") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:07: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:07: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shovel" (attacker_position "102 -1087 0") (victim_position "131 -1139 0")
+L 04/03/2021 - 21:02:07: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "65") (realdamage "14") (weapon "shovel")
+L 04/03/2021 - 21:02:07: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:02:08: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:10: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:10: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "280 -544 0")
+L 04/03/2021 - 21:02:10: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "34") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:10: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "337 -545 21")
+L 04/03/2021 - 21:02:10: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:12: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "defended") (position "370 -1410 0")
+L 04/03/2021 - 21:02:12: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "370 -1410 0") (victim_position "221 -1206 176")
+L 04/03/2021 - 21:02:12: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "221 -1206 176")
+L 04/03/2021 - 21:02:12: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "103") (realdamage "99") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:02:13: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "481 -1328 35") (victim_position "191 -1008 0")
+L 04/03/2021 - 21:02:13: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "40") (realdamage "16") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:13: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:15: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:02:15: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "200 -1137 90")
+L 04/03/2021 - 21:02:17: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "player" (attacker_position "191 -1039 14") (victim_position "449 -1089 0")
+L 04/03/2021 - 21:02:17: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "449 -1089 0")
+L 04/03/2021 - 21:02:18: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:19: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:19: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "55") (weapon "quake_rl")
+L 04/03/2021 - 21:02:19: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "81") (weapon "quake_rl")
+L 04/03/2021 - 21:02:20: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "82") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:20: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "77") (weapon "quake_rl")
+L 04/03/2021 - 21:02:21: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "166 28 0") (victim_position "492 -291 25")
+L 04/03/2021 - 21:02:21: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "61") (realdamage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:21: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "492 -291 93") (victim_position "140 -40 0")
+L 04/03/2021 - 21:02:21: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "68") (weapon "quake_rl")
+L 04/03/2021 - 21:02:22: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "433 -1040 24")
+L 04/03/2021 - 21:02:23: "anian<6><[U:1:101608870]><Blue>" committed suicide with "tf_projectile_rocket" (attacker_position "385 -1142 72")
+L 04/03/2021 - 21:02:23: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "385 -1142 72")
+L 04/03/2021 - 21:02:23: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:24: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "413 -1210 0")
+L 04/03/2021 - 21:02:27: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:27: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:28: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "279 368 144")
+L 04/03/2021 - 21:02:28: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:28: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:28: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:28: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:30: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "31") (weapon "quake_rl")
+L 04/03/2021 - 21:02:32: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "54") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:32: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "320 150 83")
+L 04/03/2021 - 21:02:32: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "53") (weapon "quake_rl")
+L 04/03/2021 - 21:02:33: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "66") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:33: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:34: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "-133 -941 128") (victim_position "296 -854 23")
+L 04/03/2021 - 21:02:34: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "71") (realdamage "70") (weapon "quake_rl")
+L 04/03/2021 - 21:02:36: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "10") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:36: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "248 -1207 149")
+L 04/03/2021 - 21:02:36: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:36: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:36: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:36: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:38: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "318 -973 77")
+L 04/03/2021 - 21:02:38: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "34") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:40: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "84 295 59")
+L 04/03/2021 - 21:02:40: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "84 295 59") (victim_position "281 534 35")
+L 04/03/2021 - 21:02:40: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "281 534 35")
+L 04/03/2021 - 21:02:40: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "70") (realdamage "29") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:41: "Bv<7><[U:1:88677982]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:02:41: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "82") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:41: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "70") (weapon "quake_rl")
+L 04/03/2021 - 21:02:42: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "215 503 0")
+L 04/03/2021 - 21:02:42: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "78") (weapon "quake_rl")
+L 04/03/2021 - 21:02:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "45") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "20") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:44: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "44") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:45: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "263 -419 0") (victim_position "23 -249 0")
+L 04/03/2021 - 21:02:45: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "39") (realdamage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:46: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "248 -1199 150")
+L 04/03/2021 - 21:02:46: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:46: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:02:46: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:46: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:48: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "25") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:49: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:50: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "225 -937 8")
+L 04/03/2021 - 21:02:50: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:50: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:51: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "52") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:51: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "104") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:51: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:53: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "557 -214 0") (victim_position "700 343 0")
+L 04/03/2021 - 21:02:53: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "59") (realdamage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:02:53: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "700 343 68")
+L 04/03/2021 - 21:02:53: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "700 343 68") (victim_position "396 -239 466")
+L 04/03/2021 - 21:02:53: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "171 30 0") (attacker_position "700 343 68") (victim_position "396 -239 466")
+L 04/03/2021 - 21:02:53: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "396 -239 466")
+L 04/03/2021 - 21:02:53: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "59") (realdamage "54") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:02:53: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "374 -280 23")
+L 04/03/2021 - 21:02:54: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "8") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:54: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "49") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:54: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "85") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:57: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "318 1 0")
+L 04/03/2021 - 21:02:57: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "318 1 0") (victim_position "548 -53 0")
+L 04/03/2021 - 21:02:57: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "548 -53 0")
+L 04/03/2021 - 21:02:57: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "74") (realdamage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:02:58: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "482 -32 0")
+L 04/03/2021 - 21:02:58: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:02:59: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:02:59: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:01: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:03: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "-85 -1178 0")
+L 04/03/2021 - 21:03:03: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "-85 -1178 0") (victim_position "333 -1156 70")
+L 04/03/2021 - 21:03:03: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "333 -1156 70")
+L 04/03/2021 - 21:03:03: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "59") (realdamage "56") (weapon "quake_rl")
+L 04/03/2021 - 21:03:03: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "52") (weapon "quake_rl")
+L 04/03/2021 - 21:03:03: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:04: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "57") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:04: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "49") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:04: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "87") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:04: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "269 -1165 5")
+L 04/03/2021 - 21:03:05: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:06: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "480 -1175 16") (victim_position "153 -726 8")
+L 04/03/2021 - 21:03:06: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "Bv<7><[U:1:88677982]><Blue>" (assister_position "34 -1304 16") (attacker_position "480 -1175 16") (victim_position "153 -726 8")
+L 04/03/2021 - 21:03:06: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "67") (realdamage "9") (weapon "quake_rl")
+L 04/03/2021 - 21:03:06: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "153 -726 76")
+L 04/03/2021 - 21:03:06: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "153 -726 76") (victim_position "442 -1224 0")
+L 04/03/2021 - 21:03:06: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "442 -1224 0")
+L 04/03/2021 - 21:03:06: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "61") (realdamage "3") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:08: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "377 -1211 0")
+L 04/03/2021 - 21:03:08: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:03:09: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:12: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:13: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:13: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "257 366 148")
+L 04/03/2021 - 21:03:13: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:13: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:13: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:13: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:15: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "241 163 103")
+L 04/03/2021 - 21:03:16: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "78") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:17: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "quake_rl" (attacker_position "-98 -589 0") (victim_position "27 -596 45")
+L 04/03/2021 - 21:03:17: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "70") (realdamage "37") (weapon "quake_rl")
+L 04/03/2021 - 21:03:17: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "44") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:03:18: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "79") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:19: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "-58 -808 25")
+L 04/03/2021 - 21:03:19: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "shotgun_soldier" (attacker_position "-58 -808 25") (victim_position "255 -808 22")
+L 04/03/2021 - 21:03:19: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "255 -808 22")
+L 04/03/2021 - 21:03:19: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "54") (realdamage "20") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:21: "strauß<5><[U:1:82123920]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:03:22: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "247 -876 0")
+L 04/03/2021 - 21:03:23: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:24: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "70") (weapon "quake_rl")
+L 04/03/2021 - 21:03:24: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "549 290 175") (victim_position "368 145 0")
+L 04/03/2021 - 21:03:24: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "88") (realdamage "24") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:25: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "438 -13 211")
+L 04/03/2021 - 21:03:25: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "438 -13 211") (victim_position "231 245 284")
+L 04/03/2021 - 21:03:25: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "231 245 284")
+L 04/03/2021 - 21:03:25: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "101") (realdamage "82") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:03:25: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:26: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "273 175 0")
+L 04/03/2021 - 21:03:29: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "257 -1207 144")
+L 04/03/2021 - 21:03:29: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:29: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:29: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:29: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:32: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "28") (weapon "quake_rl")
+L 04/03/2021 - 21:03:32: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "33") (weapon "quake_rl")
+L 04/03/2021 - 21:03:34: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "65") (weapon "quake_rl")
+L 04/03/2021 - 21:03:34: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "39") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:34: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "47") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:34: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "280 -995 49")
+L 04/03/2021 - 21:03:35: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "3") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:35: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "56") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:35: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "10") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:36: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:36: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "26") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:36: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "19") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:37: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:37: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:38: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:38: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "27") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:38: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "137 258 66")
+L 04/03/2021 - 21:03:38: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "137 258 66") (victim_position "-123 198 280")
+L 04/03/2021 - 21:03:38: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "347 308 0") (attacker_position "137 258 66") (victim_position "-123 198 280")
+L 04/03/2021 - 21:03:38: "anian<6><[U:1:101608870]><Blue>" triggered "domination" against "Charon<4><[U:1:101449025]><Red>"
+L 04/03/2021 - 21:03:38: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "-123 198 280")
+L 04/03/2021 - 21:03:38: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "59") (realdamage "40") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:39: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "46") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:39: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "99 -153 51") (victim_position "33 203 0")
+L 04/03/2021 - 21:03:39: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "58") (realdamage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:41: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "66") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:42: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "-57 165 0")
+L 04/03/2021 - 21:03:42: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 21:03:44: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "world" (attacker_position "-118 -866 0") (victim_position "-251 -482 302")
+L 04/03/2021 - 21:03:44: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "-251 -482 302")
+L 04/03/2021 - 21:03:45: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:46: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:48: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "-228 -551 0")
+L 04/03/2021 - 21:03:49: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "73") (weapon "quake_rl")
+L 04/03/2021 - 21:03:50: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "73") (weapon "quake_rl")
+L 04/03/2021 - 21:03:50: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:51: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "266 375 148")
+L 04/03/2021 - 21:03:51: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:51: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:51: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:51: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:52: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "228 162 77")
+L 04/03/2021 - 21:03:53: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 21:03:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "70") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "75") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "52") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:55: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "176 -962 55") (victim_position "85 -1110 0")
+L 04/03/2021 - 21:03:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "77") (realdamage "55") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:03:56: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "274 -1174 148")
+L 04/03/2021 - 21:03:56: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:56: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:03:56: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:56: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:03:58: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "30") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:03:59: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "257 -929 28")
+L 04/03/2021 - 21:04:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "84") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "46") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:00: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "86") (weapon "quake_rl")
+L 04/03/2021 - 21:04:02: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "154 64 429")
+L 04/03/2021 - 21:04:02: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "154 64 429") (victim_position "242 126 502")
+L 04/03/2021 - 21:04:02: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "510 234 0") (attacker_position "154 64 429") (victim_position "242 126 502")
+L 04/03/2021 - 21:04:02: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "242 126 502")
+L 04/03/2021 - 21:04:02: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "111") (realdamage "5") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:04:03: "Bv<7><[U:1:88677982]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:04:03: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "256 115 52") (victim_position "65 -17 49")
+L 04/03/2021 - 21:04:03: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "365 154 67") (attacker_position "256 115 52") (victim_position "65 -17 49")
+L 04/03/2021 - 21:04:03: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "55") (realdamage "47") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:03: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "307 86 23")
+L 04/03/2021 - 21:04:08: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:08: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "255 -1198 150")
+L 04/03/2021 - 21:04:08: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:08: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:08: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:08: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:11: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "31") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:11: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "290 -977 28")
+L 04/03/2021 - 21:04:13: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "50") (weapon "quake_rl")
+L 04/03/2021 - 21:04:14: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "79") (weapon "quake_rl")
+L 04/03/2021 - 21:04:15: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "366 210 63")
+L 04/03/2021 - 21:04:15: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "366 210 63") (victim_position "340 37 135")
+L 04/03/2021 - 21:04:15: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "340 37 135")
+L 04/03/2021 - 21:04:15: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "54") (realdamage "29") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:15: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:04:16: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "370 107 0")
+L 04/03/2021 - 21:04:16: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "48") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:16: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "21") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:17: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "255 -309 1") (victim_position "-92 31 0")
+L 04/03/2021 - 21:04:17: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "92") (realdamage "28") (weapon "quake_rl")
+L 04/03/2021 - 21:04:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "69") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:19: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:20: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "69") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:20: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "33") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:21: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:21: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:21: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "57") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:22: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "274 -1174 150")
+L 04/03/2021 - 21:04:22: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:22: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:22: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:22: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:24: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "257 -962 28")
+L 04/03/2021 - 21:04:27: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "26") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:27: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "251 375 143")
+L 04/03/2021 - 21:04:27: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:27: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:27: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:27: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:29: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "299 158 72")
+L 04/03/2021 - 21:04:30: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "54") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:31: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "105") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:31: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "193 -1106 105")
+L 04/03/2021 - 21:04:31: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "quake_rl" (attacker_position "193 -1106 105") (victim_position "368 -1124 167")
+L 04/03/2021 - 21:04:31: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "368 -1124 167")
+L 04/03/2021 - 21:04:31: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "109") (realdamage "48") (weapon "quake_rl")
+L 04/03/2021 - 21:04:32: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "59") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:32: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "69") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:32: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:04:33: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "46") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:34: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:34: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "331 -1259 0") (victim_position "633 -1016 117")
+L 04/03/2021 - 21:04:34: "strauß<5><[U:1:82123920]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "17 -1136 0") (attacker_position "331 -1259 0") (victim_position "633 -1016 117")
+L 04/03/2021 - 21:04:34: "Charon<4><[U:1:101449025]><Red>" triggered "revenge" against "anian<6><[U:1:101608870]><Blue>"
+L 04/03/2021 - 21:04:34: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "55") (realdamage "26") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:34: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "307 -1192 0")
+L 04/03/2021 - 21:04:35: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "player" (attacker_position "622 -1012 123") (victim_position "487 -1114 49")
+L 04/03/2021 - 21:04:35: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "487 -1114 49")
+L 04/03/2021 - 21:04:37: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "422 -1069 0")
+L 04/03/2021 - 21:04:38: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:40: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:41: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "10") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:41: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:41: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "39") (weapon "quake_rl")
+L 04/03/2021 - 21:04:42: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "10") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:42: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "28") (weapon "quake_rl")
+L 04/03/2021 - 21:04:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "14") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "4") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "3") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "8") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "3") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:43: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "4") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:44: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "88 -8 60")
+L 04/03/2021 - 21:04:44: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "88 -8 60") (victim_position "203 -793 41")
+L 04/03/2021 - 21:04:44: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "182 -97 38") (attacker_position "88 -8 60") (victim_position "203 -793 41")
+L 04/03/2021 - 21:04:44: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "203 -793 41")
+L 04/03/2021 - 21:04:44: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "47") (realdamage "45") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:44: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "37") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:45: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "20") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:45: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:04:45: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "185 -862 0")
+L 04/03/2021 - 21:04:46: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "64") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:46: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "34") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:46: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "108 -388 52")
+L 04/03/2021 - 21:04:46: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "108 -388 52") (victim_position "128 -746 410")
+L 04/03/2021 - 21:04:46: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "476 -590 0") (attacker_position "108 -388 52") (victim_position "128 -746 410")
+L 04/03/2021 - 21:04:46: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "128 -746 410")
+L 04/03/2021 - 21:04:46: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "18") (realdamage "4") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:48: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "195 -686 19")
+L 04/03/2021 - 21:04:49: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "240 -1199 150")
+L 04/03/2021 - 21:04:49: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:49: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:49: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:49: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:52: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "25") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:53: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "248 -940 28")
+L 04/03/2021 - 21:04:54: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "61") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:55: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "48") (weapon "quake_rl")
+L 04/03/2021 - 21:04:55: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "73") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:04:56: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "35") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:56: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "5") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:56: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:57: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "42") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:04:57: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "262 370 149")
+L 04/03/2021 - 21:04:57: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:57: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:04:57: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:57: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:04:59: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "288 164 89")
+L 04/03/2021 - 21:05:02: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "91") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:02: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "49") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:03: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "319 -1185 0") (victim_position "75 -1207 229")
+L 04/03/2021 - 21:05:03: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "68") (realdamage "60") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:03: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "247 -1191 150")
+L 04/03/2021 - 21:05:03: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:03: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:03: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:03: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:05: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "286 -979 28")
+L 04/03/2021 - 21:05:07: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "64") (weapon "quake_rl")
+L 04/03/2021 - 21:05:07: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "104") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:07: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "50") (weapon "quake_rl")
+L 04/03/2021 - 21:05:09: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "64") (weapon "quake_rl")
+L 04/03/2021 - 21:05:10: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "235 351 151")
+L 04/03/2021 - 21:05:10: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:10: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:10: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:10: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:11: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "196 166 94")
+L 04/03/2021 - 21:05:13: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "53") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:14: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "103") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:14: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "66") (weapon "quake_rl")
+L 04/03/2021 - 21:05:15: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "184 -1230 0") (victim_position "-23 -1394 83")
+L 04/03/2021 - 21:05:15: "anian<6><[U:1:101608870]><Blue>" triggered "domination" against "Charon<4><[U:1:101449025]><Red>"
+L 04/03/2021 - 21:05:15: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "104") (realdamage "97") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:16: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "50") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:16: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "43") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:16: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "22") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:17: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "8") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:17: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "world" (attacker_position "-44 -650 0") (victim_position "74 -582 2")
+L 04/03/2021 - 21:05:17: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "74 -582 2")
+L 04/03/2021 - 21:05:17: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "22 -936 0") (victim_position "-55 -632 0")
+L 04/03/2021 - 21:05:17: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "76 -581 68") (attacker_position "22 -936 0") (victim_position "-55 -632 0")
+L 04/03/2021 - 21:05:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "46") (realdamage "32") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:18: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "49 -651 0")
+L 04/03/2021 - 21:05:19: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:05:20: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "260 -1189 138")
+L 04/03/2021 - 21:05:20: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:20: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:20: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:20: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:23: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "83") (weapon "quake_rl")
+L 04/03/2021 - 21:05:24: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "68") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:25: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "50") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:05:25: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "71") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:25: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "46") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:26: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "world" (attacker_position "321 -1020 0") (victim_position "-179 -513 11")
+L 04/03/2021 - 21:05:26: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "274 -948 28")
+L 04/03/2021 - 21:05:27: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "101") (weapon "quake_rl")
+L 04/03/2021 - 21:05:28: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "8") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:28: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "31") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:28: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:29: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "338 -361 0") (victim_position "112 15 72")
+L 04/03/2021 - 21:05:29: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "33") (realdamage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:30: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "272 352 150")
+L 04/03/2021 - 21:05:30: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:30: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:30: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:30: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:33: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 21:05:33: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "41") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:33: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "200 164 35")
+L 04/03/2021 - 21:05:34: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "90") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:34: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "107") (weapon "quake_rl")
+L 04/03/2021 - 21:05:34: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "108") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:35: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "441 -1036 0") (victim_position "-122 -720 0")
+L 04/03/2021 - 21:05:35: "strauß<5><[U:1:82123920]><Red>" triggered "kill assist" against "Bv<7><[U:1:88677982]><Blue>" (assister_position "-243 -1028 81") (attacker_position "441 -1036 0") (victim_position "-122 -720 0")
+L 04/03/2021 - 21:05:35: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "36") (realdamage "5") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:37: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "62") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:38: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:38: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "-41 -1212 0")
+L 04/03/2021 - 21:05:38: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "-41 -1212 0") (victim_position "39 -1119 71")
+L 04/03/2021 - 21:05:38: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "386 -1128 35") (attacker_position "-41 -1212 0") (victim_position "39 -1119 71")
+L 04/03/2021 - 21:05:38: "Charon<4><[U:1:101449025]><Red>" triggered "revenge" against "anian<6><[U:1:101608870]><Blue>" (assist "1")
+L 04/03/2021 - 21:05:38: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "39 -1119 71")
+L 04/03/2021 - 21:05:38: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "87") (realdamage "28") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:38: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "51") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:41: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:42: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "70 -1188 0")
+L 04/03/2021 - 21:05:42: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:05:45: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:45: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "57") (weapon "quake_rl")
+L 04/03/2021 - 21:05:45: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "shotgun_soldier" (attacker_position "237 -890 0") (victim_position "145 -759 36")
+L 04/03/2021 - 21:05:45: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "60") (realdamage "2") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:05:46: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "329 -782 0")
+L 04/03/2021 - 21:05:46: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "329 -782 0") (victim_position "-183 248 205")
+L 04/03/2021 - 21:05:46: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "-183 248 205")
+L 04/03/2021 - 21:05:46: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "30") (realdamage "2") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:05:48: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "-116 256 0")
+L 04/03/2021 - 21:05:52: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "captured") (position "274 -1180 150")
+L 04/03/2021 - 21:05:52: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:52: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:05:52: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:52: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:05:54: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 21:05:54: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "24") (weapon "quake_rl")
+L 04/03/2021 - 21:05:55: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "73") (weapon "quake_rl")
+L 04/03/2021 - 21:05:55: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "36") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:56: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:57: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "73") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:58: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "470 -516 0") (victim_position "630 -846 115")
+L 04/03/2021 - 21:05:58: "anian<6><[U:1:101608870]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "52 -393 0") (attacker_position "470 -516 0") (victim_position "630 -846 115")
+L 04/03/2021 - 21:05:58: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "98") (realdamage "36") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:05:58: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "71") (weapon "quake_rl")
+L 04/03/2021 - 21:05:58: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "246 -935 28")
+L 04/03/2021 - 21:06:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "33") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:00: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "15") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:00: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "56") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:00: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "17") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:00: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "50") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:01: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:01: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "181 -35 0")
+L 04/03/2021 - 21:06:01: "anian<6><[U:1:101608870]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "181 -35 0") (victim_position "106 -99 0")
+L 04/03/2021 - 21:06:01: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "Charon<4><[U:1:101449025]><Red>" (assister_position "417 -253 0") (attacker_position "181 -35 0") (victim_position "106 -99 0")
+L 04/03/2021 - 21:06:01: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "106 -99 0")
+L 04/03/2021 - 21:06:01: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "88") (realdamage "4") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:01: "anian<6><[U:1:101608870]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:06:01: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "111") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:02: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "player" (attacker_position "66 -82 114") (victim_position "68 191 82")
+L 04/03/2021 - 21:06:04: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:06: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "10") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:07: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "38") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:07: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:08: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "47") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:08: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "14") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:08: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "64") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:08: "strauß<5><[U:1:82123920]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "shotgun_soldier" (attacker_position "37 -541 0") (victim_position "206 -328 0")
+L 04/03/2021 - 21:06:08: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "32") (realdamage "18") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:09: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:10: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "69 -167 0")
+L 04/03/2021 - 21:06:10: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "defended") (position "391 222 0")
+L 04/03/2021 - 21:06:10: "anian<6><[U:1:101608870]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "391 222 0") (victim_position "78 -152 0")
+L 04/03/2021 - 21:06:10: "Bv<7><[U:1:88677982]><Blue>" triggered "kill assist" against "strauß<5><[U:1:82123920]><Red>" (assister_position "182 -342 14") (attacker_position "391 222 0") (victim_position "78 -152 0")
+L 04/03/2021 - 21:06:10: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "78 -152 0")
+L 04/03/2021 - 21:06:10: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "76") (realdamage "41") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:12: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:06:12: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "122 -168 23")
+L 04/03/2021 - 21:06:12: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "104") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:14: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "56") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:15: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:15: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:15: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "257 375 148")
+L 04/03/2021 - 21:06:15: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:15: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:15: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:15: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:17: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "299 160 67")
+L 04/03/2021 - 21:06:19: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "64") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:20: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:22: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "89") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:22: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "266 -1203 151")
+L 04/03/2021 - 21:06:22: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:22: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:22: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:22: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:24: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "285 -979 28")
+L 04/03/2021 - 21:06:24: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "27") (weapon "quake_rl")
+L 04/03/2021 - 21:06:26: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "64") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:26: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "86") (weapon "quake_rl")
+L 04/03/2021 - 21:06:28: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "7") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:28: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "245 353 151")
+L 04/03/2021 - 21:06:28: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:28: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:28: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:28: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:30: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "256 164 30")
+L 04/03/2021 - 21:06:32: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "54") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:33: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "77") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:33: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "63") (weapon "quake_rl") (airshot "1")
+L 04/03/2021 - 21:06:33: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "tf_projectile_rocket" (attacker_position "525 -962 68") (victim_position "464 -1108 0")
+L 04/03/2021 - 21:06:33: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "95") (realdamage "69") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:33: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:34: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "world" (attacker_position "464 -1108 14") (victim_position "-157 -1056 3")
+L 04/03/2021 - 21:06:34: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "-157 -1056 3")
+L 04/03/2021 - 21:06:35: "Charon<4><[U:1:101449025]><Red>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:06:35: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "-143 -1123 0")
+L 04/03/2021 - 21:06:35: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "67") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:36: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "67") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:37: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "5") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:37: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "221 -397 0")
+L 04/03/2021 - 21:06:37: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "221 -397 0") (victim_position "-69 -307 362")
+L 04/03/2021 - 21:06:37: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "-69 -307 362")
+L 04/03/2021 - 21:06:37: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "26") (realdamage "4") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:39: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "-2 -322 0")
+L 04/03/2021 - 21:06:40: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "world" (attacker_position "0 -231 419") (victim_position "-20 -380 35")
+L 04/03/2021 - 21:06:40: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "dropped") (position "-20 -380 35")
+L 04/03/2021 - 21:06:40: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:40: "Console<0><Console><Console>" say "hello, bear! just donated to serveme.tf - 1 year! 31 percent of our monthly server bills are now taken care of"
+L 04/03/2021 - 21:06:40: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:43: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "43") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:43: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "7 -310 0")
+L 04/03/2021 - 21:06:44: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "75") (weapon "quake_rl")
+L 04/03/2021 - 21:06:44: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:46: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:46: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:46: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "62") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:46: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "defended") (position "74 -739 0")
+L 04/03/2021 - 21:06:46: "strauß<5><[U:1:82123920]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "74 -739 0") (victim_position "159 -320 30")
+L 04/03/2021 - 21:06:46: "Charon<4><[U:1:101449025]><Red>" triggered "kill assist" against "anian<6><[U:1:101608870]><Blue>" (assister_position "463 -999 0") (attacker_position "74 -739 0") (victim_position "159 -320 30")
+L 04/03/2021 - 21:06:46: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "159 -320 30")
+L 04/03/2021 - 21:06:46: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "27") (realdamage "3") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:47: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "13") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:48: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "9") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:06:49: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "49") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:50: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "225 -379 0")
+L 04/03/2021 - 21:06:50: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "91") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:50: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "world" (attacker_position "-224 -15 31") (victim_position "214 -271 62")
+L 04/03/2021 - 21:06:50: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "214 -271 62")
+L 04/03/2021 - 21:06:51: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "45") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:51: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "91") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:53: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "253 -315 23")
+L 04/03/2021 - 21:06:53: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:53: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "defended") (position "49 -139 45")
+L 04/03/2021 - 21:06:53: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "tf_projectile_rocket" (attacker_position "49 -139 45") (victim_position "199 -286 0")
+L 04/03/2021 - 21:06:53: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "dropped") (position "199 -286 0")
+L 04/03/2021 - 21:06:53: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "107") (realdamage "93") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:06:54: "Bv<7><[U:1:88677982]><Blue>" picked up item "tf_ammo_pack"
+L 04/03/2021 - 21:06:54: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "158 -218 0")
+L 04/03/2021 - 21:06:56: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:57: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "248 -1188 146")
+L 04/03/2021 - 21:06:57: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:57: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:06:57: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:57: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:06:58: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "234 -989 8")
+L 04/03/2021 - 21:06:59: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "59") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:00: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "77") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:01: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "14") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:01: "strauß<5><[U:1:82123920]><Red>" committed suicide with "quake_rl" (attacker_position "469 109 0")
+L 04/03/2021 - 21:07:01: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "469 109 0")
+L 04/03/2021 - 21:07:02: "Charon<4><[U:1:101449025]><Red>" killed "Bv<7><[U:1:88677982]><Blue>" with "tf_projectile_rocket" (attacker_position "7 -703 50") (victim_position "-98 -291 0")
+L 04/03/2021 - 21:07:02: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "71") (realdamage "54") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:03: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "picked up") (position "405 139 0")
+L 04/03/2021 - 21:07:06: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "100") (weapon "tf_projectile_rocket") (airshot "1")
+L 04/03/2021 - 21:07:07: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "defended") (position "76 -1180 0")
+L 04/03/2021 - 21:07:07: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "shotgun_soldier" (attacker_position "76 -1180 0") (victim_position "231 -1245 327")
+L 04/03/2021 - 21:07:07: "anian<6><[U:1:101608870]><Blue>" triggered "flagevent" (event "dropped") (position "231 -1245 327")
+L 04/03/2021 - 21:07:07: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "37") (realdamage "12") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:08: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:08: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:09: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "picked up") (position "167 -1255 157")
+L 04/03/2021 - 21:07:11: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "37") (weapon "quake_rl")
+L 04/03/2021 - 21:07:12: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "38") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:12: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "43") (weapon "quake_rl")
+L 04/03/2021 - 21:07:13: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:13: "strauß<5><[U:1:82123920]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "55") (weapon "quake_rl")
+L 04/03/2021 - 21:07:14: "Charon<4><[U:1:101449025]><Red>" triggered "flagevent" (event "captured") (position "268 375 148")
+L 04/03/2021 - 21:07:14: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:14: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:14: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:14: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:16: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "284 166 112")
+L 04/03/2021 - 21:07:17: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "87") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:18: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "79") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:19: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "81") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:19: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "6") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:20: "anian<6><[U:1:101608870]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "51") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:20: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "243 -1181 150")
+L 04/03/2021 - 21:07:20: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:20: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:20: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:20: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:22: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "48") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:22: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "picked up") (position "237 -937 28")
+L 04/03/2021 - 21:07:25: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "strauß<5><[U:1:82123920]><Red>" (damage "55") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:25: "Bv<7><[U:1:88677982]><Blue>" killed "strauß<5><[U:1:82123920]><Red>" with "world" (attacker_position "493 -40 47") (victim_position "277 -129 56")
+L 04/03/2021 - 21:07:25: "Bv<7><[U:1:88677982]><Blue>" triggered "domination" against "strauß<5><[U:1:82123920]><Red>"
+L 04/03/2021 - 21:07:25: "strauß<5><[U:1:82123920]><Red>" triggered "flagevent" (event "dropped") (position "277 -129 56")
+L 04/03/2021 - 21:07:25: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "112") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:26: "Charon<4><[U:1:101449025]><Red>" killed "anian<6><[U:1:101608870]><Blue>" with "tf_projectile_rocket" (attacker_position "184 -407 90") (victim_position "-47 -269 19")
+L 04/03/2021 - 21:07:26: "Charon<4><[U:1:101449025]><Red>" triggered "domination" against "anian<6><[U:1:101608870]><Blue>"
+L 04/03/2021 - 21:07:26: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "anian<6><[U:1:101608870]><Blue>" (damage "104") (realdamage "88") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:26: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "46") (weapon "tf_projectile_rocket")
+L 04/03/2021 - 21:07:27: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "picked up") (position "295 -62 0")
+L 04/03/2021 - 21:07:27: "Charon<4><[U:1:101449025]><Red>" triggered "damage" against "Bv<7><[U:1:88677982]><Blue>" (damage "30") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:27: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "33") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:28: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "8") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:28: "Bv<7><[U:1:88677982]><Blue>" killed "Charon<4><[U:1:101449025]><Red>" with "shotgun_soldier" (attacker_position "255 -407 46") (victim_position "368 -1192 12")
+L 04/03/2021 - 21:07:28: "Bv<7><[U:1:88677982]><Blue>" triggered "damage" against "Charon<4><[U:1:101449025]><Red>" (damage "11") (realdamage "6") (weapon "shotgun_soldier")
+L 04/03/2021 - 21:07:31: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:31: "Bv<7><[U:1:88677982]><Blue>" triggered "flagevent" (event "captured") (position "263 -1206 150")
+L 04/03/2021 - 21:07:31: "Charon<4><[U:1:101449025]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:31: "strauß<5><[U:1:82123920]><Red>" spawned as "Soldier"
+L 04/03/2021 - 21:07:31: "anian<6><[U:1:101608870]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:31: "Bv<7><[U:1:88677982]><Blue>" spawned as "Soldier"
+L 04/03/2021 - 21:07:31: World triggered "Game_Over" reason "Reached Win Limit"
+L 04/03/2021 - 21:07:31: Team "Red" final score "16" with "2" players
+L 04/03/2021 - 21:07:31: Team "Blue" final score "25" with "2" players
+L 04/03/2021 - 21:07:31: World triggered "Round_Win" (winner "Blue")
+L 04/03/2021 - 21:07:31: World triggered "Round_Length" (seconds "639.20")
+L 04/03/2021 - 21:07:31: Team "Red" current score "16" with "2" players
+L 04/03/2021 - 21:07:31: Team "Blue" current score "25" with "2" players
+L 04/03/2021 - 21:07:31: Team "BLUE" triggered "Intermission_Win_Limit"
+L 04/03/2021 - 21:07:32: Log file closed.

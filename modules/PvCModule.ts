@@ -9,7 +9,7 @@ interface IPvCStats {
     damageTaken: number
 }
 
-
+//Player versus Class
 class PvCModule implements events.IStats {
     public identifier: string
     private players: Map<string, Map<events.Role, IPvCStats>>

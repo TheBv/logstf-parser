@@ -19,7 +19,9 @@
     "lib/"
   ],
   "author": "zoob",
-  "maintainers": ["Bv"],
+  "maintainers": [
+    "Bv"
+  ],
   "license": "AGPL",
   "dependencies": {
     "@types/node": "^10.9.4",

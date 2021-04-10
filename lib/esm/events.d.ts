@@ -15,6 +15,16 @@ export declare enum Team {
     Blue = "Blue",
     Spectator = "Spectator"
 }
+export declare enum FlagEvent {
+    Dropped = "dropped",
+    PickedUp = "picked up",
+    Captured = "captured"
+}
+export declare enum Building {
+    Sentry = "OBJ_SENTRYGUN",
+    Dispenser = "OBJ_DISPENSER",
+    Teleporter = "OBJ_TELEPORTER"
+}
 export interface IStats {
     [index: string]: any;
     identifier: string;
@@ -39,9 +49,16 @@ export interface IStats {
     onCharge?(event: IChargeEvent): void;
     onChat?(event: IChatEvent): void;
     onBuild?(event: IBuildEvent): void;
+    onObjectDestroyed?(event: IObjectDestroyed): void;
     onPause?(event: IPauseEvent): void;
     onUnpause?(event: IUnpauseEvent): void;
     onMapLoad?(event: IMapLoadEvent): void;
+    onFirstHeal?(event: IFirstHealEvent): void;
+    onChargeRead?(event: IChargeReadyEvent): void;
+    onChargeEnded?(event: IChargeEndedEvent): void;
+    onMedicDeathEx?(event: IMedicDeathExEvent): void;
+    onEmptyUber?(event: IEmptyUberEvent): void;
+    onLostUberAdv?(event: ILostUberAdvantageEvent): void;
 }
 export interface IEvent {
     timestamp: number;
@@ -83,7 +100,14 @@ export interface IAssistEvent extends IEvent {
     victimPosition: string | null;
 }
 export interface IPickupEvent extends IEvent {
+    player: PlayerInfo;
     item: string;
+    healing: number | null;
+}
+export interface IFlagEvent extends IEvent {
+    player: PlayerInfo;
+    event: FlagEvent;
+    position: string | null;
 }
 export interface ISuicideEvent extends IEvent {
     player: PlayerInfo;
@@ -101,12 +125,16 @@ export interface ICaptureEvent extends IEvent {
     pointId: number;
     pointName: string;
     numCappers: number;
-    playerIds: string[];
+    players: PlayerInfo[];
 }
 export interface IMedicDeathEvent extends IEvent {
     attacker: PlayerInfo;
     victim: PlayerInfo;
     isDrop: boolean;
+}
+export interface IMedicDeathExEvent extends IEvent {
+    player: PlayerInfo;
+    uberpct: number;
 }
 export interface IRoundStartEvent extends IEvent {
 }
@@ -130,10 +158,29 @@ export interface IJoinTeamEvent extends IEvent {
 }
 export interface IDisconnectEvent extends IEvent {
     player: PlayerInfo;
+    reason: string;
 }
 export interface IChargeEvent extends IEvent {
     player: PlayerInfo;
     medigunType: string;
+}
+export interface IFirstHealEvent extends IEvent {
+    player: PlayerInfo;
+    time: number;
+}
+export interface IChargeReadyEvent extends IEvent {
+    player: PlayerInfo;
+}
+export interface IChargeEndedEvent extends IEvent {
+    player: PlayerInfo;
+    duration: number;
+}
+export interface IEmptyUberEvent extends IEvent {
+    player: PlayerInfo;
+}
+export interface ILostUberAdvantageEvent extends IEvent {
+    player: PlayerInfo;
+    time: number;
 }
 export interface IChatEvent extends IEvent {
     player: PlayerInfo;
@@ -141,8 +188,17 @@ export interface IChatEvent extends IEvent {
 }
 export interface IBuildEvent extends IEvent {
     player: PlayerInfo;
-    builtObject: string;
-    position: string;
+    builtObject: Building;
+    position: string | null;
+}
+export interface IObjectDestroyed extends IEvent {
+    attacker: PlayerInfo;
+    builtObject: Building;
+    objectOwner: PlayerInfo;
+    weapon: string | undefined;
+    attackerPosition: string | null;
+    assist: boolean;
+    assistPositon: string | null;
 }
 export interface IPauseEvent extends IEvent {
 }

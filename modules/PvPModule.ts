@@ -12,7 +12,7 @@ interface IPvPStats {
     backstabs: number
 }
 
-
+//Player stats towards other player
 class PvPModule implements events.IStats {
     public identifier: string
     private players: Map<string, Map<string, IPvPStats>>

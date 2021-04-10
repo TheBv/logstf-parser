@@ -1,6 +1,8 @@
 import * as events from '../events'
 import { IGameState } from '../Game'
 
+//TODO bball_log doesn't have winner
+
 interface Round {
     lengthInSeconds: number
     redScore: number
@@ -110,7 +112,7 @@ class GameStateModule implements events.IStats {
             timeInSeconds: time,
             team: event.team,
             pointId: event.pointId,
-            playerIds: event.playerIds
+            playerIds: event.players.map(player => player.id)
         })
     }
 

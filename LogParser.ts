@@ -1,7 +1,6 @@
 import * as events from './events'
 import {Game, IGameState} from './Game';
 
-
 export class LogParser {
     private modules : {new(gameState: IGameState): events.IStats }[]
     constructor(){
