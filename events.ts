@@ -21,7 +21,8 @@ export enum Team {
 export enum FlagEvent {
     Dropped = "dropped",
     PickedUp = "picked up",
-    Captured = "captured"
+    Captured = "captured",
+    Defended = "defended"
 }
 
 export enum Building {
@@ -44,6 +45,7 @@ export interface IStats {
     onRole?(event: IRoleEvent): void
     onSpawn?(event: ISpawnEvent): void
     onCapture?(event: ICaptureEvent): void
+    onFlag?(event: IFlagEvent): void
     onMedicDeath?(event: IMedicDeathEvent): void
     onRoundStart?(event: IRoundStartEvent): void
     onRoundEnd?(event: IRoundEndEvent): void
@@ -54,12 +56,12 @@ export interface IStats {
     onCharge?(event: IChargeEvent):void
     onChat?(event: IChatEvent):void
     onBuild?(event: IBuildEvent):void
-    onObjectDestroyed?(event : IObjectDestroyed):void
+    onObjectDestroyed?(event : IObjectDestroyedEvent):void
     onPause?(event: IPauseEvent):void
     onUnpause?(event: IUnpauseEvent):void
     onMapLoad?(event: IMapLoadEvent):void
     onFirstHeal?(event: IFirstHealEvent):void
-    onChargeRead?(event: IChargeReadyEvent):void
+    onChargeReady?(event: IChargeReadyEvent):void
     onChargeEnded?(event: IChargeEndedEvent):void
     onMedicDeathEx?(event: IMedicDeathExEvent):void
     onEmptyUber?(event: IEmptyUberEvent):void
@@ -69,7 +71,6 @@ export interface IStats {
 export interface IEvent {
     timestamp: number
 }
-
 
 export interface IKillEvent extends IEvent {
     attacker: PlayerInfo
@@ -122,7 +123,7 @@ export interface IPickupEvent extends IEvent {
 
 export interface IFlagEvent extends IEvent{
     player: PlayerInfo
-    event: FlagEvent
+    type: FlagEvent
     position: string | null
 }
 
@@ -230,7 +231,7 @@ export interface IBuildEvent extends IEvent {
     position: string | null
 }
 
-export interface IObjectDestroyed extends IEvent{
+export interface IObjectDestroyedEvent extends IEvent{
     attacker: PlayerInfo
     builtObject: Building
     objectOwner: PlayerInfo

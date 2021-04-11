@@ -79,7 +79,7 @@ LogsParser.addModule(MyModule); //Note that we're passing the class and not an i
 - onCharge: [IChargeEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L194)
 - onChat: [IChatEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L222)
 - onBuild: [IBuildEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L227)
-- onObjectDestroyed: [IObjectDestroyed](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L233)
+- onObjectDestroyed: [IObjectDestroyedEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L233)
 - onFlag: [IFlagEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L123)
 - onScore: [IRoundScoreEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L175)
 - onPause: [IPauseEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L243)

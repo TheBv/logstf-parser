@@ -5,8 +5,7 @@ import { IGameState, PlayerInfo } from '../Game'
 //TODO averageDamage, averageTimeBeforeHealong, avgTimeToBuild, deathsAfterUber, averageTimeBeforeUsing
 //We need to keep track of the time when the medic last used, last got their uber (reset if death)
 //TODO uberLengths sometimes empty?
-//TODO add Ubercharges/medic deaths to events
-//TODO seperate player stats per round
+//TODO Accuracy 
 interface IMedicStats{
     advantagesLost: number,
     biggestAdvantageLost: number,
@@ -153,7 +152,7 @@ class PlayerStatsModule implements events.IStats {
     onFlag(event: events.IFlagEvent){
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
-        if (event.event == events.FlagEvent.Captured){
+        if (event.type == events.FlagEvent.Captured){
             player.capturesIntel += 1
         }
     }
@@ -190,7 +189,7 @@ class PlayerStatsModule implements events.IStats {
             player.sentriesBuilt += 1
         }  
     }
-    onObjectDestroyed(event: events.IObjectDestroyed){
+    onObjectDestroyed(event: events.IObjectDestroyedEvent){
         if (!this.gameState.isLive) return
         if (event.builtObject ==events.Building.Sentry){
             const player: IPlayerStats = this.getOrCreatePlayer(event.attacker)

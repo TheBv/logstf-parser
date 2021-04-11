@@ -400,7 +400,7 @@ export class Game {
         });
         this.events.set("onObjectDestroyed", {
             regexp: XRegExp('^"(?P<player>.+?)" triggered "killedobject"'),
-            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IObjectDestroyed | null {
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IObjectDestroyedEvent | null {
                 const attacker = getFromPlayerString(regexpMatches.player)
                 const objectOwnerProps = props.get("objectowner")
                 if(!attacker|| !objectOwnerProps) return null
@@ -428,7 +428,7 @@ export class Game {
                 return {
                     player: player,
                     timestamp: time,
-                    event: <events.FlagEvent>props.get("event"),
+                    type: <events.FlagEvent>props.get("event"),
                     position: position
                 }
             }
