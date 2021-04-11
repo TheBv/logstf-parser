@@ -7,8 +7,7 @@ export default class RealDamageModule implements events.IStats {
     private gameState: IGameState
     private notableEvents: number[]
     private damageEvents: events.IDamageEvent[]
-    private realDamages: {[id: string]: number}
-
+    private realDamages: {[id: string]: {DamageDealt: number, DamageTaken: number}}
     constructor(gameState: IGameState) {
         this.identifier = 'realDamage'
         this.notableEvents = []
@@ -35,14 +34,18 @@ export default class RealDamageModule implements events.IStats {
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
         this.damageEvents.push(event)
-        this.realDamages[event.attacker.id] = 0
+        this.realDamages[event.attacker.id] = {DamageTaken :0, DamageDealt: 0}
+        if (event.victim)
+            this.realDamages[event.victim.id] = {DamageTaken :0, DamageDealt: 0}
     }
 
     finish() {
         for (const damage of this.damageEvents) {
             for (const notableTimestamp of this.notableEvents) {
                 if (Math.abs(notableTimestamp - damage.timestamp) < 10) {
-                    this.realDamages[damage.attacker.id] += damage.damage
+                    this.realDamages[damage.attacker.id].DamageDealt += damage.damage
+                    if (damage.victim)
+                        this.realDamages[damage.victim.id].DamageTaken += damage.damage
                     break
                 }
             }

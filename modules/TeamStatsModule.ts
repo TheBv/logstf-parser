@@ -12,6 +12,7 @@ interface ITeamPlayerStats {
 }
 
 interface ITeamStats {
+    score: number
     kills: number
     deaths: number
     damage: number
@@ -51,6 +52,7 @@ class TeamStatsModule implements events.IStats {
     }
 
     private defaultTeam = (): ITeamStats => ({
+        score: 0,
         kills: 0,
         deaths: 0,
         damage: 0,
@@ -91,6 +93,15 @@ class TeamStatsModule implements events.IStats {
 
     onRoundStart(event: events.IRoundStartEvent) {
         this.isFirstCap = true
+    }
+
+    onRoundEnd(event: events.IRoundEndEvent) {
+        if (event.winner == events.Team.Blue){
+            this.teams.Blue.score +=1
+        }
+        if (event.winner == events.Team.Red){
+            this.teams.Red.score +=1
+        }
     }
 
     onCapture(event: events.ICaptureEvent) {

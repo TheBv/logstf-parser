@@ -1,6 +1,7 @@
 import * as events from '../events';
 import { IGameState } from '../Game';
 interface ITeamStats {
+    score: number;
     kills: number;
     deaths: number;
     damage: number;
@@ -23,6 +24,7 @@ declare class TeamStatsModule implements events.IStats {
     onDamage(event: events.IDamageEvent): void;
     onCharge(event: events.IChargeEvent): void;
     onRoundStart(event: events.IRoundStartEvent): void;
+    onRoundEnd(event: events.IRoundEndEvent): void;
     onCapture(event: events.ICaptureEvent): void;
     onMedicDeath(event: events.IMedicDeathEvent): void;
     finish(): void;

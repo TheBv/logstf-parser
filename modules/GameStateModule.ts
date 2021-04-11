@@ -2,8 +2,8 @@ import { equal } from "assert"
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 
-//TODO bball_log doesn't have winner
-//TODO bball missing final round_win event
+//FIXME: bball_log doesn't have winner
+//FIXME: bball missing final round_win event
 
 interface IPlayerStats{
     team: string | null
@@ -184,8 +184,6 @@ class GameStateModule implements events.IStats {
             steamid: event.player.id,
             team: event.player.team
         })
-        
-        //TODO type : defended
     }
     onCapture(event: events.ICaptureEvent) {
         if (!this.gameState.isLive) return
@@ -194,7 +192,7 @@ class GameStateModule implements events.IStats {
             this.firstCap = event.team;
         }
         this.currentRoundEvents.push({
-            type: 'capture',
+            type: 'pointcap',
             timeInSeconds: time,
             team: event.team,
             pointId: event.pointId,

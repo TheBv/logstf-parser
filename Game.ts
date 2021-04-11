@@ -11,6 +11,7 @@ import PvCModule from './modules/PvCModule'
 import ChatModule from './modules/ChatModule'
 import RealDamageModule from './modules/RealDamageModule'
 import PlayerClassStatsModule from './modules/PlayerClassStatsModule'
+import HealSpreadModule from './modules/HealSpreadModule'
 import KillstreakModule from './modules/KillstreakModule'
 import { WSAEPROTONOSUPPORT } from "constants"
 
@@ -86,6 +87,7 @@ export class Game {
             new PvCModule(this.gameState),
             new RealDamageModule(this.gameState),
             new ChatModule(this.gameState),
+            new HealSpreadModule(this.gameState),
             new KillstreakModule(this.gameState)
         ]
         this.events = new Map<string, IEventDefinition>()

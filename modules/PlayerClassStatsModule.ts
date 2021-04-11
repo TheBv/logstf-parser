@@ -1,6 +1,8 @@
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 
+//TODO: average damage
+
 interface IClassStats {
     playtimeInSeconds: number
     kills: number

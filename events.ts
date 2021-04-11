@@ -81,7 +81,6 @@ export interface IKillEvent extends IEvent {
     airshot: boolean
 }
 
-
 export interface IDamageEvent extends IEvent {
     attacker: PlayerInfo
     victim: PlayerInfo | null

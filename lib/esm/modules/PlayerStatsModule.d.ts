@@ -5,11 +5,9 @@ interface IMedicStats {
     biggestAdvantageLost: number;
     nearFullChargeDeaths: number;
     deathsAfterUber: number;
-    timeBeforeHealing: number[];
     avgTimeBeforeHealing: number;
-    timeToBuild: number[];
     avgTimeToBuild: number;
-    uberLengths: number[];
+    avgTimeToUse: number;
     avgUberLength: number;
 }
 interface IPlayerStats {
@@ -44,11 +42,15 @@ interface IPlayerStats {
 declare class PlayerStatsModule implements events.IStats {
     identifier: string;
     private players;
+    private internalStats;
     private gameState;
     constructor(gameState: IGameState);
     private defaultPlayer;
+    private defaultInternalStats;
     private defaultMedicStats;
+    private getMean;
     private getOrCreatePlayer;
+    private getOrCreateStats;
     onKill(event: events.IKillEvent): void;
     onDamage(event: events.IDamageEvent): void;
     onCapture(event: events.ICaptureEvent): void;
@@ -59,7 +61,9 @@ declare class PlayerStatsModule implements events.IStats {
     onObjectDestroyed(event: events.IObjectDestroyedEvent): void;
     onAssist(event: events.IAssistEvent): void;
     onSuicide(event: events.ISuicideEvent): void;
+    onSpawn(event: events.ISpawnEvent): void;
     onCharge(event: events.IChargeEvent): void;
+    onChargeReady(event: events.IChargeReadyEvent): void;
     onLostUberAdv(event: events.ILostUberAdvantageEvent): void;
     onMedicDeath(event: events.IMedicDeathEvent): void;
     onMedicDeathEx(event: events.IMedicDeathExEvent): void;

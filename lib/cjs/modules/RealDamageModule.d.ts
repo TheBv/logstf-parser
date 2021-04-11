@@ -13,6 +13,9 @@ export default class RealDamageModule implements events.IStats {
     onDamage(event: events.IDamageEvent): void;
     finish(): void;
     toJSON(): {
-        [id: string]: number;
+        [id: string]: {
+            DamageDealt: number;
+            DamageTaken: number;
+        };
     };
 }
