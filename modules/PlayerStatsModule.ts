@@ -1,22 +1,29 @@
+import { timeStamp } from "console"
+import { stat } from "fs"
 import { createSecurePair } from "tls"
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 
-//TODO averageDamage, averageTimeBeforeHealong, avgTimeToBuild, deathsAfterUber, averageTimeBeforeUsing
-//We need to keep track of the time when the medic last used, last got their uber (reset if death)
-//TODO uberLengths sometimes empty?
-//TODO Accuracy 
 interface IMedicStats{
     advantagesLost: number,
     biggestAdvantageLost: number,
     nearFullChargeDeaths: number,
     deathsAfterUber: number,
-    timeBeforeHealing : number[],
-    avgTimeBeforeHealing: number,
-    timeToBuild: number[]
+    avgTimeBeforeHealing: number, //Seems to be slightly off... ours: 9.08 theirs: 2.21
     avgTimeToBuild: number,
-    uberLengths: number[],
+    avgTimeToUse: number,
     avgUberLength: number
+}
+
+interface IInternalStats{
+    timesBeforeHealing: number[],
+    timesToBuild: number[],
+    uberLengths: number[],
+    timesBeforeUsing: number[],
+    lastUsedTime: number,
+    lastSpawnTime: number,
+    lastTimeDamageTaken: number,
+    lastChargeObtainedTime : number
 }
 
 interface IPlayerStats {
@@ -51,11 +58,13 @@ interface IPlayerStats {
 class PlayerStatsModule implements events.IStats {
     public identifier: string
     private players: {[id:string]: IPlayerStats}
+    private internalStats: {[id:string]: IInternalStats}
     private gameState: IGameState
 
     constructor(gameState: IGameState) {
         this.identifier = 'players'
         this.players = {}
+        this.internalStats = {}
         this.gameState = gameState
     }
 
@@ -87,18 +96,33 @@ class PlayerStatsModule implements events.IStats {
         medicstats: null,
     })
         
+    private defaultInternalStats = ():IInternalStats => ({
+        timesBeforeHealing: [],
+        timesToBuild: [],
+        uberLengths: [],
+        timesBeforeUsing: [],
+        lastUsedTime: 0,
+        lastSpawnTime: 0,
+        lastChargeObtainedTime : 0,
+        lastTimeDamageTaken: 0
+    })
+
     private defaultMedicStats = (): IMedicStats => ({
         advantagesLost: 0,
         biggestAdvantageLost: 0,
         nearFullChargeDeaths: 0,
         deathsAfterUber: 0,
-        timeBeforeHealing: [],
         avgTimeBeforeHealing: 0,
-        timeToBuild: [],
         avgTimeToBuild: 0,
-        uberLengths: [],
+        avgTimeToUse: 0,
         avgUberLength: 0
     })
+
+    private getMean(input: number[]): number{
+        if (input.length != 0)
+            return input.reduce((a,b) => a+b) /input.length
+        return 0
+    }
 
     private getOrCreatePlayer(player: PlayerInfo): IPlayerStats {
         if (!(player.id in this.players)) {
@@ -109,7 +133,14 @@ class PlayerStatsModule implements events.IStats {
         playerInstance.team = player.team
         return playerInstance
     }
-
+    private getOrCreateStats(player: PlayerInfo): IInternalStats {
+        if (!(player.id in this.internalStats)) {
+            this.internalStats[player.id] = this.defaultInternalStats()
+        }
+        let playerInstance = this.internalStats[player.id]
+        if (!playerInstance) throw new Error()
+        return playerInstance
+    }
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
@@ -130,16 +161,17 @@ class PlayerStatsModule implements events.IStats {
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)
-
         attacker.damage += event.damage
         if (event.headshot) attacker.headshots += 1
         if (event.airshot) attacker.airshots += 1
 
         if (event.victim) {
             const victim: IPlayerStats = this.getOrCreatePlayer(event.victim)
+            const stats: IInternalStats = this.getOrCreateStats(event.victim)
             if (victim) {
                 victim.damageTaken += event.damage
             }
+            stats.lastTimeDamageTaken = event.timestamp
         }
     }
     onCapture(event: events.ICaptureEvent){
@@ -177,10 +209,16 @@ class PlayerStatsModule implements events.IStats {
     onHeal(event: events.IHealEvent) {
         if (!this.gameState.isLive) return
         const healer: IPlayerStats = this.getOrCreatePlayer(event.healer)
+        const statsHealer: IInternalStats = this.getOrCreateStats(event.healer)
         const target: IPlayerStats = this.getOrCreatePlayer(event.target)
-
+        const statsTarget: IInternalStats = this.getOrCreateStats(event.target)
         healer.healing += event.healing
         target.healingReceived += event.healing
+        if (statsTarget.lastTimeDamageTaken){
+            statsHealer.timesBeforeHealing.push(event.timestamp - Math.max(statsTarget.lastSpawnTime,statsTarget.lastTimeDamageTaken))
+        }
+
+
     }
     onBuild(event: events.IBuildEvent){
         if (!this.gameState.isLive) return
@@ -209,19 +247,30 @@ class PlayerStatsModule implements events.IStats {
         player.suicides += 1
     }
 
-
+    onSpawn(event: events.ISpawnEvent){
+        if (!this.gameState.isLive) return
+        const stats: IInternalStats = this.getOrCreateStats(event.player)
+        stats.lastSpawnTime = event.timestamp
+    }
     //Medic specific events
 
     onCharge(event: events.IChargeEvent) {
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
+        const stats: IInternalStats = this.getOrCreateStats(event.player);
         player.charges += 1
         if (!(event.medigunType in player.chargesByType)) {
             player.chargesByType[event.medigunType] = 0
         }
         player.chargesByType[event.medigunType] += 1
+        stats.timesBeforeUsing.push(event.timestamp - stats.lastChargeObtainedTime)
     }
-
+    onChargeReady(event: events.IChargeReadyEvent){
+        if (!this.gameState.isLive) return
+        const stats: IInternalStats = this.getOrCreateStats(event.player)
+        stats.lastChargeObtainedTime = event.timestamp
+        stats.timesToBuild.push(event.timestamp - Math.max(stats.lastUsedTime,stats.lastSpawnTime))
+    }
     onLostUberAdv(event: events.ILostUberAdvantageEvent){
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
@@ -236,8 +285,16 @@ class PlayerStatsModule implements events.IStats {
         if (!this.gameState.isLive) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)
         const victim: IPlayerStats = this.getOrCreatePlayer(event.victim)
+        const stats: IInternalStats = this.getOrCreateStats(event.victim)
         if(event.isDrop)
             victim.drops += 1;
+        if(event.timestamp - stats.lastUsedTime <= 20){
+            if (!victim.medicstats){
+                victim.medicstats = this.defaultMedicStats()
+            }
+            victim.medicstats.deathsAfterUber += 1;
+        }
+        
     }
 
     onMedicDeathEx(event: events.IMedicDeathExEvent){
@@ -246,7 +303,7 @@ class PlayerStatsModule implements events.IStats {
         if (!player.medicstats){
             player.medicstats = this.defaultMedicStats()
         }
-        if(event.uberpct >= 95){
+        if(event.uberpct >= 95 && event.uberpct < 100){
             player.medicstats.nearFullChargeDeaths += 1
         }
     }
@@ -254,20 +311,24 @@ class PlayerStatsModule implements events.IStats {
     onChargeEnded(event: events.IChargeEndedEvent){
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
+        const stats: IInternalStats = this.getOrCreateStats(event.player);
         if (!player.medicstats){
             player.medicstats = this.defaultMedicStats()
         }
-        player.medicstats.uberLengths.push(event.duration)
+        stats.lastUsedTime = event.timestamp;
+        stats.uberLengths.push(event.duration);
     }
 
     finish(): void {
-        for(const player of Object.values(this.players)){
-            const stats = player.medicstats;
-            if (!stats){
-                continue
-            }
-            if (stats.uberLengths.length != 0){
-                stats.avgUberLength = stats.uberLengths.reduce((a,b) => a+b)/stats.uberLengths.length
+        const self = this;
+        for (const key of Object.keys(this.internalStats)){
+            const player = self.players[key];
+            const stats = self.internalStats[key]
+            if (player.medicstats && stats){
+                player.medicstats.avgUberLength = self.getMean(stats.uberLengths)
+                player.medicstats.avgTimeToBuild = self.getMean(stats.timesToBuild)
+                player.medicstats.avgTimeToUse = self.getMean(stats.timesBeforeUsing)
+                player.medicstats.avgTimeBeforeHealing = self.getMean(stats.timesBeforeHealing)
             }
         }
     }
