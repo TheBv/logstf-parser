@@ -56,7 +56,7 @@ declare class PlayerStatsModule implements events.IStats {
     onPickup(event: events.IPickupEvent): void;
     onHeal(event: events.IHealEvent): void;
     onBuild(event: events.IBuildEvent): void;
-    onObjectDestroyed(event: events.IObjectDestroyed): void;
+    onObjectDestroyed(event: events.IObjectDestroyedEvent): void;
     onAssist(event: events.IAssistEvent): void;
     onSuicide(event: events.ISuicideEvent): void;
     onCharge(event: events.IChargeEvent): void;
