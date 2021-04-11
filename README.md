@@ -12,51 +12,51 @@ Install it from npm:
 
 # Brief Example
 ```ts
-    const parser = require("logstf-parser");
-    const LogsParser = new parser.LogParser();
-    const lines = fs.readFileSync(filePath, "UTF-8").split("\n");
-    const game = LogsParser.parseLines(lines) 
-    console.log(game.toJson())
+const parser = require("logstf-parser");
+const LogsParser = new parser.LogParser();
+const lines = fs.readFileSync(filePath, "UTF-8").split("\n");
+const game = LogsParser.parseLines(lines) 
+console.log(game.toJson())
 ```
 # Custom modules
 One can also define custom modules to extract other events from the logfiles.
 Each module must be a class which should contain an identifier as well as a finish() and toJson() method.
 Example:
 ```ts
-    class MyModule implements events.IStats {
-        public identifier: string
-        private killEvents: events.IKillEvent[]
-        private gameStartTime: number | null
+class MyModule implements events.IStats {
+    public identifier: string
+    private killEvents: events.IKillEvent[]
+    private gameStartTime: number | null
 
-        constructor(gameState: IGameState) {
-            this.identifier = 'myModule'
-            this.killEvents = []
-            this.gameStartTime = null
-        }
-
-        onRoundStart(event: events.IRoundStartEvent) {
-            if (!this.gameStartTime) this.gameStartTime = event.timestamp
-        }
-
-        onKill(event: events.IKillEvent) {
-            if (!this.gameStartTime) return;
-            killEvents.push(event)
-        }
-
-        finish(){
-            //Get's called after every line has been processed
-        }
-
-        toJSON(): events.IKillEvent[] {
-            return this.killEvents
-        }
-
+    constructor(gameState: IGameState) {
+        this.identifier = 'myModule'
+        this.killEvents = []
+        this.gameStartTime = null
     }
+
+    onRoundStart(event: events.IRoundStartEvent) {
+        if (!this.gameStartTime) this.gameStartTime = event.timestamp
+    }
+
+    onKill(event: events.IKillEvent) {
+        if (!this.gameStartTime) return;
+        killEvents.push(event)
+    }
+
+    finish(){
+        //Get's called after every line has been processed
+    }
+
+    toJSON(): events.IKillEvent[] {
+        return this.killEvents
+    }
+
+}
 ```
 They can then be added to the pipeline like so:
 ```ts
-    const LogsParser = new parser.LogParser();
-    LogsParser.addModule(MyModule); //Note that we haven't initialized the class!
+const LogsParser = new parser.LogParser();
+LogsParser.addModule(MyModule); //Note that we're passing the class and not an instance!
 ```
 # List of events
 - onDamage: [IDamageEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L84)
