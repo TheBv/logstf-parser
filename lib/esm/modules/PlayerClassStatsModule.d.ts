@@ -28,6 +28,7 @@ declare class PlayerClassStatsModule implements events.IStats {
     private defaultWeaponStats;
     private getClassStats;
     private getWeaponStats;
+    private getMean;
     private trackingStop;
     onKill(event: events.IKillEvent): void;
     onDamage(event: events.IDamageEvent): void;

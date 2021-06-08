@@ -9,3 +9,5 @@ export declare class LogParser {
     }): void;
 }
 export * as events from './events';
+export * as IGameState from './Game';
+export * from './modules/ModuleHolder';

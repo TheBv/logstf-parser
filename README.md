@@ -18,11 +18,24 @@ const lines = fs.readFileSync(filePath, "UTF-8").split("\n");
 const game = LogsParser.parseLines(lines) 
 console.log(game.toJson())
 ```
+# Adding modules
+By default only the GameStateModule will be loaded other modules can be included like so:
+```ts
+const LogsParser = new parser.LogParser();
+LogsParser.addModule(parser.defaultModules.KillstreakModule); //Note that we're passing the class and not an instance!
+//To load all modules one can iterate through the object e.g.:
+for (const module of Object.values(parser.defaultModules)){
+    LogsParser.addModule(module);
+}
+```
+Similar to this you can create and load custom modules.
 # Custom modules
 One can also define custom modules to extract other events from the logfiles.
 Each module must be a class which should contain an identifier as well as a finish() and toJson() method.
 Example:
 ```ts
+import {events} from "logstf-parser";
+import {IGameState} from "logstf-parser";
 class MyModule implements events.IStats {
     public identifier: string
     private killEvents: events.IKillEvent[]
@@ -52,11 +65,6 @@ class MyModule implements events.IStats {
     }
 
 }
-```
-They can then be added to the pipeline like so:
-```ts
-const LogsParser = new parser.LogParser();
-LogsParser.addModule(MyModule); //Note that we're passing the class and not an instance!
 ```
 # List of events
 - onDamage: [IDamageEvent](https://github.com/TheBv/logstf-parser/blob/master/events.ts#L84)

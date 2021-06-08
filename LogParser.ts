@@ -21,3 +21,5 @@ export class LogParser {
 }
 //Export interfaces 
 export * as events from './events';
+export {IGameState} from './Game';
+export * from './modules/ModuleHolder';
