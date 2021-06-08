@@ -1,7 +1,7 @@
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 
-//TODO: average damage
+
 
 interface IClassStats {
     playtimeInSeconds: number
@@ -15,6 +15,8 @@ interface IClassStats {
 interface IWeaponStats {
     kills: number
     damage: number
+    avgDamage: number
+    avgDamages: number[]
     shots: number
     hits: number
     healing: number
@@ -47,6 +49,8 @@ class PlayerClassStatsModule implements events.IStats {
     private defaultWeaponStats = (): IWeaponStats => ({
         kills: 0,
         damage: 0,
+        avgDamage: 0,
+        avgDamages: [],
         shots: 0,
         hits: 0,
         healing: 0,
@@ -71,6 +75,12 @@ class PlayerClassStatsModule implements events.IStats {
             weaponMap.set(weapon, this.defaultWeaponStats())
         }
         return weaponMap.get(weapon)!
+    }
+
+    private getMean(input: number[]): number{
+        if (input.length != 0)
+            return input.reduce((a,b) => a+b) /input.length
+        return 0
     }
 
     private trackingStop(playerId: string, timestamp: number) {
@@ -112,6 +122,7 @@ class PlayerClassStatsModule implements events.IStats {
 
         const weaponStats = this.getWeaponStats(attackerStats.weapons, event.weapon!)
         weaponStats.damage += event.damage
+        weaponStats.avgDamages.push(event.damage);
     }
 
     onHeal(event: events.IHealEvent) {
@@ -169,6 +180,18 @@ class PlayerClassStatsModule implements events.IStats {
         if (event.newTeam === 'Spectator') {
             this.trackingStop(event.player.id, event.timestamp)
         }
+    }
+
+    finish() {
+        const self = this;
+        //calculate average damage done on finish
+        this.players.forEach(function(playerStats,key){
+            playerStats.forEach(function(classStarts,key){
+                classStarts.weapons.forEach(function(weaponStats,key){
+                    weaponStats.avgDamage = self.getMean(weaponStats.avgDamages);
+                })
+            })
+        })
     }
 
     toJSON(): Map<string, Map<string, IClassStats>> {
