@@ -1,4 +1,3 @@
-import { type } from "os";
 import * as events from './events'
 import {Game, IGameState} from './Game';
 
