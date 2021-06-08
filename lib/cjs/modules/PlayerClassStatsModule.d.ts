@@ -11,6 +11,8 @@ interface IClassStats {
 interface IWeaponStats {
     kills: number;
     damage: number;
+    avgDamage: number;
+    avgDamages: number[];
     shots: number;
     hits: number;
     healing: number;
@@ -26,6 +28,7 @@ declare class PlayerClassStatsModule implements events.IStats {
     private defaultWeaponStats;
     private getClassStats;
     private getWeaponStats;
+    private getMean;
     private trackingStop;
     onKill(event: events.IKillEvent): void;
     onDamage(event: events.IDamageEvent): void;
@@ -37,6 +40,7 @@ declare class PlayerClassStatsModule implements events.IStats {
     onRoundEnd(event: events.IRoundEndEvent): void;
     onDisconnect(event: events.IDisconnectEvent): void;
     onJoinTeam(event: events.IJoinTeamEvent): void;
+    finish(): void;
     toJSON(): Map<string, Map<string, IClassStats>>;
 }
 export default PlayerClassStatsModule;

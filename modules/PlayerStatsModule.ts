@@ -1,6 +1,3 @@
-import { timeStamp } from "console"
-import { stat } from "fs"
-import { createSecurePair } from "tls"
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 
@@ -9,7 +6,7 @@ interface IMedicStats{
     biggestAdvantageLost: number,
     nearFullChargeDeaths: number,
     deathsAfterUber: number,
-    avgTimeBeforeHealing: number, //Seems to be slightly off... ours: 9.08 theirs: 2.21
+    avgTimeBeforeFirstHealing: number, //This refers to the time the medic takes to first heal someone after he spawns
     avgTimeToBuild: number,
     avgTimeToUse: number,
     avgUberLength: number
@@ -112,7 +109,7 @@ class PlayerStatsModule implements events.IStats {
         biggestAdvantageLost: 0,
         nearFullChargeDeaths: 0,
         deathsAfterUber: 0,
-        avgTimeBeforeHealing: 0,
+        avgTimeBeforeFirstHealing: 0,
         avgTimeToBuild: 0,
         avgTimeToUse: 0,
         avgUberLength: 0
@@ -174,6 +171,7 @@ class PlayerStatsModule implements events.IStats {
             stats.lastTimeDamageTaken = event.timestamp
         }
     }
+    
     onCapture(event: events.ICaptureEvent){
         if (!this.gameState.isLive) return
         for (const playerInfo of event.players){
@@ -181,6 +179,7 @@ class PlayerStatsModule implements events.IStats {
             player.capturesPoint += 1
         }
     }
+
     onFlag(event: events.IFlagEvent){
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
@@ -188,6 +187,7 @@ class PlayerStatsModule implements events.IStats {
             player.capturesIntel += 1
         }
     }
+
     onPickup(event: events.IPickupEvent){
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
@@ -206,20 +206,23 @@ class PlayerStatsModule implements events.IStats {
             }
         }
     }
+
     onHeal(event: events.IHealEvent) {
         if (!this.gameState.isLive) return
         const healer: IPlayerStats = this.getOrCreatePlayer(event.healer)
-        const statsHealer: IInternalStats = this.getOrCreateStats(event.healer)
         const target: IPlayerStats = this.getOrCreatePlayer(event.target)
-        const statsTarget: IInternalStats = this.getOrCreateStats(event.target)
         healer.healing += event.healing
         target.healingReceived += event.healing
-        if (statsTarget.lastTimeDamageTaken){
-            statsHealer.timesBeforeHealing.push(event.timestamp - Math.max(statsTarget.lastSpawnTime,statsTarget.lastTimeDamageTaken))
-        }
 
 
     }
+
+    onFirstHeal(event: events.IFirstHealEvent){
+        if (!this.gameState.isLive) return
+        const statsHealer: IInternalStats = this.getOrCreateStats(event.player)
+        statsHealer.timesBeforeHealing.push(event.time)
+    }
+
     onBuild(event: events.IBuildEvent){
         if (!this.gameState.isLive) return
         if (event.builtObject == events.Building.Sentry){
@@ -328,7 +331,7 @@ class PlayerStatsModule implements events.IStats {
                 player.medicstats.avgUberLength = self.getMean(stats.uberLengths)
                 player.medicstats.avgTimeToBuild = self.getMean(stats.timesToBuild)
                 player.medicstats.avgTimeToUse = self.getMean(stats.timesBeforeUsing)
-                player.medicstats.avgTimeBeforeHealing = self.getMean(stats.timesBeforeHealing)
+                player.medicstats.avgTimeBeforeFirstHealing = self.getMean(stats.timesBeforeHealing)
             }
         }
     }

@@ -1,4 +1,3 @@
-import { equal } from "assert"
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 

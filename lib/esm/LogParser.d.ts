@@ -8,3 +8,4 @@ export declare class LogParser {
         new (gameState: IGameState): events.IStats;
     }): void;
 }
+export * as events from './events';

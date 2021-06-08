@@ -1,3 +1,4 @@
+import { type } from "os";
 import * as events from './events'
 import {Game, IGameState} from './Game';
 
@@ -19,3 +20,5 @@ export class LogParser {
         this.modules.push(moduleClass);
     }
 }
+//Export interfaces 
+export * as events from './events';

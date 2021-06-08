@@ -13,7 +13,6 @@ import RealDamageModule from './modules/RealDamageModule'
 import PlayerClassStatsModule from './modules/PlayerClassStatsModule'
 import HealSpreadModule from './modules/HealSpreadModule'
 import KillstreakModule from './modules/KillstreakModule'
-import { WSAEPROTONOSUPPORT } from "constants"
 
 // TODO: MedicStats
 // TODO: HighlightsModule

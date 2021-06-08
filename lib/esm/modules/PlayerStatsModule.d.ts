@@ -5,7 +5,7 @@ interface IMedicStats {
     biggestAdvantageLost: number;
     nearFullChargeDeaths: number;
     deathsAfterUber: number;
-    avgTimeBeforeHealing: number;
+    avgTimeBeforeFirstHealing: number;
     avgTimeToBuild: number;
     avgTimeToUse: number;
     avgUberLength: number;
@@ -57,6 +57,7 @@ declare class PlayerStatsModule implements events.IStats {
     onFlag(event: events.IFlagEvent): void;
     onPickup(event: events.IPickupEvent): void;
     onHeal(event: events.IHealEvent): void;
+    onFirstHeal(event: events.IFirstHealEvent): void;
     onBuild(event: events.IBuildEvent): void;
     onObjectDestroyed(event: events.IObjectDestroyedEvent): void;
     onAssist(event: events.IAssistEvent): void;
