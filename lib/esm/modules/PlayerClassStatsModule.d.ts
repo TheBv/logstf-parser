@@ -6,6 +6,9 @@ interface IClassStats {
     assists: number;
     deaths: number;
     damage: number;
+    damageTaken: number;
+    healsReceived: number;
+    healsDistributed: number;
     weapons: Map<string, IWeaponStats>;
 }
 interface IWeaponStats {
@@ -15,7 +18,6 @@ interface IWeaponStats {
     avgDamages: number[];
     shots: number;
     hits: number;
-    healing: number;
 }
 declare class PlayerClassStatsModule implements events.IStats {
     identifier: string;
@@ -31,6 +33,7 @@ declare class PlayerClassStatsModule implements events.IStats {
     private getMean;
     private trackingStop;
     onKill(event: events.IKillEvent): void;
+    onAssist(event: events.IAssistEvent): void;
     onDamage(event: events.IDamageEvent): void;
     onHeal(event: events.IHealEvent): void;
     onShot(event: events.IShotEvent): void;

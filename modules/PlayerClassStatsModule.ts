@@ -9,6 +9,9 @@ interface IClassStats {
     assists: number
     deaths: number
     damage: number
+    damageTaken: number
+    healsReceived: number
+    healsDistributed: number
     weapons: Map<string, IWeaponStats>
 }
 
@@ -19,7 +22,6 @@ interface IWeaponStats {
     avgDamages: number[]
     shots: number
     hits: number
-    healing: number
 }
 
 class PlayerClassStatsModule implements events.IStats {
@@ -43,6 +45,9 @@ class PlayerClassStatsModule implements events.IStats {
         assists: 0,
         deaths: 0,
         damage: 0,
+        damageTaken: 0,
+        healsDistributed: 0,
+        healsReceived: 0,
         weapons: new Map<string, IWeaponStats>(),
     })
 
@@ -53,7 +58,6 @@ class PlayerClassStatsModule implements events.IStats {
         avgDamages: [],
         shots: 0,
         hits: 0,
-        healing: 0,
     })
 
     private getClassStats(player: string, role: string): IClassStats {
@@ -112,10 +116,19 @@ class PlayerClassStatsModule implements events.IStats {
         }
     }
 
+    onAssist(event: events.IAssistEvent){
+        if (!this.gameState.isLive) return
+        const assisterRole = this.currentRoles.get(event.assister.id)
+        if (!assisterRole) return
+        const assisterStats = this.getClassStats(event.assister.id,assisterRole)
+        assisterStats.assists += 1
+    }
+    
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
 
         const attackerRole = this.currentRoles.get(event.attacker.id)
+        
         if (!attackerRole) return
         const attackerStats = this.getClassStats(event.attacker.id, attackerRole)
         attackerStats.damage += event.damage
@@ -123,13 +136,28 @@ class PlayerClassStatsModule implements events.IStats {
         const weaponStats = this.getWeaponStats(attackerStats.weapons, event.weapon!)
         weaponStats.damage += event.damage
         weaponStats.avgDamages.push(event.damage);
+
+        if (event.victim != null){
+            const victimRole = this.currentRoles.get(event.victim.id)
+            if (!victimRole) return
+            const victimStats = this.getClassStats(event.victim.id,victimRole)
+            victimStats.damageTaken += event.damage
+        }
     }
 
     onHeal(event: events.IHealEvent) {
         if (!this.gameState.isLive) return
-        // TODO
+        const targetRole = this.currentRoles.get(event.target.id)
+        const healerRole = this.currentRoles.get(event.healer.id)
+        if (targetRole) {
+            const targetStats = this.getClassStats(event.target.id, targetRole)
+            targetStats.healsReceived += event.healing
+        }
+        if (!healerRole) return
+        const healerStats = this.getClassStats(event.healer.id,healerRole)
+        healerStats.healsDistributed += event.healing
     }
-
+    
     onShot(event: events.IShotEvent) {
         if (!this.gameState.isLive) return
         const playerRole = this.currentRoles.get(event.player.id)

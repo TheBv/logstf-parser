@@ -22,11 +22,14 @@ console.log(game.toJson())
 By default only the GameStateModule will be loaded other modules can be included like so:
 ```ts
 const LogsParser = new parser.LogParser();
-LogsParser.addModule(parser.defaultModules.KillstreakModule); //Note that we're passing the class and not an instance!
+ //Note that we're passing the class and not an instance!
+LogsParser.addModule(parser.defaultModules.KillstreakModule);
 //To load all modules one can iterate through the object e.g.:
 for (const module of Object.values(parser.defaultModules)){
     LogsParser.addModule(module);
 }
+//If you want to define your own GameStateModule you should disable the provided one like this:
+LogsParser.useCustomGameState(true);
 ```
 Similar to this you can create and load custom modules.
 # Custom modules

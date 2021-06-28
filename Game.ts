@@ -78,7 +78,7 @@ export class Game {
             mapName: null
         }
         this.modules = [
-            new GameStateModule(this.gameState)/*,
+            /*new GameStateModule(this.gameState),
             new TeamStatsModule(this.gameState),
             new PlayerStatsModule(this.gameState),
             new PlayerClassStatsModule(this.gameState),
