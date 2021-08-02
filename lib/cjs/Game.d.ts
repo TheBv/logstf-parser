@@ -1,5 +1,3 @@
-/// <reference types="xregexp" />
-/// <reference types="steamid" />
 import * as events from './events';
 export interface PlayerInfo {
     id: string;
