@@ -403,7 +403,6 @@ export class Game {
         this.events.set("onChat", {
             regexp: XRegExp('^"(?P<player>.+?)" say "(?P<message>.{1,160}?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChatEvent | null {
-                console.log(regexpMatches)
                 const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
                 const message = regexpMatches.message
