@@ -1,4 +1,4 @@
-import * as parser from "../LogParser";
+import { defaultModules, LogParser } from "../LogParser";
 import fs from "fs/promises";
 
 import sixesJson from "../logs/log_6s.json";
@@ -6,12 +6,12 @@ import hlJson from "../logs/log_hl.json";
 import bballJson from "../logs/log_bball.json";
 
 describe("logs-parser", () => {
-  let logParser: parser.LogParser;
+  let logParser: LogParser;
 
   beforeAll(() => {
-    const testingParser = new parser.LogParser();
+    const testingParser = new LogParser();
 
-    for (const module of Object.values(parser.defaultModules)) {
+    for (const module of Object.values(defaultModules)) {
       testingParser.addModule(module);
     }
 
