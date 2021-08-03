@@ -1,4 +1,6 @@
+import XRegExp from 'xregexp'
 import * as events from './events'
+
 import PlayerStatsModule from './modules/PlayerStatsModule'
 import GameStateModule from './modules/GameStateModule'
 import TeamStatsModule from './modules/TeamStatsModule'
@@ -17,9 +19,9 @@ import KillstreakModule from './modules/KillstreakModule'
 // TODO: Feign death
 // TODO: Captures
 
-const PLAYER_EXPRESSION: RegExp = /'^(?<name>.{1,80}?)<\\d{1,4}><(?<steamid>.{1,40})><(?<team>(Red|Blue|Spectator|Console))>'/
+const PLAYER_EXPRESSION: RegExp = XRegExp('^(?<name>.{1,80}?)<\\d{1,4}><(?<steamid>.{1,40})><(?<team>(Red|Blue|Spectator|Console))>')
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
-const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}) "([^"]{1,60})"\)/g
+const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}) "([^"]{1,60})"\)/
 
 export interface PlayerInfo {
     id: string,
@@ -30,7 +32,7 @@ export interface PlayerInfo {
 
 function getFromPlayerString(playerString: string): PlayerInfo | null {
     if (!playerString) throw new Error("Empty playerString")
-    const matches: any = playerString.match(PLAYER_EXPRESSION)
+    const matches: any = XRegExp.exec(playerString, PLAYER_EXPRESSION)
     if (!matches) return null
 
     return {
@@ -89,32 +91,33 @@ export class Game {
 
         this.events = new Map<string, IEventDefinition>()
         this.events.set("onDamage", {
-            regexp: /"(?<attacker>.+?)" triggered "damage" against "(?<victim>.+?)"/,
+            regexp: XRegExp('^"(?P<attacker>.+?)" triggered "damage"( against "(?P<victim>.+?)")?'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IDamageEvent | null {
-                const attacker = getFromPlayerString(regexpMatches.groups?.attacker)
-                const victim = getFromPlayerString(regexpMatches.groups?.victim)
+                const attacker = getFromPlayerString(regexpMatches.attacker)
+                const victim = getFromPlayerString(regexpMatches.victim)
                 const damage = parseInt(props.get('damage') || '0')
                 const weapon = props.get('weapon')
                 const headshot = parseInt(props.get('headshot') || '0') ? true : false
                 const airshot = props.get("airshot") === '1' ? true : false;
                 if (!attacker) return null
+
                 return {
                     timestamp: time,
-                    attacker: attacker,
-                    victim: victim,
-                    damage: damage,
-                    weapon: weapon,
-                    headshot: headshot,
-                    airshot: airshot
+                    attacker,
+                    victim,
+                    damage,
+                    weapon,
+                    headshot,
+                    airshot
                 }
             }
         });
 
         this.events.set("onHeal", {
-            regexp: /"(?<player>.+?)" triggered "healed" against "(?<target>.+?)"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "healed" against "(?P<target>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IHealEvent | null {
-                const healer = getFromPlayerString(regexpMatches.groups?.player)
-                const target = getFromPlayerString(regexpMatches.groups?.target)
+                const healer = getFromPlayerString(regexpMatches.player)
+                const target = getFromPlayerString(regexpMatches.target)
                 const healing = parseInt(props.get('healing') || '0')
 
                 if (!healer || !target || healing < 1 || healing > 450) return null
@@ -130,41 +133,43 @@ export class Game {
 
         // L 08/26/2018 - 23:06:46: "arekk<78><[U:1:93699014]><Red>" triggered "shot_fired" (weapon "gloves")
         this.events.set("onShot", {
-            regexp: /"(?<player>.+?)" triggered "shot_fired"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "shot_fired"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IShotEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const weapon = props.get('weapon')
                 if (!player ||!weapon) return null
+
                 return {
                     timestamp: time,
-                    player: player,
-                    weapon: weapon,
+                    player,
+                    weapon,
                 }
 
             }
         });
 
         this.events.set("onShotHit", {
-            regexp: /"(?<player>.+?)" triggered "shot_hit"'/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "shot_hit"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IShotEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const weapon = props.get('weapon')
                 if (!player ||!weapon) return null
+
                 return {
                     timestamp: time,
-                    player: player,
-                    weapon: weapon,
+                    player,
+                    weapon,
                 }
 
             }
         });
 
         this.events.set("onKill", {
-            regexp: /"(?<attacker>.+?)" killed "(?<victim>.+?)" with "(?<weapon>.+?)"/,
+            regexp: XRegExp('^"(?P<attacker>.+?)" killed "(?P<victim>.+?)" with "(?P<weapon>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IKillEvent | null {
-                const attacker = getFromPlayerString(regexpMatches.groups?.attacker)
-                const victim = getFromPlayerString(regexpMatches.groups?.victim)
-                const weapon = regexpMatches.groups?.weapon
+                const attacker = getFromPlayerString(regexpMatches.attacker)
+                const victim = getFromPlayerString(regexpMatches.victim)
+                const weapon = regexpMatches.weapon
                 const isHeadshot = props.get("headshot") === '1' ? true : false
                 const isBackstab = props.get("ubercharge") === '1' ? true : false
                 const isAirshot = props.get("airshot") === '1' ? true : false;
@@ -183,10 +188,10 @@ export class Game {
         });
 
         this.events.set("onAssist", {
-            regexp: /"(?<player>.+?)" triggered "kill assist" against "(?<victim>.+?)"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "kill assist" against "(?P<victim>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IAssistEvent | null {
-                const assister = getFromPlayerString(regexpMatches.groups?.player)
-                const victim = getFromPlayerString(regexpMatches.groups?.victim)
+                const assister = getFromPlayerString(regexpMatches.player)
+                const victim = getFromPlayerString(regexpMatches.victim)
 
                 if (!assister || !victim) return null
 
@@ -206,14 +211,15 @@ export class Game {
         });
 
         this.events.set("onPickup", {
-            regexp: /"(?<player>.+?)" picked up item "(?<item>.{1,40}?)"/,
+            regexp: XRegExp('^"(?P<player>.+?)" picked up item "(?P<item>.{1,40}?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IPickupEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
-                const item = regexpMatches.groups?.item
+                const item = regexpMatches.item
                 const healingProp = props.get("healing")
                 let healing = null
                 if (healingProp) healing = parseInt(healingProp)
+
                 return {
                     timestamp: time,
                     player,
@@ -224,10 +230,11 @@ export class Game {
         });
 
         this.events.set("onSuicide", {
-            regexp: /"(?<player>.+?)" committed suicide'/,
+            regexp: XRegExp('^"(?P<player>.+?)" committed suicide'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ISuicideEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
+
                 return {
                     timestamp: time,
                     player
@@ -236,12 +243,13 @@ export class Game {
         });
 
         this.events.set("onSpawn", {
-            regexp: /"(?<player>.+?)" spawned as "(?<role>.+?)"/,
+            regexp: XRegExp('^"(?P<player>.+?)" spawned as "(?P<role>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ISpawnEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
-                let role = regexpMatches.groups?.role.toLowerCase()
+                const player = getFromPlayerString(regexpMatches.player)
+                let role = regexpMatches.role.toLowerCase()
                 if (role === 'heavy') role = 'heavyweapons'
                 if (!player) return null
+
                 return {
                     timestamp: time,
                     player,
@@ -249,13 +257,15 @@ export class Game {
                 }
             }
         });
+
         this.events.set("onRole", {
-            regexp: /"(?<player>.+?)" changed role to "(?<role>.+?)"/,
+            regexp: XRegExp('^"(?P<player>.+?)" changed role to "(?P<role>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoleEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
-                let role = regexpMatches.groups?.role.toLowerCase()
+                const player = getFromPlayerString(regexpMatches.player)
+                let role = regexpMatches.role.toLowerCase()
                 if (role === 'heavy') role = 'heavyweapons'
                 if (!player) return null
+
                 return {
                     timestamp: time,
                     player,
@@ -266,39 +276,44 @@ export class Game {
 
         // (cp "0") (cpname "Blue Final Point") (numcappers "4") (player1 "yomps<76><[U:1:84024852]><Red>") (position1 "-3530 -1220 583") (player2 "b4nny<77><[U:1:10403381]><Red>") (position2 "-3570 -1311 583") (player3 "arekk<78><[U:1:93699014]><Red>") (position3 "-3509 -1157 576") (player4 "cookiejake<81><[U:1:84193779]><Red>") (position4 "-3521 -1306 583")
         this.events.set("onCapture", {
-            regexp: /Team "(?<team>(Red|Blue)?)" triggered "pointcaptured'/,
+            regexp: XRegExp('^Team "(?P<team>(Red|Blue)?)" triggered "pointcaptured'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ICaptureEvent | null {
                 const pointId = parseInt(props.get('cp') || '-1') + 1
                 const pointName = props.get('cpname') || '';
-                const input = regexpMatches.groups?.input + " "; //This is needed to avoid inconsistencies
+                const input = regexpMatches.input + " "; //This is needed to avoid inconsistencies
                 const CAPTURE_PLAYERS = /\(player\d{1,2} "(?<name>.{0,80}?)<\d{1,4}><(?<steamid>.{1,40})><(?<team2>(Red|Blue|Spectator|Console))>"\) \(position\d{1,2} ".{1,30}"\) /g;
                 const matches = [...input.matchAll(CAPTURE_PLAYERS)];
-                const players:PlayerInfo[] = [];
+                const players: PlayerInfo[] = [];
+
                 if (parseInt(props.get('numcappers') || '0') !== matches.length) {
                     return null;   
                 }
+
                 for (const match of matches) {
                     const player = getFromPlayerString(match[0])
                     if (player)
                         players.push(player);
                 }
+
                 return {
-                    timestamp: time,
-                    team: regexpMatches.groups?.team,
                     numCappers: parseInt(props.get('numcappers')|| '0'),
+                    timestamp: time,
+                    team: regexpMatches.team,
                     pointId,
                     pointName,
                     players,
                 }
             }
         });
+
         this.events.set("onMedicDeath", {
-            regexp: /"(?<attacker>.+?)" triggered "medic_death" against "(?<victim>.+?)"/,
+            regexp: XRegExp('^"(?P<attacker>.+?)" triggered "medic_death" against "(?P<victim>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMedicDeathEvent | null {
-                const attacker = getFromPlayerString(regexpMatches.groups?.attacker)
-                const victim = getFromPlayerString(regexpMatches.groups?.victim)
+                const attacker = getFromPlayerString(regexpMatches.attacker)
+                const victim = getFromPlayerString(regexpMatches.victim)
                 if (!attacker || !victim) return null
                 const isDrop = props.get("ubercharge") === '1' ? true : false
+
                 return {
                     timestamp: time,
                     attacker,
@@ -309,7 +324,7 @@ export class Game {
         });
 
         this.events.set("onRoundStart", {
-            regexp: /World triggered "Round_Start"/,
+            regexp: XRegExp('^World triggered "Round_Start"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundStartEvent | null {
                 return {
                     timestamp: time
@@ -318,155 +333,155 @@ export class Game {
         });
 
         this.events.set("onRoundEnd", {
-            regexp: /World triggered "Round_(?<type>Win|Stalemate)/,
+            regexp: XRegExp('^World triggered "Round_(?P<type>Win|Stalemate)'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundEndEvent | null {
                 const winner = props.get('winner') || null
+
                 return {
                     timestamp: time,
-                    type: regexpMatches.groups?.type,
+                    type: regexpMatches.type,
                     winner: <events.Team>winner
                 }
             }
         });
 
         this.events.set("onGameOver", {
-            regexp: /World triggered "Game_Over" reason "(?<reason>.+)"/,
+            regexp: XRegExp('^World triggered "Game_Over" reason "(?<reason>.+)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IGameOverEvent | null {
                 return {
                     timestamp: time,
-                    reason: regexpMatches.groups?.reason 
+                    reason: regexpMatches.reason 
                 }
             }
             
         });
 
         this.events.set("onJoinTeam", {
-            regexp: /"(?<player>.+?)" joined team "(?<newteam>.+?)"/,
+            regexp: XRegExp('^"(?P<player>.+?)" joined team "(?P<newteam>.+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IJoinTeamEvent | null {
                 const reason = props.get("reason") || ""
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
                 return {
                     timestamp: time,
-                    newTeam: regexpMatches.groups?.newteam,
-                    player: player
+                    newTeam: regexpMatches.newteam,
+                    player
                 }
             }
         });
-
+        
         this.events.set("onDisconnect", {
-            regexp: /"(?<player>.+?)" disconnected/,
+            regexp: XRegExp('^"(?P<player>.+?)" disconnected'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IDisconnectEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const reason = props.get("reason") || ""   
                 if (!player) return null   
+
                 return {
                     timestamp: time,
-                    player: player,
-                    reason: reason
+                    player,
+                    reason
                 }
             }
             
         });
 
         this.events.set("onCharge", {
-            regexp: /"(?<player>.+?)" triggered "chargedeployed"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "chargedeployed"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChargeEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
                 const medigunType = props.get("medigun") || "medigun"
                 return {
-                    player: player,
                     timestamp: time,
-                    medigunType: medigunType
+                    player,
+                    medigunType
                 }
             }
         });
 
         this.events.set("onChat", {
-            regexp: /"(?<player>.+?)" say "(?<message>.{1,160}?)"/,
-            createEvent: function (regexpMatches: RegExpExecArray, props: Map<string, string>, time: number): events.IChatEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player!)
-                
+            regexp: XRegExp('^"(?P<player>.+?)" say "(?P<message>.{1,160}?)"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChatEvent | null {
+                console.log(regexpMatches)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
-                const message = regexpMatches.groups?.message!
-
+                const message = regexpMatches.message
                 return {
                     timestamp: time,
-                    player,
                     message,
+                    player,
                 }
             }
         });
 
         this.events.set("onBuild", {
-            regexp: /"(?<player>.+?)" triggered "player_builtobject"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "player_builtobject"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IBuildEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if(!player) return null
                 const position = props.get("position") || null
                 const object = props.get("object")
                 return {
-                    player: player,
                     timestamp: time,
                     builtObject: <events.Building>object,
-                    position: position
+                    player,
+                    position
                 }
             }
-            
         });
 
         this.events.set("onObjectDestroyed", {
-            regexp: /"(?<player>.+?)" triggered "killedobject"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "killedobject"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IObjectDestroyedEvent | null {
-                const attacker = getFromPlayerString(regexpMatches.groups?.player)
+                const attacker = getFromPlayerString(regexpMatches.player)
                 const objectOwnerProps = props.get("objectowner")
                 if(!attacker|| !objectOwnerProps) return null
                 const objectOwner = getFromPlayerString(objectOwnerProps);
                 if (!objectOwner) return null
+
                 return {
-                    attacker: attacker,
                     builtObject: <events.Building>props.get("object"),
-                    objectOwner: objectOwner,
                     weapon: props.get("weapon"),
-                    attackerPosition: props.get("attacker_position")||null,
+                    attackerPosition: props.get("attacker_position") ||null,
                     assist: props.get("assist")? true : false,
-                    assistPositon: props.get("assister_position")|| null,
+                    assistPositon: props.get("assister_position") || null,
                     timestamp: time,
+                    objectOwner,
+                    attacker,
                 }
             }
-            
         });
 
         this.events.set("onFlag", {
-            regexp: /"(?<player>.+?)" triggered "flagevent"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "flagevent"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IFlagEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if(!player) return null
                 const position = props.get("position") || null
                 return {
-                    player: player,
                     timestamp: time,
                     type: <events.FlagEvent>props.get("event"),
-                    position: position
+                    player,
+                    position
                 }
             }
             
         });
 
         this.events.set("onScore", {
-            regexp: /Team "(?<team>(Red|Blue))" (current|final) score "(?<score>\\d+?)"/,
+            regexp: XRegExp('^Team "(?P<team>(Red|Blue))" (current|final) score "(?P<score>\\d+?)"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundScoreEvent | null {
                 return {
                     timestamp: time,
-                    team: regexpMatches.groups?.team,
-                    score: regexpMatches.groups?.score,
+                    team: regexpMatches.team,
+                    score: regexpMatches.score,
                 }
             }
         });
 
         this.events.set("onPause", {
-            regexp: /World triggered "Game_Paused"/,
+            regexp: XRegExp('^World triggered "Game_Paused'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IPauseEvent | null {
                 return {
                     timestamp: time,
@@ -475,7 +490,7 @@ export class Game {
         });
 
         this.events.set("onUnpause", {
-            regexp: /World triggered "Game_Unpaused'/,
+            regexp: XRegExp('^World triggered "Game_Unpaused'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IUnpauseEvent | null {
                 return {
                     timestamp: time,
@@ -484,95 +499,96 @@ export class Game {
         });
 
         this.events.set("onMapLoad", {
-            regexp: /Started map "(?<mapname>.+?)/,
+            regexp: XRegExp('^Started map "(?P<mapname>.+?)'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMapLoadEvent | null {
                 return {
                     timestamp: time,
-                    mapName: regexpMatches.groups?.mapname
+                    mapName: regexpMatches.mapname
                 }
             }
         });
 
         this.events.set("onFirstHeal", {
-            regexp: /"(?<player>.+?)" triggered "first_heal_after_spawn"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "first_heal_after_spawn"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IFirstHealEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const timeTaken = props.get('time')
                 if (!player ||!timeTaken) return null
                 return {
                     timestamp: time,
-                    player: player,
-                    time : parseFloat(timeTaken)
+                    time : parseFloat(timeTaken),
+                    player,
                 }
 
             }
         });
 
         this.events.set("onChargeReady", {
-            regexp: /"(?<player>.+?)" triggered "chargeready"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "chargeready"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChargeReadyEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
                 return {
                     timestamp: time,
-                    player: player,
+                    player,
                 }
 
             }
         });
 
         this.events.set("onChargeEnded", {
-            regexp: /"(?<player>.+?)" triggered "chargeended"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "chargeended"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChargeEndedEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const duration = props.get('duration')
                 if (!player ||!duration) return null
                 return {
                     timestamp: time,
-                    player: player,
                     duration: parseFloat(duration),
+                    player,
                 }
 
             }
         });
 
         this.events.set("onMedicDeathEx", {
-            regexp: /"(?<player>.+?)" triggered "medic_death_ex"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "medic_death_ex"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMedicDeathExEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const uberpct = props.get('uberpct')
                 if (!player ||!uberpct) return null
                 return {
                     timestamp: time,
-                    player: player,
                     uberpct: parseInt(uberpct),
+                    player,
                 }
 
             }
         });
 
         this.events.set("onEmptyUber", {
-            regexp: /"(?<player>.+?)" triggered "empty_uber"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "empty_uber"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IEmptyUberEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 if (!player) return null
                 return {
                     timestamp: time,
-                    player: player,
+                    player,
                 }
+
             }
         });
-        
+
         this.events.set("onLostUberAdv", {
-            regexp: /"(?<player>.+?)" triggered "lost_uber_advantage"/,
+            regexp: XRegExp('^"(?P<player>.+?)" triggered "lost_uber_advantage"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ILostUberAdvantageEvent | null {
-                const player = getFromPlayerString(regexpMatches.groups?.player)
+                const player = getFromPlayerString(regexpMatches.player)
                 const timeLost = props.get('time')
                 if (!player ||!timeLost) return null
                 return {
                     timestamp: time,
-                    player: player,
                     time: parseFloat(timeLost),
+                    player,
                 }
 
             }
@@ -589,19 +605,18 @@ export class Game {
     processLine(line: string) {
         const eventLine = line.slice(25)
         for (let [eventName, eventProps] of this.events.entries()) {
-            const matches = eventLine.match(eventProps.regexp);
+            const matches = XRegExp.exec(eventLine, eventProps.regexp);
             if (!matches) continue
             const time = this.makeTimestamp(line)
             if (!time) return
             const props = new Map<string, string>()
-
-            for (const [key, value] of eventLine.matchAll(PROPERTIES_EXPRESSION)){
+            XRegExp.forEach(eventLine, PROPERTIES_EXPRESSION, function (match, i) {
+                const key = match[1]
+                const value = match[2]
                 props.set(key, value)
-            }
-
+            })
             const event: events.IEvent | null = this.createEvent(eventName, matches, props, time);
             if (!event) return
-
             for (const m of this.modules) {
                 const callback: IEventCallback = m[eventName]
                 if (callback) callback.call(m, event)
