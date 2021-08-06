@@ -12,10 +12,6 @@ jobs:
   tests:
     runs-on: ubuntu-20.04
 
-    strategy:
-      matrix:
-        node-version: ["14.x", "16.x"]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,7 +19,7 @@ jobs:
       - name: Node v${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.6.0
 
       - name: "Install dependencies"
         run: npm install
