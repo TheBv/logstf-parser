@@ -9,6 +9,9 @@
     "require": "./lib/cjs/LogParser.js"
   },
   "scripts": {
+    "buildcjs": "tsc --project tsconfig.cjs.json",
+    "buildesm": "tsc",
+    "build": "tsc  && tsc --project tsconfig.cjs.json",
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:ci": "jest --ci --maxWorkers 4"

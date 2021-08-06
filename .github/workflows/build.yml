@@ -1,4 +1,4 @@
-name: test
+name: build
 
 on:
   push:
@@ -28,5 +28,9 @@ jobs:
       - name: "Install dependencies"
         run: npm install
 
-      - name: "Run tests"
-        run: npm run test:ci
+      - name: "Build regular"
+        run: npm run buildcjs
+
+      - name: "Build regular"
+        run: npm run buildesm
+
