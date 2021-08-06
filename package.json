@@ -1,6 +1,6 @@
 {
   "name": "logstf-parser",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "TF2 log parser",
   "main": "./lib/cjs/LogParser.js",
   "module": "./lib/esm/LogParser.js",
@@ -9,7 +9,9 @@
     "require": "./lib/cjs/LogParser.js"
   },
   "scripts": {
-    "test": "node ./tests.js"
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:ci": "jest --ci --maxWorkers 4"
   },
   "keywords": [
     "logs.tf",
@@ -28,14 +30,14 @@
   ],
   "license": "AGPL",
   "dependencies": {
-    "@types/node": "^10.9.4",
-    "@types/steamid": "^1.1.0",
-    "@types/xregexp": "^3.0.29",
-    "steamid": "^1.1.3",
     "xregexp": "^4.4.1"
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
-    "typescript": "^4.2.3"
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.10",
+    "@types/xregexp": "^4.4.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
   }
 }
