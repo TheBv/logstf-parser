@@ -4,6 +4,7 @@ import fs from "fs/promises";
 import sixesJson from "../logs/log_6s.json";
 import hlJson from "../logs/log_hl.json";
 import bballJson from "../logs/log_bball.json";
+import GameStateModule from "../modules/GameStateModule";
 
 describe("logs-parser", () => {
   let logParser: LogParser;
@@ -20,6 +21,14 @@ describe("logs-parser", () => {
 
   it("can load", () => {
     expect(logParser).toBeDefined();
+  });
+
+  it("will not duplicate modules", () => {
+    expect(logParser.modules.length).toBe(9);
+
+    logParser.addModule(defaultModules.ChatModule);
+
+    expect(logParser.modules.length).toBe(9);
   });
 
   describe("can full parse", () => {

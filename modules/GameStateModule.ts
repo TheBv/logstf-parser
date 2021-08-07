@@ -253,7 +253,7 @@ class GameStateModule implements events.IStats {
     toJSON() {
         return {
             rounds: this.rounds,
-            toatlLength: this.totalLengthInSeconds
+            totalLength: this.totalLengthInSeconds
         }
     }
 }
