@@ -35,6 +35,7 @@ class GameStateModule implements events.IStats {
     private currentRoundPausedTime: number
     private totalLengthInSeconds: number
     private firstCap : string
+    private paused : boolean
 
     constructor(gameState: IGameState) {
         this.identifier = 'game'
@@ -48,6 +49,7 @@ class GameStateModule implements events.IStats {
         this.firstCap = ""
         this.totalLengthInSeconds = 0
         this.rounds = []
+        this.paused = false
     }
 
     private defaultTeamStats = (score: number): ITeamRoundStats => ({
@@ -147,6 +149,10 @@ class GameStateModule implements events.IStats {
         this.newRound(event.timestamp)
     }
 
+    onMiniRoundStart(event: events.IRoundStartEvent) {
+        this.newRound(event.timestamp)
+    }
+
     onRoundEnd(event: events.IRoundEndEvent) {
         this.endRound(event.timestamp, event.winner)
         // Workaround for the case that the "Game_Over" event triggers before the "Round_Win" event
@@ -172,20 +178,31 @@ class GameStateModule implements events.IStats {
 
     onPause(event: events.IPauseEvent) {
         this.gameState.isLive = false
+        this.paused = true
         this.currentRoundPausedStart = event.timestamp
     }
 
     onUnpause(event: events.IUnpauseEvent) {
         this.gameState.isLive = true
+        this.paused = false
         if (this.currentRoundPausedStart > 0 && event.timestamp > this.currentRoundPausedStart) {
             this.currentRoundPausedTime += event.timestamp - this.currentRoundPausedStart
             this.currentRoundPausedStart = 0
         }
     }
+    // Added to fix pause/unpause desync issues 
+    onTriggered(event: events.ITriggeredEvent) {
+        if (this.gameState.isLive) return
+        if (!this.paused) return
+        this.onUnpause({
+            timestamp : event.timestamp
+        })
+    }
 
     onMapLoad(event: events.IMapLoadEvent) {
         this.gameState.mapName = event.mapName
     }
+
     onFlag(event: events.IFlagEvent){
         if (!this.gameState.isLive) return
         const time = event.timestamp - this.currentRoundStartTime
@@ -196,6 +213,7 @@ class GameStateModule implements events.IStats {
             team: event.player.team
         })
     }
+
     onCapture(event: events.ICaptureEvent) {
         if (!this.gameState.isLive) return
         const time = event.timestamp - this.currentRoundStartTime
@@ -210,6 +228,7 @@ class GameStateModule implements events.IStats {
             playerIds: event.players.map(player => player.id)
         })
     }
+
     onCharge(event: events.IChargeEvent){
         if (!this.gameState.isLive) return
         const time = event.timestamp - this.currentRoundStartTime

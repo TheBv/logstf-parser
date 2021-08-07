@@ -43,6 +43,7 @@ describe("logs-parser", () => {
     });
 
     it("a highlander (hl) game", async () => {
+      // https://logs.tf/2890935
       const lines = await fs.readFile("./logs/log_hl.log", {
         encoding: "utf-8",
       });

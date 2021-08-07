@@ -49,6 +49,12 @@ export interface IStats {
     onMedicDeath?(event: IMedicDeathEvent): void
     onRoundStart?(event: IRoundStartEvent): void
     onRoundEnd?(event: IRoundEndEvent): void
+    onMiniRoundStart?(event: IRoundStartEvent): void
+    onMiniRoundSelected?(event: IMiniRoundSelected): void
+    onMiniRoundWin?(event: IMiniRoundWin): void
+    onMiniRoundLength?(event: IRoundLengthEvent): void
+    onRoundSetupBegin?(event: IRoundSetupBegin): void
+    onRoundSetupEnd?(event: IRoundSetupEnd): void
     onScore?(event: IRoundScoreEvent): void
     onGameOver?(event: IGameOverEvent): void
     onJoinTeam?(event: IJoinTeamEvent):void
@@ -66,6 +72,7 @@ export interface IStats {
     onMedicDeathEx?(event: IMedicDeathExEvent):void
     onEmptyUber?(event: IEmptyUberEvent):void
     onLostUberAdv?(event: ILostUberAdvantageEvent):void
+    onTriggered?(event: ITriggeredEvent): void
 }
 
 export interface IEvent {
@@ -159,14 +166,25 @@ export interface IMedicDeathExEvent extends IEvent{
     uberpct: number
 }
 
-export interface IRoundStartEvent extends IEvent {
-
+export interface IMiniRoundSelected extends IEvent {
+    round: string
 }
+
+export interface IRoundStartEvent extends IEvent {}
 
 export interface IRoundEndEvent extends IEvent {
     type: "Win" | "Stalemate"
     winner: Team | null
 }
+
+export interface IMiniRoundWin extends IRoundEndEvent {
+    type: "Win",
+    round: string
+}
+
+export interface IRoundSetupBegin extends IEvent {}
+
+export interface IRoundSetupEnd extends IEvent {}
 
 export interface IRoundLengthEvent extends IEvent {
     lengthInSeconds: number
@@ -244,4 +262,7 @@ export interface IPauseEvent extends IEvent {}
 export interface IUnpauseEvent extends IEvent {}
 export interface IMapLoadEvent extends IEvent {
     mapName: string
+}
+export interface ITriggeredEvent extends IEvent {
+    player: PlayerInfo
 }

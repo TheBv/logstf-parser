@@ -322,7 +322,50 @@ export class Game {
                 }
             }
         });
-
+        this.events.set("onMiniRoundStart", {
+            regexp: XRegExp('^World triggered "Mini_Round_Start"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundStartEvent | null {
+                return {
+                    timestamp: time
+                }
+            }
+        });
+        // World triggered "Mini_Round_Selected" (round "Round_A")
+        this.events.set("onMiniRoundSelected", {
+            regexp: XRegExp('^World triggered "Mini_Round_Selected"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMiniRoundSelected | null {
+                const round = props.get("round") || ""
+                return {
+                    timestamp: time,
+                    round: round
+                }
+            }
+        });
+        // World triggered "Mini_Round_Win" (winner "Red") (round "Round_A"); usually accomponied by Round_Win
+        this.events.set("onMiniRoundWin", {
+            regexp: XRegExp('^World triggered "Mini_Round_Selected"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMiniRoundWin | null {
+                const winner = props.get('winner') || null
+                const round = props.get('round') || ""
+                return {
+                    timestamp: time,
+                    type: "Win",
+                    winner: <events.Team>winner,
+                    round: round
+                }
+            }
+        });
+        // World triggered "Mini_Round_Length" (seconds "345.02")
+        this.events.set("onMiniRoundLength", {
+            regexp: XRegExp('^World triggered "Mini_Round_Selected"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundLengthEvent | null {
+                const length = parseInt(props.get('numcappers') || '-1');
+                return {
+                    timestamp: time,
+                    lengthInSeconds: length
+                }
+            }
+        });
         this.events.set("onRoundStart", {
             regexp: XRegExp('^World triggered "Round_Start"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundStartEvent | null {
@@ -331,7 +374,22 @@ export class Game {
                 }
             }
         });
-
+        this.events.set("onRoundSetupBegin",{
+            regexp: XRegExp('^World triggered "Round_Setup_Begin"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundSetupBegin | null {
+                return {
+                    timestamp: time
+                }
+            }
+        })
+        this.events.set("onRoundSetupEnd",{
+            regexp: XRegExp('^World triggered "Round_Setup_End"'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundSetupEnd | null {
+                return {
+                    timestamp: time
+                }
+            }
+        })
         this.events.set("onRoundEnd", {
             regexp: XRegExp('^World triggered "Round_(?P<type>Win|Stalemate)'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundEndEvent | null {
@@ -588,6 +646,20 @@ export class Game {
                     timestamp: time,
                     time: parseFloat(timeLost),
                     player,
+                }
+
+            }
+        });
+
+        // Used to mainly check for pause/unpause desyncing
+        this.events.set("onTriggered", {
+            regexp: XRegExp('^"(?P<player>.+?)" triggered'),
+            createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ITriggeredEvent | null {
+                const player = getFromPlayerString(regexpMatches.player)
+                if (!player) return null
+                return {
+                    timestamp: time,
+                    player: player,
                 }
 
             }
