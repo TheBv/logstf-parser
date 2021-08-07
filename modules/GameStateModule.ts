@@ -1,9 +1,6 @@
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
 
-//FIXME: bball_log doesn't have winner
-//FIXME: bball missing final round_win event
-
 interface IPlayerStats{
     team: string | null
     kills: number
@@ -152,6 +149,21 @@ class GameStateModule implements events.IStats {
 
     onRoundEnd(event: events.IRoundEndEvent) {
         this.endRound(event.timestamp, event.winner)
+        // Workaround for the case that the "Game_Over" event triggers before the "Round_Win" event
+        if (!this.gameState.isLive){
+            const roundLength = event.timestamp - this.currentRoundStartTime - this.currentRoundPausedTime
+            const lastRound = this.getLastRound()
+            // Check to make sure the round_win event happened at the same time as
+            // the previous event that ended the round
+            if (lastRound.winner) return
+            if (lastRound.lengthInSeconds !== roundLength) return
+            lastRound.events.push({
+                type: "round_win",
+                time: roundLength,
+                team: event.winner
+            })
+            lastRound.winner = event.winner
+        }
     }
 
     onGameOver(event: events.IGameOverEvent) {
