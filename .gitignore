@@ -3,3 +3,4 @@ lib
 temp
 package-lock.json
 .vscode/launch.json
+coverage
