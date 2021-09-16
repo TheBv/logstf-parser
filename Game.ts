@@ -5,7 +5,7 @@ import * as events from './events'
 // TODO: Class support without plugin
 // TODO: Feign death
 
-const PLAYER_EXPRESSION: RegExp = XRegExp('^(?<name>.{1,80}?)<\\d{1,4}><(?<steamid>.{1,40})><(?<team>(Red|Blue|Spectator|Console))>')
+const PLAYER_EXPRESSION: RegExp = XRegExp('^(?<name>.{1,80}?)<\\d{1,4}><(?<steamid>(?!STEAM_\\d).{1,40})><(?<team>(Red|Blue|Spectator|Console))>')
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
 const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}) "([^"]{1,60})"\)/
 
@@ -20,7 +20,6 @@ function getFromPlayerString(playerString: string): PlayerInfo | null {
     if (!playerString) throw new Error("Empty playerString")
     const matches: any = XRegExp.exec(playerString, PLAYER_EXPRESSION)
     if (!matches) return null
-
     return {
         id: matches.steamid,
         name: matches.name,
