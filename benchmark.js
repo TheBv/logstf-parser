@@ -4,7 +4,7 @@ const parserCJS = require("./lib/cjs/LogParser");
 
 const LogParserCJS = new parserCJS.LogParser();
 for (const module of Object.values(parserCJS.defaultModules)){
-    //LogParserCJS.addModule(module);
+    LogParserCJS.addModule(module);
 }
 
 async function runBenchmark(amount) {
