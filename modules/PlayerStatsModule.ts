@@ -323,10 +323,11 @@ class PlayerStatsModule implements events.IStats {
     }
 
     finish(): void {
-        const self = this;
-        for (const key of Object.keys(this.internalStats)){
+        const self = this; //TODO: players/internalStats can be out of sync
+        for (const key of Object.keys(this.players)){
             const player = self.players[key];
             const stats = self.internalStats[key]
+            if (!stats || !player) return
             if (player.medicstats && stats){
                 player.medicstats.avgUberLength = self.getMean(stats.uberLengths)
                 player.medicstats.avgTimeToBuild = self.getMean(stats.timesToBuild)
