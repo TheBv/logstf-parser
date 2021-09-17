@@ -412,7 +412,7 @@ export class Game {
         });
         // World triggered "Mini_Round_Win" (winner "Red") (round "Round_A"); usually accomponied by Round_Win
         this.worldEvents.set("onMiniRoundWin", {
-            regexp: XRegExp('^World triggered "Mini_Round_Selected"'),
+            regexp: XRegExp('^World triggered "Mini_Round_Win"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMiniRoundWin | null {
                 const winner = props.get('winner') || null
                 const round = props.get('round') || ""
@@ -426,7 +426,7 @@ export class Game {
         });
         // World triggered "Mini_Round_Length" (seconds "345.02")
         this.worldEvents.set("onMiniRoundLength", {
-            regexp: XRegExp('^World triggered "Mini_Round_Selected"'),
+            regexp: XRegExp('^World triggered "Mini_Round_Length"'),
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundLengthEvent | null {
                 const length = parseInt(props.get('numcappers') || '-1');
                 return {
