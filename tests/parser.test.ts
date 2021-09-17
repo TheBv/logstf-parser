@@ -34,6 +34,22 @@ describe("logs-parser", () => {
     expect(logParser.modules.length).toBe(10);
   });
 
+  it("can use a custom game state",async ()=> {
+    const testingParser = new LogParser();
+    testingParser.useCustomGameState();
+    testingParser.addModule(GameStateModule);
+    for (const module of Object.values(defaultModules)) {
+      testingParser.addModule(module);
+    }
+    const lines = await fs.readFile("./logs/log_6s.log", {
+      encoding: "utf-8",
+    });
+
+    const game = testingParser.parseLines(lines.split("\n"));
+
+    expect(game.toJSON()).toMatchObject(sixesJson);
+  })
+
   describe("can full parse", () => {
     it("a sixes (6s) game", async () => {
       const lines = await fs.readFile("./logs/log_6s.log", {
@@ -70,7 +86,6 @@ describe("logs-parser", () => {
       });
 
       const game = logParser.parseLines(lines.split("\n"));
-      console.log(bballJson)
       expect(game.toJSON()).toMatchObject(bballJson);
     });
     /*
