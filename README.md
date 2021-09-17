@@ -29,7 +29,7 @@ for (const module of Object.values(parser.defaultModules)){
     LogsParser.addModule(module);
 }
 //If you want to define your own GameStateModule you should disable the provided one like this:
-LogsParser.useCustomGameState(true);
+LogsParser.useCustomGameState();
 ```
 Similar to this you can create and load custom modules.
 # Custom modules

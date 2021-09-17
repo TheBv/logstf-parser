@@ -170,6 +170,8 @@ export interface IMiniRoundSelected extends IEvent {
     round: string
 }
 
+export interface IWorldTriggeredEvent extends IEvent {}
+
 export interface IRoundStartEvent extends IEvent {}
 
 export interface IRoundEndEvent extends IEvent {

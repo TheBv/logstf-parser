@@ -2,7 +2,7 @@
 import * as events from '../events'
 import { IGameState} from '../Game'
 
-
+//TODO: rewrite the way killstreaks get 'merged'
 interface IKillstreak {
     steamid: string
     streak: number
