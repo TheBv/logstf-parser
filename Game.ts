@@ -66,7 +66,7 @@ export class Game {
         this.playerTriggeredEvents = new Map<string, IEventDefinition>()
         this.worldEvents = new Map<string, IEventDefinition>()
         this.events = new Map<string, IEventDefinition>()
-        this.timeState = {difference: 0, previousTime: 0}
+        this.timeState = {difference: 0, previousTime: -1}
         const self = this;
 
         //PLAYER TRIGGERED EVENTS
@@ -675,6 +675,11 @@ export class Game {
         });
 
     }
+    //difference = 0
+    //time = time + difference
+    //if prevTime > time
+    //  time difference = prevTime-time
+    // prevTime = time
     getFromPlayerString(playerString: string): PlayerInfo | null {
         if (!playerString) throw new Error("Empty playerString")
         const matches: any = XRegExp.exec(playerString, PLAYER_EXPRESSION)
@@ -693,8 +698,9 @@ export class Game {
 
     processLine(line: string) {
         const eventLine = line.slice(25)
-        const time = this.makeTimestamp(line)
+        let time = this.makeTimestamp(line)
         if (!time) return
+        time = this.checkAndUpdateTime(time);
         if (this.executeEvent(time, eventLine, this.playerTriggeredMain[0],this.playerTriggeredMain[1])) {
             for (const [eventName, eventProps] of this.playerTriggeredEvents){
                 const matched = this.executeEvent(time, eventLine, eventName, eventProps)
@@ -745,6 +751,18 @@ export class Game {
         const seconds = parseInt(t[6])
         const time = new Date(year, month, day, hours, minutes, seconds).getTime() / 1000;
         return time
+    }
+
+    private checkAndUpdateTime(timeIn: number) : number {
+        let time = timeIn + this.timeState.difference
+        //If for some reason we go backwards in time
+        if (this.timeState.previousTime > time){
+            //+= the difference in case we go backwards in time multiple times
+            this.timeState.difference += this.timeState.previousTime - time;
+        }
+        //update previous time to be the timeIn + the difference
+        this.timeState.previousTime = timeIn + this.timeState.difference;
+        return this.timeState.previousTime;
     }
 
     finish(): void {
