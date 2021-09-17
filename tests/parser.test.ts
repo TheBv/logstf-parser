@@ -61,7 +61,6 @@ describe("logs-parser", () => {
     });
 
     const game = testingParser.parseLines(lines.split("\n"));
-    console.log(game.toJSON());
     expect(game.toJSON()).toMatchObject(sixes64Json);
   })
   describe("can full parse", () => {

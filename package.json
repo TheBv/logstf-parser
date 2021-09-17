@@ -35,8 +35,7 @@
   ],
   "license": "AGPL",
   "dependencies": {
-    "steamid": "^2.0.0",
-    "xregexp": "^4.4.1"
+    "steamid": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
