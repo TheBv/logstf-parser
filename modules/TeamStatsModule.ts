@@ -94,14 +94,22 @@ class TeamStatsModule implements events.IStats {
         this.isFirstCap = true
     }
 
-    onRoundEnd(event: events.IRoundEndEvent) {
+    onScore(event: events.IRoundScoreEvent) {
+        if (event.team == events.Team.Red) {
+            this.teams.Red.score = event.score
+        } else if (event.team == events.Team.Blue) {
+            this.teams.Blue.score = event.score
+        }
+    }
+
+    /*onRoundEnd(event: events.IRoundEndEvent) {
         if (event.winner == events.Team.Blue){
             this.teams.Blue.score +=1
         }
         if (event.winner == events.Team.Red){
             this.teams.Red.score +=1
         }
-    }
+    }*/
 
     onCapture(event: events.ICaptureEvent) {
         if (!this.gameState.isLive) return
