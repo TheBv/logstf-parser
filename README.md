@@ -1,6 +1,8 @@
 # Logs.tf Parser
 
-This is an updated version of the logs.tf parser which aims to recreate the parser currently used by logs.tf
+[![Build](https://github.com/thebv/logstf-parser/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/thebv/logstf-parser/actions/workflows/build.yml)
+
+This is an updated version of the logs.tf parser which aims to recreate the parser currently used by logs.tf and tries to improve upon it by fixing various issues ever since version 2.0.0.
 
 This parser is currently being used for demoticks.tf
 
