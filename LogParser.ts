@@ -7,17 +7,22 @@ type GameModule = { new (gameState: IGameState): events.IStats };
 export class LogParser {
   private _modules: Set<GameModule> = new Set();
   private useCustom: boolean;
-
+  private useSteam64: boolean;
   constructor() {
     this.useCustom = false;
+    this.useSteam64 = false;
   }
 
   useCustomGameState() {
     this.useCustom = true;
   }
 
+  useSteam64Id(){
+    this.useSteam64 = true;
+  }
+
   parseLines(lines: string[]): Game {
-    const game = new Game();
+    const game = new Game(this.useSteam64);
 
     if (!this.useCustom) {
       game.modules.push(new GameStateModule(game.gameState));

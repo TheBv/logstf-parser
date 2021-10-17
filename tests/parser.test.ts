@@ -4,6 +4,7 @@ import axios from 'axios';
 import JSZip from 'jszip';
 
 import sixesJson from "../logs/log_6s.json";
+import sixes64Json from "../logs/log_6s_STEAM64.json";
 import hlJson from "../logs/log_hl.json";
 import steamJson from "../logs/log_STEAM_.json";
 import bballJson from "../logs/log_bball.json";
@@ -49,7 +50,19 @@ describe("logs-parser", () => {
 
     expect(game.toJSON()).toMatchObject(sixesJson);
   })
+  it ("can use steam64 to parse",async ()=> {
+    const testingParser = new LogParser();
+    testingParser.useSteam64Id();
+    for (const module of Object.values(defaultModules)) {
+      testingParser.addModule(module);
+    }
+    const lines = await fs.readFile("./logs/log_6s.log", {
+      encoding: "utf-8",
+    });
 
+    const game = testingParser.parseLines(lines.split("\n"));
+    expect(game.toJSON()).toMatchObject(sixes64Json);
+  })
   describe("can full parse", () => {
     it("a sixes (6s) game", async () => {
       const lines = await fs.readFile("./logs/log_6s.log", {
