@@ -489,11 +489,20 @@ export class Game {
                 let victim = null
                 if (regexpMatches.victim)
                     victim = self.getFromPlayerString(regexpMatches.victim)
-                const weapon = regexpMatches.weapon
-                const isHeadshot = props.get("headshot") === '1' ? true : false
-                const isBackstab = props.get("ubercharge") === '1' ? true : false
-                const isAirshot = props.get("airshot") === '1' ? true : false;
+
                 if (!attacker || !victim) return null
+
+                const weapon = regexpMatches.weapon
+                let isHeadshot = props.get("headshot") === '1' ? true : false
+                let isBackstab = false
+                const isAirshot = props.get("airshot") === '1' ? true : false
+
+                if (props.has("customkill")){
+                    if (props.get("customkill") == "backstab")
+                        isBackstab = true
+                    if (props.get("customkill") == "headshot")
+                        isHeadshot = true
+                }
 
                 return {
                     timestamp: time,
