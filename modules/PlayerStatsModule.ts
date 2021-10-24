@@ -147,7 +147,7 @@ class PlayerStatsModule implements events.IStats {
         attacker.kills++
         attacker.currentKillStreak++
 
-        if (event.headshot) attacker.headshots++
+        if (event.headshot) attacker.headshotKills++
         if (event.backstab) attacker.backstabs++
         
         victim.deaths++

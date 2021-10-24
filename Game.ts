@@ -42,9 +42,9 @@ export interface IGameState {
 
 
 export class Game {
-    playerTriggeredMain : [string, IEventDefinition]
+    playerTriggeredMain: [string, IEventDefinition]
     playerTriggeredEvents: Map<string, IEventDefinition>
-    worldMain : [string, IEventDefinition]
+    worldMain: [string, IEventDefinition]
     worldEvents: Map<string, IEventDefinition>
     events: Map<string, IEventDefinition>
     modules: events.IStats[]
@@ -61,7 +61,7 @@ export class Game {
         this.playerTriggeredEvents = new Map<string, IEventDefinition>()
         this.worldEvents = new Map<string, IEventDefinition>()
         this.events = new Map<string, IEventDefinition>()
-        this.timeState = {difference: 0, previousTime: -1}
+        this.timeState = { difference: 0, previousTime: -1 }
         const self = this;
 
         //PLAYER TRIGGERED EVENTS
@@ -76,7 +76,7 @@ export class Game {
                     timestamp: time,
                     player: player,
                 }
-            } 
+            }
         }];
 
         this.playerTriggeredEvents.set("onDamage", {
@@ -88,13 +88,13 @@ export class Game {
                 if (regexpMatches.victim)
                     victim = self.getFromPlayerString(regexpMatches.victim)
                 let damage = parseInt(props.get('damage') || '0')
-                if (damage <0) damage = 0
+                if (damage < 0) damage = 0
                 // Fully buffed heavy hp = 450 knife deals 6-times that + some leeway
-                if (damage > 500*6) damage = 500*6 
+                if (damage > 500 * 6) damage = 500 * 6
                 const weapon = props.get('weapon')
                 const headshot = parseInt(props.get('headshot') || '0') ? true : false
                 const airshot = props.get("airshot") === '1' ? true : false;
-                
+
 
                 return {
                     timestamp: time,
@@ -109,7 +109,7 @@ export class Game {
         });
 
         this.playerTriggeredEvents.set("onHeal", {
-            regexp:/^"(?<player>.+?)" triggered "healed" against "(?<target>.+?)"/,
+            regexp: /^"(?<player>.+?)" triggered "healed" against "(?<target>.+?)"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IHealEvent | null {
                 const healer = self.getFromPlayerString(regexpMatches.player)
                 const target = self.getFromPlayerString(regexpMatches.target)
@@ -132,7 +132,7 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IShotEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 const weapon = props.get('weapon')
-                if (!player ||!weapon) return null
+                if (!player || !weapon) return null
 
                 return {
                     timestamp: time,
@@ -148,7 +148,7 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IShotEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 const weapon = props.get('weapon')
-                if (!player ||!weapon) return null
+                if (!player || !weapon) return null
 
                 return {
                     timestamp: time,
@@ -205,7 +205,7 @@ export class Game {
             regexp: /^"(?<player>.+?)" triggered "player_builtobject"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IBuildEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
-                if(!player) return null
+                if (!player) return null
                 const position = props.get("position") || null
                 const object = props.get("object")
                 return {
@@ -222,15 +222,15 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IObjectDestroyedEvent | null {
                 const attacker = self.getFromPlayerString(regexpMatches.player)
                 const objectOwnerProps = props.get("objectowner")
-                if(!attacker|| !objectOwnerProps) return null
+                if (!attacker || !objectOwnerProps) return null
                 const objectOwner = self.getFromPlayerString(objectOwnerProps);
                 if (!objectOwner) return null
 
                 return {
                     builtObject: <events.Building>props.get("object"),
                     weapon: props.get("weapon"),
-                    attackerPosition: props.get("attacker_position") ||null,
-                    assist: props.get("assist")? true : false,
+                    attackerPosition: props.get("attacker_position") || null,
+                    assist: props.get("assist") ? true : false,
                     assistPositon: props.get("assister_position") || null,
                     timestamp: time,
                     objectOwner,
@@ -243,7 +243,7 @@ export class Game {
             regexp: /^"(?<player>.+?)" triggered "flagevent"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IFlagEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
-                if(!player) return null
+                if (!player) return null
                 const position = props.get("position") || null
                 return {
                     timestamp: time,
@@ -252,7 +252,7 @@ export class Game {
                     position
                 }
             }
-            
+
         });
 
         this.playerTriggeredEvents.set("onFirstHeal", {
@@ -260,10 +260,10 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IFirstHealEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 const timeTaken = props.get('time')
-                if (!player ||!timeTaken) return null
+                if (!player || !timeTaken) return null
                 return {
                     timestamp: time,
-                    time : parseFloat(timeTaken),
+                    time: parseFloat(timeTaken),
                     player,
                 }
 
@@ -296,13 +296,13 @@ export class Game {
                 }
             }
         });
-        
+
         this.playerTriggeredEvents.set("onChargeEnded", {
             regexp: /^"(?<player>.+?)" triggered "chargeended"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChargeEndedEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 const duration = props.get('duration')
-                if (!player ||!duration) return null
+                if (!player || !duration) return null
                 return {
                     timestamp: time,
                     duration: parseFloat(duration),
@@ -317,7 +317,7 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMedicDeathExEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 const uberpct = props.get('uberpct')
-                if (!player ||!uberpct) return null
+                if (!player || !uberpct) return null
                 return {
                     timestamp: time,
                     uberpct: parseInt(uberpct),
@@ -345,7 +345,7 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.ILostUberAdvantageEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 const timeLost = props.get('time')
-                if (!player ||!timeLost) return null
+                if (!player || !timeLost) return null
                 return {
                     timestamp: time,
                     time: parseFloat(timeLost),
@@ -356,7 +356,7 @@ export class Game {
         });
 
         //WORLD EVENTS
-        
+
         this.worldMain = ["onWorldTriggered", {
             regexp: /^World triggered/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IWorldTriggeredEvent | null {
@@ -433,7 +433,7 @@ export class Game {
             }
         });
 
-        this.worldEvents.set("onRoundSetupBegin",{
+        this.worldEvents.set("onRoundSetupBegin", {
             regexp: /^World triggered "Round_Setup_Begin"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundSetupBegin | null {
                 return {
@@ -442,7 +442,7 @@ export class Game {
             }
         });
 
-        this.worldEvents.set("onRoundSetupEnd",{
+        this.worldEvents.set("onRoundSetupEnd", {
             regexp: /^World triggered "Round_Setup_End"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundSetupEnd | null {
                 return {
@@ -456,10 +456,10 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IGameOverEvent | null {
                 return {
                     timestamp: time,
-                    reason: regexpMatches.reason 
+                    reason: regexpMatches.reason
                 }
             }
-            
+
         });
 
         this.worldEvents.set("onPause", {
@@ -489,11 +489,20 @@ export class Game {
                 let victim = null
                 if (regexpMatches.victim)
                     victim = self.getFromPlayerString(regexpMatches.victim)
-                const weapon = regexpMatches.weapon
-                const isHeadshot = props.get("headshot") === '1' ? true : false
-                const isBackstab = props.get("ubercharge") === '1' ? true : false
-                const isAirshot = props.get("airshot") === '1' ? true : false;
+
                 if (!attacker || !victim) return null
+
+                const weapon = regexpMatches.weapon
+                let isHeadshot = props.get("headshot") === '1' ? true : false
+                let isBackstab = false
+                const isAirshot = props.get("airshot") === '1' ? true : false
+
+                if (props.has("customkill")){
+                    if (props.get("customkill") == "backstab")
+                        isBackstab = true
+                    if (props.get("customkill") == "headshot")
+                        isHeadshot = true
+                }
 
                 return {
                     timestamp: time,
@@ -583,7 +592,7 @@ export class Game {
                 const players: PlayerInfo[] = [];
 
                 if (parseInt(props.get('numcappers') || '0') !== matches.length) {
-                    return null;   
+                    return null;
                 }
 
                 for (const match of matches) {
@@ -593,7 +602,7 @@ export class Game {
                 }
 
                 return {
-                    numCappers: parseInt(props.get('numcappers')|| '0'),
+                    numCappers: parseInt(props.get('numcappers') || '0'),
                     timestamp: time,
                     team: regexpMatches.team,
                     pointId,
@@ -617,13 +626,13 @@ export class Game {
                 }
             }
         });
-        
+
         this.events.set("onDisconnect", {
             regexp: /^"(?<player>.+?)" disconnected/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IDisconnectEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
-                const reason = props.get("reason") || ""   
-                if (!player) return null   
+                const reason = props.get("reason") || ""
+                if (!player) return null
 
                 return {
                     timestamp: time,
@@ -631,7 +640,7 @@ export class Game {
                     reason
                 }
             }
-            
+
         });
 
         this.events.set("onChat", {
@@ -676,10 +685,13 @@ export class Game {
         const matches: any = playerString.match(PLAYER_EXPRESSION)
         if (!matches) return null
         const groups = matches.groups;
-        if (this.useSteam64 && groups.steamid){
-            const steamid = new SteamID(groups.steamid);
-            if (steamid.isValid())
-            groups.steamid = steamid.getSteamID64()
+        if (this.useSteam64 && groups.steamid) {
+            try {
+                const steamid = new SteamID(groups.steamid);
+                if (steamid.isValid())
+                    groups.steamid = steamid.getSteamID64()
+            } //Ignore errors with parsing since they are usually tied to Console/Bots
+            catch (error) { }
         }
         return {
             id: groups.steamid,
@@ -693,15 +705,15 @@ export class Game {
         let time = this.makeTimestamp(line)
         if (!time) return
         time = this.checkAndUpdateTime(time);
-        if (this.executeEvent(time, eventLine, this.playerTriggeredMain[0],this.playerTriggeredMain[1])) {
-            for (const [eventName, eventProps] of this.playerTriggeredEvents){
+        if (this.executeEvent(time, eventLine, this.playerTriggeredMain[0], this.playerTriggeredMain[1])) {
+            for (const [eventName, eventProps] of this.playerTriggeredEvents) {
                 const matched = this.executeEvent(time, eventLine, eventName, eventProps)
                 if (matched) break;
             }
         }
-        
+
         if (this.executeEvent(time, eventLine, this.worldMain[0], this.worldMain[1])) {
-            for (const [eventName, eventProps] of this.worldEvents){
+            for (const [eventName, eventProps] of this.worldEvents) {
                 const matched = this.executeEvent(time, eventLine, eventName, eventProps)
                 if (matched) break;
             }
@@ -710,14 +722,14 @@ export class Game {
             const matched = this.executeEvent(time, eventLine, eventName, eventProps);
             if (matched) break;
         }
-        
+
     }
 
-    executeEvent(time: number, eventLine: string, eventName: string, eventProps: IEventDefinition) : Boolean{
+    executeEvent(time: number, eventLine: string, eventName: string, eventProps: IEventDefinition): Boolean {
         const matches = eventLine.match(eventProps.regexp);
         if (!matches) return false
         const props = new Map<string, string>()
-        for (const match of [...eventLine.matchAll(PROPERTIES_EXPRESSION)]){
+        for (const match of [...eventLine.matchAll(PROPERTIES_EXPRESSION)]) {
             const key = match[1]
             const value = match[2]
             props.set(key, value)
@@ -745,10 +757,10 @@ export class Game {
         return time
     }
 
-    private checkAndUpdateTime(timeIn: number) : number {
+    private checkAndUpdateTime(timeIn: number): number {
         let time = timeIn + this.timeState.difference
         //If for some reason we go backwards in time
-        if (this.timeState.previousTime > time){
+        if (this.timeState.previousTime > time) {
             //+= the difference in case we go backwards in time multiple times
             this.timeState.difference += this.timeState.previousTime - time;
         }
