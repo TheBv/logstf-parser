@@ -16,6 +16,7 @@ interface ITeamRoundStats{
 
 interface Round {
     lengthInSeconds: number
+    startTime: number,
     firstCap: string
     winner: events.Team | null
     team: {Blue: ITeamRoundStats, Red: ITeamRoundStats}
@@ -26,6 +27,7 @@ interface Round {
 class GameStateModule implements events.IStats {
     public identifier: string
     private gameState: IGameState
+    private gameStartTime: number
     private rounds: Round[]
     private currentRoundPlayers: {[id:string]: IPlayerStats}
     private currentRoundEvents: Array<any>
@@ -40,6 +42,7 @@ class GameStateModule implements events.IStats {
     constructor(gameState: IGameState) {
         this.identifier = 'game'
         this.gameState = gameState
+        this.gameStartTime = 0
         this.currentRoundStartTime = 0
         this.currentRoundPausedStart = 0
         this.currentRoundPausedTime = 0
@@ -76,6 +79,9 @@ class GameStateModule implements events.IStats {
     }
 
     private newRound(timestamp: number) {
+        if (this.rounds.length == 0) {
+            this.gameStartTime = timestamp
+        }
         this.currentRoundEvents = []
         this.currentRoundStartTime = timestamp
         this.currentRoundPausedTime = 0
@@ -94,12 +100,14 @@ class GameStateModule implements events.IStats {
         if (winner) {
             this.currentRoundEvents.push({
                 type: "round_win",
-                time: roundLength,
+                absoluteTimeInSeconds: timestamp - this.gameStartTime - this.currentRoundPausedTime,
+                relativeTimeInSeconds: roundLength,
                 team: winner
             })
         }
         this.rounds.push({
             lengthInSeconds: roundLength,
+            startTime: timestamp - roundLength,
             firstCap: this.firstCap,
             winner: winner,
             events: this.currentRoundEvents,
@@ -165,7 +173,8 @@ class GameStateModule implements events.IStats {
             if (lastRound.lengthInSeconds !== roundLength) return
             lastRound.events.push({
                 type: "round_win",
-                time: roundLength,
+                absoluteTimeInSeconds: event.timestamp - this.gameStartTime - this.currentRoundPausedTime,
+                relativeTimeInSeconds: roundLength,
                 team: event.winner
             })
             lastRound.winner = event.winner
@@ -208,7 +217,8 @@ class GameStateModule implements events.IStats {
         const time = event.timestamp - this.currentRoundStartTime
         this.currentRoundEvents.push({
             type: event.type,
-            time: time,
+            relativeTimeInSeconds: time,
+            absoluteTimeInSeconds: event.timestamp - this.gameStartTime,
             steamid: event.player.id,
             team: event.player.team
         })
@@ -222,7 +232,8 @@ class GameStateModule implements events.IStats {
         }
         this.currentRoundEvents.push({
             type: 'pointcap',
-            timeInSeconds: time,
+            relativeTimeInSeconds: time,
+            absoluteTimeInSeconds: event.timestamp - this.gameStartTime,
             team: event.team,
             pointId: event.pointId,
             playerIds: event.players.map(player => player.id)
@@ -241,7 +252,8 @@ class GameStateModule implements events.IStats {
         }
         this.currentRoundEvents.push({
             type: 'charge',
-            timeInSeconds: time,
+            relativeTimeInSeconds: time,
+            absoluteTimeInSeconds: event.timestamp - this.gameStartTime,
             medigun: event.medigunType,
             team: event.player.team,
             steamid: event.player.id,
@@ -254,14 +266,16 @@ class GameStateModule implements events.IStats {
         if (event.isDrop){
             this.currentRoundEvents.push({
                 type: 'drop',
-                timeInSeconds: time,
+                relativeTimeInSeconds: time,
+                absoluteTimeInSeconds: event.timestamp - this.gameStartTime,
                 team: event.victim.team,
                 steamid: event.victim.id,
             })
         }
         this.currentRoundEvents.push({
             type: 'medic_death',
-            timeInSeconds: time,
+            relativeTimeInSeconds: time,
+            absoluteTimeInSeconds: event.timestamp - this.gameStartTime,
             team: event.victim.team,
             steamid: event.victim.id,
             attacker: event.attacker.id
