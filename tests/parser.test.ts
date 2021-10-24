@@ -56,7 +56,7 @@ describe("logs-parser", () => {
     for (const module of Object.values(defaultModules)) {
       testingParser.addModule(module);
     }
-    const lines = await fs.readFile("./logs/log_6s.log", {
+    const lines = await fs.readFile("./logs/log_3045614.log", {
       encoding: "utf-8",
     });
 
