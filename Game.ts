@@ -80,7 +80,7 @@ export class Game {
         }];
 
         this.playerTriggeredEvents.set("onDamage", {
-            regexp: /^"(?<attacker>.+?)" triggered "damage"( against "(?<victim>.+?)")?/,
+            regexp: /^"(?<attacker>.+?)" triggered "damage"( against "(?<victim>.+?)")/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IDamageEvent | null {
                 const attacker = self.getFromPlayerString(regexpMatches.attacker)
                 if (!attacker) return null
