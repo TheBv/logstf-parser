@@ -11,9 +11,7 @@ import HealSpreadModule from "./modules/HealSpreadModule"
 import PlayerClassStatsModule from "./modules/PlayerClassStatsModule"
 import RealDamageModule from "./modules/RealDamageModule"
 import PvCModule from "./modules/PvCModule"
-// TODO: HighlightsModule
-// TODO: Class support without plugin
-// TODO: Feign death
+
 
 const PLAYER_EXPRESSION: RegExp = /^(?<name>.{1,80}?)<\d{1,4}><(?<steamid>(?!STEAM_\d).{1,40})><(?<team>(Red|Blue|Spectator|Console|Unassigned))>/
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
@@ -25,17 +23,14 @@ export interface PlayerInfo {
     team: string
 }
 
-
 interface IEventDefinition {
     createEvent: IEventCreator | null
     regexp: RegExp
 }
 
-
 interface IEventCreator {
     (regexpMatches: any, props: Map<string, string>, time: number): events.IEvent | null
 }
-
 
 interface IEventCallback {
     (event: events.IEvent): void
@@ -510,6 +505,8 @@ export class Game {
                 const isAirshot = props.get("airshot") === '1' ? true : false
 
                 if (props.has("customkill")) {
+                    if (props.get("customkill") == "feign_death")
+                        return null
                     if (props.get("customkill") == "backstab")
                         isBackstab = true
                     if (props.get("customkill") == "headshot")
