@@ -141,6 +141,7 @@ class PlayerStatsModule implements events.IStats {
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)
         const victim: IPlayerStats = this.getOrCreatePlayer(event.victim)
 
@@ -161,6 +162,7 @@ class PlayerStatsModule implements events.IStats {
         attacker.damage += event.damage
         if (event.headshot) attacker.headshots += 1
         if (event.airshot) attacker.airshots += 1
+        if (event.healing) attacker.healing += event.healing
 
         if (event.victim) {
             const victim: IPlayerStats = this.getOrCreatePlayer(event.victim)

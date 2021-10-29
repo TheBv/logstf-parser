@@ -28,6 +28,7 @@ class KillstreakModule implements events.IStats {
     }
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         let gameTime = 0
         if (this.gameStartTime) {
             gameTime = event.timestamp - this.gameStartTime

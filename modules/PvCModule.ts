@@ -51,6 +51,7 @@ class PvCModule implements events.IStats {
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         const attackerRole = this.currentRoles.get(event.attacker.id)
         const victimRole = this.currentRoles.get(event.victim.id)
 

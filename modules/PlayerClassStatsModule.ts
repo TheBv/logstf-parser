@@ -100,7 +100,7 @@ class PlayerClassStatsModule implements events.IStats {
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
-
+        if (event.feignDeath) return
         const attackerRole = this.currentRoles.get(event.attacker.id)
         if (attackerRole) {
             const attackerStats = this.getClassStats(event.attacker.id, attackerRole)

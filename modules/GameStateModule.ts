@@ -123,6 +123,7 @@ class GameStateModule implements events.IStats {
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)
         attacker.kills += 1
         if (attacker.team == events.Team.Blue) {

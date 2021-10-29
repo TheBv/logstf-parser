@@ -72,6 +72,7 @@ class TeamStatsModule implements events.IStats {
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         const attacker: ITeamPlayerStats = this.getOrCreatePlayer(event.attacker)
         attacker.kills += 1
         const victim: ITeamPlayerStats = this.getOrCreatePlayer(event.victim)
