@@ -83,6 +83,7 @@ export interface IKillEvent extends IEvent {
     attacker: PlayerInfo
     victim: PlayerInfo
     weapon: string | undefined
+    feignDeath: boolean
     headshot: boolean
     backstab: boolean
     airshot: boolean

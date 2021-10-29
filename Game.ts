@@ -503,10 +503,10 @@ export class Game {
                 let isHeadshot = props.get("headshot") === '1' ? true : false
                 let isBackstab = false
                 const isAirshot = props.get("airshot") === '1' ? true : false
-
+                let feignDeath = false
                 if (props.has("customkill")) {
                     if (props.get("customkill") == "feign_death")
-                        return null
+                        feignDeath = true
                     if (props.get("customkill") == "backstab")
                         isBackstab = true
                     if (props.get("customkill") == "headshot")
@@ -518,6 +518,7 @@ export class Game {
                     headshot: isHeadshot,
                     backstab: isBackstab,
                     airshot: isAirshot,
+                    feignDeath: feignDeath,
                     attacker,
                     victim,
                     weapon,
