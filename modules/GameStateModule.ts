@@ -124,13 +124,22 @@ class GameStateModule implements events.IStats {
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)
-        attacker.kills +=1
-        if (attacker.team == events.Team.Blue){
-            this.currentRoundTeams.Blue.kills +=1
+        attacker.kills += 1
+        if (attacker.team == events.Team.Blue) {
+            this.currentRoundTeams.Blue.kills += 1
         }
-        if (attacker.team == events.Team.Red){
-            this.currentRoundTeams.Red.kills +=1
+        if (attacker.team == events.Team.Red) {
+            this.currentRoundTeams.Red.kills += 1
         }
+        // Workaround for the event that the medic dies from 'world' which is being logged as 
+        // triggering the medic_death event with them as the attacker as well as victim
+        this.currentRoundEvents.filter((round) => {
+            return round.absoluteTimeInSeconds == event.timestamp - this.gameStartTime &&
+                round.type == 'medic_death' &&
+                round.steamid == event.victim.id
+        }).forEach((round) => {
+            round.attacker = event.attacker.id
+        })
     }
     onDamage(event: events.IDamageEvent){
         if (!this.gameState.isLive) return
@@ -143,6 +152,12 @@ class GameStateModule implements events.IStats {
             this.currentRoundTeams.Red.dmg += event.damage
         }
     }
+
+    onSpawn(event: events.ISpawnEvent) {
+        if (!this.gameState.isLive) return
+        const attacker: IPlayerStats = this.getOrCreatePlayer(event.player)
+    }
+
     onScore(event: events.IRoundScoreEvent) {
         const lastRound = this.getLastRound()
         if (!lastRound) return
@@ -227,8 +242,8 @@ class GameStateModule implements events.IStats {
     onCapture(event: events.ICaptureEvent) {
         if (!this.gameState.isLive) return
         const time = event.timestamp - this.currentRoundStartTime
-        if (this.currentRoundEvents.filter(evt => evt.type == 'capture' ).length == 0){
-            this.firstCap = event.team;
+        if (this.currentRoundEvents.filter(evt => evt.type == 'pointcap').length == 0) {
+            this.firstCap = event.team
         }
         this.currentRoundEvents.push({
             type: 'pointcap',
