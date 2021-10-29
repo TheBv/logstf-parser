@@ -57,12 +57,15 @@ export class Game {
     gameState: IGameState
     timeState: ITimeState
     useSteam64: boolean
-    constructor(useSteam64: boolean) {
+    useDamageHealing: boolean
+
+    constructor(useSteam64: boolean, useDamageHealing: boolean) {
         this.gameState = {
             isLive: false,
             mapName: null
         }
         this.useSteam64 = useSteam64
+        this.useDamageHealing = useDamageHealing
         this.modules = []
         this.playerTriggeredEvents = new Map<string, IEventDefinition>()
         this.worldEvents = new Map<string, IEventDefinition>()
@@ -102,13 +105,14 @@ export class Game {
                 const headshot = parseInt(props.get('headshot') || '0') ? true : false
                 const airshot = props.get("airshot") === '1' ? true : false
                 const realDamage = parseInt(props.get('realdamage') || '0')
-
+                const healing = self.useDamageHealing ? parseInt(props.get('healing') || '0') : 0
                 return {
                     timestamp: time,
                     attacker,
                     victim,
                     damage,
                     realDamage,
+                    healing,
                     weapon,
                     headshot,
                     airshot
