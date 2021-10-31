@@ -12,10 +12,9 @@ import PlayerClassStatsModule from "./modules/PlayerClassStatsModule"
 import RealDamageModule from "./modules/RealDamageModule"
 import PvCModule from "./modules/PvCModule"
 
-
-const PLAYER_EXPRESSION: RegExp = /^(?<name>.{1,80}?)<\d{1,4}><(?<steamid>(?!STEAM_\d).{1,40})><(?<team>(Red|Blue|Spectator|Console|Unassigned))>/
+const PLAYER_EXPRESSION: RegExp = /^(?<name>.{1,80}?)<\d{1,4}><(?<steamid>(?!STEAM_\d).{1,40}?)><(?<team>(Red|Blue|Spectator|Console|Unassigned))>/
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
-const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}) "([^"]{1,60})"\)/g
+const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}?) "([^"]{1,60}?)"\)/g
 
 export interface PlayerInfo {
     id: string,
@@ -57,6 +56,8 @@ export class Game {
     gameState: IGameState
     timeState: ITimeState
     useSteam64: boolean
+    timeStampCache: Map<string, number>
+    playerCache: Map<string, PlayerInfo | null>
     useDamageHealing: boolean
 
     constructor(useSteam64: boolean, useDamageHealing: boolean) {
@@ -65,6 +66,8 @@ export class Game {
             mapName: null
         }
         this.useSteam64 = useSteam64
+        this.timeStampCache = new Map<string, number>()
+        this.playerCache = new Map<string, PlayerInfo | null>()
         this.useDamageHealing = useDamageHealing
         this.modules = []
         this.playerTriggeredEvents = new Map<string, IEventDefinition>()
@@ -89,7 +92,7 @@ export class Game {
         }];
 
         this.playerTriggeredEvents.set("onDamage", {
-            regexp: /^"(?<attacker>.+?)" triggered "damage"( against "(?<victim>.+?)")/,
+            regexp: /^"(?<attacker>.+?)" triggered "damage" against "(?<victim>.+?)"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IDamageEvent | null {
                 const attacker = self.getFromPlayerString(regexpMatches.attacker)
                 if (!attacker) return null
@@ -695,22 +698,32 @@ export class Game {
 
     getFromPlayerString(playerString: string): PlayerInfo | null {
         if (!playerString) throw new Error("Empty playerString")
+        const playerCached = this.playerCache.get(playerString);
+        if (playerCached)
+            return playerCached
         const matches: any = playerString.match(PLAYER_EXPRESSION)
-        if (!matches) return null
+        if (!matches) {
+            this.playerCache.set(playerString, null)
+            return null
+        }
         const groups = matches.groups
+        // If we need to convert the steam id
         if (this.useSteam64 && groups.steamid) {
             try {
                 const steamid = new SteamID(groups.steamid)
                 if (steamid.isValid())
                     groups.steamid = steamid.getSteamID64()
-            } //Ignore errors with parsing since they are usually tied to Console/Bots
+            } // Ignore errors with parsing since they are usually tied to Console/Bots
             catch (error) { }
         }
-        return {
+        // Add the player to the cache
+        const player = {
             id: groups.steamid,
             name: groups.name,
             team: groups.team
         }
+        this.playerCache.set(playerString,player)
+        return player
     }
 
     processLine(line: string) {
@@ -724,30 +737,31 @@ export class Game {
                 if (matched) break
             }
         }
-
-        if (this.executeEvent(time, eventLine, this.worldMain[0], this.worldMain[1])) {
+        else if (this.executeEvent(time, eventLine, this.worldMain[0], this.worldMain[1])) {
             for (const [eventName, eventProps] of this.worldEvents) {
                 const matched = this.executeEvent(time, eventLine, eventName, eventProps)
                 if (matched) break
             }
         }
+        else {
         for (const [eventName, eventProps] of this.events) {
             const matched = this.executeEvent(time, eventLine, eventName, eventProps)
             if (matched) break
+        }
         }
 
     }
 
     executeEvent(time: number, eventLine: string, eventName: string, eventProps: IEventDefinition): Boolean {
+        if (!eventProps.createEvent) return false
         const matches = eventLine.match(eventProps.regexp)
         if (!matches) return false
         const props = new Map<string, string>()
-        for (const match of [...eventLine.matchAll(PROPERTIES_EXPRESSION)]) {
+        for (const match of eventLine.matchAll(PROPERTIES_EXPRESSION)) {
             const key = match[1]
             const value = match[2]
             props.set(key, value)
         }
-        if (!eventProps.createEvent) return false
         const event: events.IEvent | null = eventProps.createEvent(matches.groups, props, time)
         if (!event) return false
         for (const m of this.modules) {
@@ -758,6 +772,11 @@ export class Game {
     }
 
     private makeTimestamp(line: string): number | null {
+        line = line.slice(0,25)
+        const timeStampCached = this.timeStampCache.get(line);
+        if (timeStampCached) {
+            return timeStampCached
+        }
         const t = TIMESTAMP_EXPRESSION.exec(line)
         if (!t) return null
         const year = parseInt(t[3])
@@ -767,6 +786,7 @@ export class Game {
         const minutes = parseInt(t[5])
         const seconds = parseInt(t[6])
         const time = new Date(year, month, day, hours, minutes, seconds).getTime() / 1000
+        this.timeStampCache.set(line,time);
         return time
     }
 
