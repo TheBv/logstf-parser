@@ -1,5 +1,8 @@
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
+import { renameObjectKeys } from '../Utilities'
+import { Team, Teams } from "../interfaces/LogstfInterfaces"
+
 
 interface ITeamPlayerStats {
     team: string | null
@@ -21,11 +24,10 @@ interface ITeamStats {
     midfights: number
 }
 
-
 class TeamStatsModule implements events.IStats {
     public identifier: string
     private players: Map<string, ITeamPlayerStats>
-    private teams: {[team:string]: ITeamStats}
+    private teams: { [team: string]: ITeamStats }
     private gameState: IGameState
     private isFirstCap: boolean
 
@@ -103,15 +105,6 @@ class TeamStatsModule implements events.IStats {
         }
     }
 
-    /*onRoundEnd(event: events.IRoundEndEvent) {
-        if (event.winner == events.Team.Blue){
-            this.teams.Blue.score +=1
-        }
-        if (event.winner == events.Team.Red){
-            this.teams.Red.score +=1
-        }
-    }*/
-
     onCapture(event: events.ICaptureEvent) {
         if (!this.gameState.isLive) return
         this.teams[event.team].captures += 1
@@ -140,10 +133,27 @@ class TeamStatsModule implements events.IStats {
         })
     }
 
-    toJSON(): {[team:string]: ITeamStats} {
+    toJSON(): { [team: string]: ITeamStats } {
         return this.teams
     }
 
+    toLogstf(): Teams {
+        const transformMap = new Map<string, any>([
+            ["captures", "caps"],
+            ["charges", "charges"],
+            ["deaths", "deaths"],
+            ["damage", "dmg"],
+            ["drops", "drops"],
+            ["midfights", "firstcaps"],
+            ["kills", "kills"],
+            ["score", "score"]
+        ])
+        const teams: Teams = {
+            Blue: <Team>renameObjectKeys(this.teams.Blue, transformMap),
+            Red: <Team>renameObjectKeys(this.teams.Red, transformMap)
+        }
+        return teams
+    }
 }
 
 export default TeamStatsModule

@@ -1,10 +1,11 @@
-//TODO: Healspread things
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
+import { Healspread } from "../interfaces/LogstfInterfaces"
+
 
 class HealSpreadModule implements events.IStats {
     public identifier: string
-    private healspread: {[id:string]: {[id:string]:number}}
+    private healspread: { [id: string]: { [id: string]: number } }
     private gameState: IGameState
     constructor(gameState: IGameState) {
         this.identifier = 'healspread'
@@ -12,7 +13,7 @@ class HealSpreadModule implements events.IStats {
         this.healspread = {}
     }
 
-    private getOrCreateHealer(player: PlayerInfo): {[id:string]:number} {
+    private getOrCreateHealer(player: PlayerInfo): { [id: string]: number } {
         if (!(player.id in this.healspread)) {
             this.healspread[player.id] = {}
         }
@@ -31,8 +32,13 @@ class HealSpreadModule implements events.IStats {
         healer[event.target.id] += event.healing
     }
 
-    toJSON(){
+    toJSON(): { [id: string]: { [id: string]: number } } {
         return this.healspread
     }
+
+    toLogstf(): Healspread {
+        return this.toJSON()
+    }
+
 }
 export default HealSpreadModule

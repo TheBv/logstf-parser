@@ -8,6 +8,8 @@ import PvPModule from "./PvPModule";
 import RealDamageModule from "./RealDamageModule";
 import TeamStatsModule from "./TeamStatsModule";
 import NamesModule from "./NamesModule";
+
+
 const defaultModules = {
   ChatModule,
   HealSpreadModule,

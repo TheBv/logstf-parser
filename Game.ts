@@ -1,6 +1,5 @@
 import * as events from './events'
 import SteamID from 'steamid'
-import { convertPvC, LooseObject } from "./Utilities"
 import TeamStatsModule from "./modules/TeamStatsModule"
 import ChatModule from "./modules/ChatModule"
 import GameStateModule from "./modules/GameStateModule"
@@ -11,7 +10,8 @@ import HealSpreadModule from "./modules/HealSpreadModule"
 import PlayerClassStatsModule from "./modules/PlayerClassStatsModule"
 import RealDamageModule from "./modules/RealDamageModule"
 import PvCModule from "./modules/PvCModule"
-
+import { Log } from "./interfaces/LogstfInterfaces"
+ 
 const PLAYER_EXPRESSION: RegExp = /^(?<name>.{1,80}?)<\d{1,4}><(?<steamid>(?!STEAM_\d).{1,40}?)><(?<team>(Red|Blue|Spectator|Console|Unassigned))>/
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
 const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}?) "([^"]{1,60}?)"\)/g
@@ -45,7 +45,6 @@ export interface IGameState {
     mapName: string | null
 }
 
-
 export class Game {
     playerTriggeredMain: [string, IEventDefinition]
     playerTriggeredEvents: Map<string, IEventDefinition>
@@ -77,7 +76,6 @@ export class Game {
         const self = this
 
         //PLAYER TRIGGERED EVENTS
-
         // Used to mainly check for pause/unpause desyncing
         this.playerTriggeredMain = ["onTriggered", {
             regexp: /^"(?<player>.+?)" triggered/,
@@ -139,7 +137,6 @@ export class Game {
                 }
             }
         });
-
         // L 08/26/2018 - 23:06:46: "arekk<78><[U:1:93699014]><Red>" triggered "shot_fired" (weapon "gloves")
         this.playerTriggeredEvents.set("onShot", {
             regexp: /^"(?<player>.+?)" triggered "shot_fired"/,
@@ -370,7 +367,6 @@ export class Game {
         });
 
         //WORLD EVENTS
-
         this.worldMain = ["onWorldTriggered", {
             regexp: /^World triggered/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IWorldTriggeredEvent | null {
@@ -502,7 +498,6 @@ export class Game {
                 let victim = null
                 if (regexpMatches.victim)
                     victim = self.getFromPlayerString(regexpMatches.victim)
-
                 if (!attacker || !victim) return null
 
                 const weapon = regexpMatches.weapon
@@ -518,7 +513,6 @@ export class Game {
                     if (props.get("customkill") == "headshot")
                         isHeadshot = true
                 }
-
                 return {
                     timestamp: time,
                     headshot: isHeadshot,
@@ -659,7 +653,7 @@ export class Game {
         });
 
         this.events.set("onChat", {
-            regexp: /^"(?<player>.+?)" say "(?<message>.{1,160}?)"/,
+            regexp: /^"(?<player>.+?)" say "(?<message>.{1,160}?)"(\r\n|\r|\n|$)/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChatEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 if (!player) return null
@@ -743,10 +737,10 @@ export class Game {
             }
         }
         else {
-        for (const [eventName, eventProps] of this.events) {
-            const matched = this.executeEvent(time, eventLine, eventName, eventProps)
-            if (matched) break
-        }
+            for (const [eventName, eventProps] of this.events) {
+                const matched = this.executeEvent(time, eventLine, eventName, eventProps)
+                if (matched) break
+            }
         }
 
     }
@@ -815,8 +809,7 @@ export class Game {
         return output
     }
 
-    toLogstf() {
-        const output: LooseObject = {}
+    toLogstf(): Log {
         const gameModule = this.modules.find(a => a instanceof GameStateModule)
         const playerModule = this.modules.find(a => a instanceof PlayerStatsModule)
         const chatModule = this.modules.find(a => a instanceof ChatModule)
@@ -828,10 +821,17 @@ export class Game {
         const realDamageModule = this.modules.find(a => a instanceof RealDamageModule)
         const pvcModule = this.modules.find(a => a instanceof PvCModule)
 
-        output.version = 3
-        output.success = true
+        const output: Log = {
+            version: 3,
+            success: false,
+            teams: undefined, players: undefined, names: undefined, rounds: undefined,
+            healspread: undefined, classkills: undefined, classdeaths: undefined, classkillassists: undefined,
+            chat: undefined, info: undefined, killstreaks: undefined, length: undefined
+        }
+
         //TODO: info
         if (gameModule instanceof GameStateModule) {
+            output.success = true
             const logstfFormat = gameModule.toLogstf()
             output.length = logstfFormat.length
             output.rounds = logstfFormat.rounds

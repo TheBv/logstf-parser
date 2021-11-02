@@ -1,5 +1,7 @@
 import * as events from '../events'
 import { IGameState, PlayerInfo } from '../Game'
+import { renameObjectKeys } from "../Utilities"
+import { Chat } from "../interfaces/LogstfInterfaces"
 
 interface IMessage {
     timeInSeconds: number
@@ -8,7 +10,6 @@ interface IMessage {
     team: string | null
     message: string
 }
-
 
 class ChatModule implements events.IStats {
     public identifier: string
@@ -42,6 +43,20 @@ class ChatModule implements events.IStats {
 
     toJSON(): IMessage[] {
         return this.messages
+    }
+
+    toLogstf(): Chat[] {
+        const chat: Chat[] = []
+        for (const chatItem of this.messages) {
+            chat.push(<Chat>renameObjectKeys(chatItem, new Map<string, any>([
+                ["message", "msg"],
+                ["name", "name"],
+                ["steamid", "steamid"],
+                ["team", "team"],
+                ["timeInSeconds", "timeInSeconds"]
+            ])))
+        }
+        return chat
     }
 
 }
