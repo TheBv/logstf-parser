@@ -19,6 +19,9 @@ const LogsParser = new parser.LogParser();
 const lines = fs.readFileSync(filePath, "UTF-8").split("\n");
 const game = LogsParser.parseLines(lines) 
 console.log(game.toJson())
+console.log(game.toLogstf()) 
+// Returns a format like the one logs.tf json provides this however requires one to have some
+// of the default modules loaded
 ```
 # Adding modules
 By default only the GameStateModule will be loaded other modules can be included like so:
