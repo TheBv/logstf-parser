@@ -355,7 +355,7 @@ class PlayerStatsModule implements events.IStats {
         const players: Players = {}
         for (const playerKey of Object.keys(this.players)) {
             const playerValue = this.players[playerKey]
-            players[playerKey] = <Player>renameObjectKeys(playerValue, new Map<string, any>([
+            players[playerKey] = renameObjectKeys(playerValue, new Map<string, any>([
                 ["airshots", "as"],
                 ["assists", "assists"],
                 ["backstabs", "backstabs"],
@@ -390,7 +390,7 @@ class PlayerStatsModule implements events.IStats {
                 for (const [classKey, classValue] of (playerClasses.toJSON().get(playerKey) || [])) {
                     if (classValue.damage + classValue.kills + classValue.assists + classValue.deaths == 0 && classValue.playtimeInSeconds <= 20)
                         continue;
-                    const classStat: ClassStat = <ClassStat>renameObjectKeys(classValue, new Map<string, any>([
+                    const classStat: ClassStat = renameObjectKeys(classValue, new Map<string, any>([
                         ["assists", "assists"],
                         ["deaths", "deaths"],
                         ["damage", "dmg"],
@@ -402,7 +402,7 @@ class PlayerStatsModule implements events.IStats {
                     classStat.weapon = {}
                     //WEAPONSTATS
                     for (const [weaponKey, weaponValue] of classValue.weapons) {
-                        classStat.weapon[weaponKey] = <WeaponStats>renameObjectKeys(weaponValue, new Map<string, any>([
+                        classStat.weapon[weaponKey] = renameObjectKeys(weaponValue, new Map<string, any>([
                             ["avgDamage", "avg_dmg"],
                             ["damage", "dmg"],
                             ["hits", "hits"],
@@ -427,7 +427,7 @@ class PlayerStatsModule implements events.IStats {
             }
             //MEDICSTATS
             if (playerValue.medicstats)
-                players[playerKey].medicstats = <Medicstats>renameObjectKeys(playerValue.medicstats, new Map<string, any>([
+                players[playerKey].medicstats = renameObjectKeys(playerValue.medicstats, new Map<string, any>([
                     ["advantagesLost", "advantages_lost"],
                     ["avgTimeBeforeFirstHealing", "avg_time_before_healing"],
                     ["avgTimeToUse", "avg_time_before_using"],

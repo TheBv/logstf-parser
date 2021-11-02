@@ -149,8 +149,8 @@ class TeamStatsModule implements events.IStats {
             ["score", "score"]
         ])
         const teams: Teams = {
-            Blue: <Team>renameObjectKeys(this.teams.Blue, transformMap),
-            Red: <Team>renameObjectKeys(this.teams.Red, transformMap)
+            Blue: renameObjectKeys(this.teams.Blue, transformMap),
+            Red: renameObjectKeys(this.teams.Red, transformMap)
         }
         return teams
     }

@@ -48,7 +48,7 @@ class ChatModule implements events.IStats {
     toLogstf(): Chat[] {
         const chat: Chat[] = []
         for (const chatItem of this.messages) {
-            chat.push(<Chat>renameObjectKeys(chatItem, new Map<string, any>([
+            chat.push(renameObjectKeys(chatItem, new Map<string, any>([
                 ["message", "msg"],
                 ["name", "name"],
                 ["steamid", "steamid"],

@@ -37,7 +37,7 @@ class NamesModule implements events.IStats {
     }
 
     toLogstf(): Names {
-        return <Names>this.toJSON()
+        return this.toJSON() as Names
     }
 
 }

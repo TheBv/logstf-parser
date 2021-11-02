@@ -220,12 +220,11 @@ class PlayerClassStatsModule implements events.IStats {
     }
 
     finish() {
-        const self = this
         //calculate average damage done on finish
-        this.players.forEach(function (playerStats, key) {
-            playerStats.forEach(function (classStats, key) {
-                classStats.weapons.forEach(function (weaponStats, key) {
-                    weaponStats.avgDamage = self.getMean(weaponStats.avgDamages)
+        this.players.forEach((playerStats, key) => {
+            playerStats.forEach((classStats, key) => {
+                classStats.weapons.forEach((weaponStats, key) => {
+                    weaponStats.avgDamage = this.getMean(weaponStats.avgDamages)
                 })
             })
         })

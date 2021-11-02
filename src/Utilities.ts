@@ -2,7 +2,7 @@ export interface LooseObject {
     [key: string]: any
 }
 
-export function renameObjectKeys(object: LooseObject, transformMap: Map<string, any>): LooseObject {
+export function renameObjectKeys<T = unknown>(object: LooseObject, transformMap: Map<string, any>): T {
     const replacement: LooseObject = {};
 
     for (const key of transformMap.keys()) {
@@ -11,5 +11,5 @@ export function renameObjectKeys(object: LooseObject, transformMap: Map<string, 
         if (value !== undefined)
             replacement[transformMap.get(key)] = value;
     }
-    return replacement;
+    return replacement as T;
 }

@@ -246,6 +246,7 @@ class GameStateModule implements events.IStats {
     onCapture(event: events.ICaptureEvent) {
         if (!this.gameState.isLive) return
         const time = event.timestamp - this.currentRoundStartTime
+        // TODO: enum for types
         if (this.currentRoundEvents.filter(evt => evt.type == 'pointcap').length == 0) {
             this.firstCap = event.team
         }
@@ -313,7 +314,7 @@ class GameStateModule implements events.IStats {
         const output = {length: 1, rounds: new Array<LogstfRound>()}
         output.length = this.totalLengthInSeconds
         for (const gameRound of this.rounds) {
-            const round: LogstfRound = <LogstfRound>renameObjectKeys(gameRound, new Map<string, any>([
+            const round: LogstfRound = renameObjectKeys(gameRound, new Map<string, any>([
                 ["firstCap", "firstcap"],
                 ["players", "players"],
                 ["team", "team"],
@@ -323,7 +324,7 @@ class GameStateModule implements events.IStats {
             ]))
             round.events = []
             for (const gameEvent of gameRound.events) {
-                const roundEvent : RoundEvent = <RoundEvent>renameObjectKeys(gameEvent, new Map<string, any>([
+                const roundEvent : RoundEvent = renameObjectKeys(gameEvent, new Map<string, any>([
                     ["medigun", "medigun"],
                     ["pointId", "point"],
                     ["team", "team"],
