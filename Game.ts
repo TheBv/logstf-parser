@@ -92,7 +92,7 @@ export class Game {
         }];
 
         this.playerTriggeredEvents.set("onDamage", {
-            regexp: /^"(?<attacker>.+?)" triggered "damage" against "(?<victim>.+?)"/,
+            regexp: /^"(?<attacker>.+?)" triggered "damage" against "(?<victim>.+?)"(\r\n|\r|\n|$| \()/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IDamageEvent | null {
                 const attacker = self.getFromPlayerString(regexpMatches.attacker)
                 if (!attacker) return null
@@ -124,12 +124,11 @@ export class Game {
         });
 
         this.playerTriggeredEvents.set("onHeal", {
-            regexp: /^"(?<player>.+?)" triggered "healed" against "(?<target>.+?)"/,
+            regexp: /^"(?<player>.+?)" triggered "healed" against "(?<target>.+?)"(\r\n|\r|\n|$| \()/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IHealEvent | null {
                 const healer = self.getFromPlayerString(regexpMatches.player)
                 const target = self.getFromPlayerString(regexpMatches.target)
                 const healing = parseInt(props.get('healing') || '0')
-
                 if (!healer || !target || healing < 1 || healing > 450) return null
 
                 return {
@@ -175,7 +174,7 @@ export class Game {
         });
 
         this.playerTriggeredEvents.set("onAssist", {
-            regexp: /^"(?<player>.+?)" triggered "kill assist" against "(?<victim>.+?)"/,
+            regexp: /^"(?<player>.+?)" triggered "kill assist" against "(?<victim>.+?)"(\r\n|\r|\n|$| \()/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IAssistEvent | null {
                 const assister = self.getFromPlayerString(regexpMatches.player)
                 let victim = null
@@ -200,7 +199,7 @@ export class Game {
         });
 
         this.playerTriggeredEvents.set("onMedicDeath", {
-            regexp: /^"(?<attacker>.+?)" triggered "medic_death" against "(?<victim>.+?)"/,
+            regexp: /^"(?<attacker>.+?)" triggered "medic_death" against "(?<victim>.+?)"(\r\n|\r|\n|$| \()/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IMedicDeathEvent | null {
                 const attacker = self.getFromPlayerString(regexpMatches.attacker)
                 const victim = self.getFromPlayerString(regexpMatches.victim)
