@@ -1,4 +1,4 @@
-import * as events from './events'
+import * as events from './interfaces/events'
 import SteamID from 'steamid'
 import TeamStatsModule from "./modules/TeamStatsModule"
 import ChatModule from "./modules/ChatModule"

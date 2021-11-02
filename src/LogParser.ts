@@ -1,4 +1,4 @@
-import * as events from "./events";
+import * as events from "./interfaces/events";
 import GameStateModule from "./modules/GameStateModule";
 import { Game, IGameState } from "./Game";
 
@@ -54,6 +54,6 @@ export class LogParser {
 }
 
 // Export interfaces
-export * as events from "./events";
+export * as events from "./interfaces/events";
 export * from "./modules/ModuleHolder";
 export { IGameState, PlayerInfo } from "./Game";

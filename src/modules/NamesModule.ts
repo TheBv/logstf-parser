@@ -1,4 +1,4 @@
-import { ICaptureEvent, IDamageEvent, IRoleEvent, ISpawnEvent } from "../events"
+import { ICaptureEvent, IDamageEvent, IRoleEvent, ISpawnEvent } from "../interfaces/events"
 import { events, IGameState } from "../LogParser"
 import { Names } from "../interfaces/LogstfInterfaces"
 

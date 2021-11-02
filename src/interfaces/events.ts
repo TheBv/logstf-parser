@@ -1,4 +1,4 @@
-import { PlayerInfo } from './Game'
+import { PlayerInfo } from '../Game'
 
 export enum Role {
     Scout = "scout",

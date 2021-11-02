@@ -1,4 +1,4 @@
-import * as events from '../events'
+import * as events from '../interfaces/events'
 import { IGameState, PlayerInfo } from '../Game'
 import { renameObjectKeys } from "../Utilities"
 import { Round as LogstfRound, RoundEvent} from "../interfaces/LogstfInterfaces"

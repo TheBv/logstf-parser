@@ -1,4 +1,4 @@
-const parserCJS = require("./lib/cjs/LogParser");
+const parserCJS = require("../../lib/cjs/LogParser");
 const fs = require("fs");
 const LogParserCJS = new parserCJS.LogParser();
 for (const module of Object.values(parserCJS.defaultModules)){

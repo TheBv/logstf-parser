@@ -1,4 +1,4 @@
-import * as events from '../events'
+import * as events from '../interfaces/events'
 import { IGameState } from '../Game'
 import { LooseObject } from "../Utilities"
 import { ClassData, ClassSubData } from "../interfaces/LogstfInterfaces"

@@ -1,19 +1,21 @@
-import { defaultModules, LogParser } from "../LogParser";
+import { defaultModules, LogParser } from "../src/LogParser";
 import fs from "fs/promises";
 import axios from 'axios';
 import JSZip from 'jszip';
 
-import sixesJson from "../logs/log_6s.json";
-import sixes64Json from "../logs/log_6s_STEAM64.json";
-import hlJson from "../logs/log_hl.json";
-import steamJson from "../logs/log_STEAM_.json";
-import bballJson from "../logs/log_bball.json";
-import GameStateModule from "../modules/GameStateModule";
-import { Log } from "../interfaces/LogstfInterfaces";
+import sixesJson from "./logs/log_6s.json";
+import sixes64Json from "./logs/log_6s_STEAM64.json";
+import hlJson from "./logs/log_hl.json";
+import steamJson from "./logs/log_STEAM_.json";
+import bballJson from "./logs/log_bball.json";
+import negTimes from "./logs/log_negTimes.json"
+import GameStateModule from "../src/modules/GameStateModule";
+import { Log } from "../src/interfaces/LogstfInterfaces";
 
 describe("logs-parser", () => {
     let logParser: LogParser;
-
+    // Jest tends to timeout the first time you run the test
+    jest.setTimeout(20000)
     beforeAll(() => {
         const testingParser = new LogParser();
 
@@ -43,7 +45,7 @@ describe("logs-parser", () => {
         for (const module of Object.values(defaultModules)) {
             testingParser.addModule(module);
         }
-        const lines = await fs.readFile("./logs/log_6s.log", {
+        const lines = await fs.readFile("./tests/logs/log_6s.log", {
             encoding: "utf-8",
         });
 
@@ -57,7 +59,7 @@ describe("logs-parser", () => {
         for (const module of Object.values(defaultModules)) {
             testingParser.addModule(module);
         }
-        const lines = await fs.readFile("./logs/log_3045614.log", {
+        const lines = await fs.readFile("./tests/logs/log_3045614.log", {
             encoding: "utf-8",
         });
 
@@ -66,7 +68,7 @@ describe("logs-parser", () => {
     })
     describe("can full parse", () => {
         it("a sixes (6s) game", async () => {
-            const lines = await fs.readFile("./logs/log_6s.log", {
+            const lines = await fs.readFile("./tests/logs/log_6s.log", {
                 encoding: "utf-8",
             });
 
@@ -75,7 +77,7 @@ describe("logs-parser", () => {
             expect(game.toJSON()).toMatchObject(sixesJson);
         });
         it("a log with sizzlingstats", async () => {
-            const lines = await fs.readFile("./logs/log_STEAM_.log", {
+            const lines = await fs.readFile("./tests/logs/log_STEAM_.log", {
                 encoding: "utf-8",
             });
 
@@ -85,7 +87,7 @@ describe("logs-parser", () => {
         })
         it("a highlander (hl) game", async () => {
             // https://logs.tf/2890935
-            const lines = await fs.readFile("./logs/log_hl.log", {
+            const lines = await fs.readFile("./tests/logs/log_hl.log", {
                 encoding: "utf-8",
             });
 
@@ -93,25 +95,32 @@ describe("logs-parser", () => {
 
             expect(game.toJSON()).toMatchObject(hlJson);
         });
-
         it("a bball game", async () => {
-            const lines = await fs.readFile("./logs/log_bball.log", {
+            const lines = await fs.readFile("./tests/logs/log_bball.log", {
                 encoding: "utf-8",
             });
 
             const game = logParser.parseLines(lines.split("\n"));
             expect(game.toJSON()).toMatchObject(bballJson);
         });
+        it ("a log that goes backwards in time", async() => {
+            const lines = await fs.readFile("./tests/logs/log_negTimes.log", {
+                encoding: "utf-8",
+            });
+
+            const game = logParser.parseLines(lines.split("\n"));
+
+            expect(game.toJSON()).toMatchObject(negTimes);
+        });
+
         it("produces same results as logstf", async () => {
             const logid = 3056639//3025115//Difference: 3024932//Fine: 3024930//Damage difference: 3024929
             //3024940
             logParser.useDamageHealing();
-            //console.log("LOGID:", logid);
             const json = await fetchJson(logid);
             const logLines = await fetchLog(logid);
             const game = logParser.parseLines(logLines);
             const gameData = game.toLogstf()
-            //const stuff = gameToLogstf(gameData);
             delete json.info;
             // Team death data seems to be mostly broken; don't compare against it
             if (gameData.teams) {
@@ -151,6 +160,7 @@ async function fetchJson(id: number): Promise<Log> {
     return response.data;
 
 }
+
 async function fetchLog(logid: number): Promise<string[]> {
     try {
         const response = await axios.get(`https://logs.tf/logs/log_${logid}.log.zip`, { responseType: 'arraybuffer' })
