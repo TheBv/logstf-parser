@@ -1,6 +1,8 @@
 # Logs.tf Parser
 
-This is an updated version of the logs.tf parser which aims to recreate the parser currently used by logs.tf
+[![Build](https://github.com/thebv/logstf-parser/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/thebv/logstf-parser/actions/workflows/build.yml)
+
+This is an updated version of the logs.tf parser which aims to recreate the parser currently used by logs.tf as closely as possible while still fixing/improving upon various issues.
 
 This parser is currently being used for demoticks.tf
 
@@ -17,6 +19,9 @@ const LogsParser = new parser.LogParser();
 const lines = fs.readFileSync(filePath, "UTF-8").split("\n");
 const game = LogsParser.parseLines(lines) 
 console.log(game.toJson())
+console.log(game.toLogstf()) 
+// Returns a format like the one logs.tf json provides this however requires one to have some
+// of the default modules loaded
 ```
 # Adding modules
 By default only the GameStateModule will be loaded other modules can be included like so:

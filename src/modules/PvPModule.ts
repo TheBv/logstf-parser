@@ -1,5 +1,6 @@
-import * as events from '../events'
+import * as events from '../interfaces/events'
 import { IGameState } from '../Game'
+
 
 interface IPvPStats {
     kills: number
@@ -49,9 +50,9 @@ class PvPModule implements events.IStats {
         return returnInstance
     }
 
-
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         const attacker = this.getStats(event.attacker.id, event.victim.id)
         attacker.kills += 1
     }

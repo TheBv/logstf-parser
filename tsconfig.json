@@ -11,5 +11,5 @@
         "sourceMap": true,
         "declaration": true
     },
-    "files": ["LogParser.ts"]
+    "files": ["src/LogParser.ts"]
 }

@@ -15,8 +15,8 @@
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:ci": "jest --ci --maxWorkers 4",
-    "benchmark": "node ./benchmark.js",
-    "updateTests": "node ./update_tests.js"
+    "benchmark": "node ./src/scripts/benchmark.js",
+    "updateTests": "node ./src/scripts/update_tests.js"
   },
   "keywords": [
     "logs.tf",

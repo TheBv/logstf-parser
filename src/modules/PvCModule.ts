@@ -1,5 +1,8 @@
-import * as events from '../events'
+import * as events from '../interfaces/events'
 import { IGameState } from '../Game'
+import { LooseObject } from "../Utilities"
+import { ClassData, ClassSubData } from "../interfaces/LogstfInterfaces"
+
 
 interface IPvCStats {
     kills: number
@@ -8,7 +11,6 @@ interface IPvCStats {
     damage: number
     damageTaken: number
 }
-
 //Player versus Class
 class PvCModule implements events.IStats {
     public identifier: string
@@ -47,10 +49,9 @@ class PvCModule implements events.IStats {
         }
     }
 
-
-
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
+        if (event.feignDeath) return
         const attackerRole = this.currentRoles.get(event.attacker.id)
         const victimRole = this.currentRoles.get(event.victim.id)
 
@@ -99,6 +100,35 @@ class PvCModule implements events.IStats {
     toJSON(): Map<string, Map<events.Role, IPvCStats>> {
         return this.players
     }
+
+    toLogstf(): { classkills: ClassData, classkillassists: ClassData, classdeaths: ClassData } {
+        const output = {
+            classkills: convertPvC(this.players, ["kills"]),
+            classkillassists: convertPvC(this.players, ["kills", "assists"]),
+            classdeaths: convertPvC(this.players, ["deaths"])
+        }
+        return output
+    }
+
+}
+
+function convertPvC(PvC: Map<string, Map<events.Role, IPvCStats>>, keys: string[]): ClassData {
+    const classStats: ClassData = {}
+    PvC.forEach((value: Map<events.Role, IPvCStats>, key: string) => {
+        const playerStats: ClassSubData = {}
+        value.forEach((value: LooseObject, key: events.Role) => {
+            for (const valueName of keys) {
+                if (value[valueName] !== undefined)
+                    if (!playerStats[key])
+                        playerStats[key] = value[valueName];
+                    else
+                        playerStats[key] += value[valueName];
+            }
+        })
+        if (!(Object.keys(playerStats).length === 0))
+            classStats[key] = playerStats;
+    })
+    return classStats;
 }
 
 export default PvCModule

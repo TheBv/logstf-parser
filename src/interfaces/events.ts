@@ -1,4 +1,4 @@
-import { PlayerInfo } from './Game'
+import { PlayerInfo } from '../Game'
 
 export enum Role {
     Scout = "scout",
@@ -32,7 +32,7 @@ export enum Building {
 }
 
 export interface IStats {
-    [index: string] : any
+    [index: string]: any
     identifier: string
     onKill?(event: IKillEvent): void
     onDamage?(event: IDamageEvent): void
@@ -57,21 +57,21 @@ export interface IStats {
     onRoundSetupEnd?(event: IRoundSetupEnd): void
     onScore?(event: IRoundScoreEvent): void
     onGameOver?(event: IGameOverEvent): void
-    onJoinTeam?(event: IJoinTeamEvent):void
-    onDisconnect?(event: IDisconnectEvent):void
-    onCharge?(event: IChargeEvent):void
-    onChat?(event: IChatEvent):void
-    onBuild?(event: IBuildEvent):void
-    onObjectDestroyed?(event : IObjectDestroyedEvent):void
-    onPause?(event: IPauseEvent):void
-    onUnpause?(event: IUnpauseEvent):void
-    onMapLoad?(event: IMapLoadEvent):void
-    onFirstHeal?(event: IFirstHealEvent):void
-    onChargeReady?(event: IChargeReadyEvent):void
-    onChargeEnded?(event: IChargeEndedEvent):void
-    onMedicDeathEx?(event: IMedicDeathExEvent):void
-    onEmptyUber?(event: IEmptyUberEvent):void
-    onLostUberAdv?(event: ILostUberAdvantageEvent):void
+    onJoinTeam?(event: IJoinTeamEvent): void
+    onDisconnect?(event: IDisconnectEvent): void
+    onCharge?(event: IChargeEvent): void
+    onChat?(event: IChatEvent): void
+    onBuild?(event: IBuildEvent): void
+    onObjectDestroyed?(event: IObjectDestroyedEvent): void
+    onPause?(event: IPauseEvent): void
+    onUnpause?(event: IUnpauseEvent): void
+    onMapLoad?(event: IMapLoadEvent): void
+    onFirstHeal?(event: IFirstHealEvent): void
+    onChargeReady?(event: IChargeReadyEvent): void
+    onChargeEnded?(event: IChargeEndedEvent): void
+    onMedicDeathEx?(event: IMedicDeathExEvent): void
+    onEmptyUber?(event: IEmptyUberEvent): void
+    onLostUberAdv?(event: ILostUberAdvantageEvent): void
     onTriggered?(event: ITriggeredEvent): void
 }
 
@@ -83,6 +83,7 @@ export interface IKillEvent extends IEvent {
     attacker: PlayerInfo
     victim: PlayerInfo
     weapon: string | undefined
+    feignDeath: boolean
     headshot: boolean
     backstab: boolean
     airshot: boolean
@@ -92,6 +93,8 @@ export interface IDamageEvent extends IEvent {
     attacker: PlayerInfo
     victim: PlayerInfo | null
     damage: number
+    realDamage: number
+    healing: number
     weapon: string | undefined
     headshot: boolean
     airshot: boolean
@@ -127,7 +130,7 @@ export interface IPickupEvent extends IEvent {
     healing: number | null
 }
 
-export interface IFlagEvent extends IEvent{
+export interface IFlagEvent extends IEvent {
     player: PlayerInfo
     type: FlagEvent
     position: string | null
@@ -161,7 +164,7 @@ export interface IMedicDeathEvent extends IEvent {
     isDrop: boolean
 }
 
-export interface IMedicDeathExEvent extends IEvent{
+export interface IMedicDeathExEvent extends IEvent {
     player: PlayerInfo,
     uberpct: number
 }
@@ -170,9 +173,9 @@ export interface IMiniRoundSelected extends IEvent {
     round: string
 }
 
-export interface IWorldTriggeredEvent extends IEvent {}
+export interface IWorldTriggeredEvent extends IEvent { }
 
-export interface IRoundStartEvent extends IEvent {}
+export interface IRoundStartEvent extends IEvent { }
 
 export interface IRoundEndEvent extends IEvent {
     type: "Win" | "Stalemate"
@@ -184,9 +187,9 @@ export interface IMiniRoundWin extends IRoundEndEvent {
     round: string
 }
 
-export interface IRoundSetupBegin extends IEvent {}
+export interface IRoundSetupBegin extends IEvent { }
 
-export interface IRoundSetupEnd extends IEvent {}
+export interface IRoundSetupEnd extends IEvent { }
 
 export interface IRoundLengthEvent extends IEvent {
     lengthInSeconds: number
@@ -216,25 +219,25 @@ export interface IChargeEvent extends IEvent {
     medigunType: string
 }
 
-export interface IFirstHealEvent extends IEvent{
+export interface IFirstHealEvent extends IEvent {
     player: PlayerInfo,
     time: number
 }
 
-export interface IChargeReadyEvent extends IEvent{
+export interface IChargeReadyEvent extends IEvent {
     player: PlayerInfo,
 }
 
-export interface IChargeEndedEvent extends IEvent{
+export interface IChargeEndedEvent extends IEvent {
     player: PlayerInfo,
     duration: number
 }
 
-export interface IEmptyUberEvent extends IEvent{
+export interface IEmptyUberEvent extends IEvent {
     player: PlayerInfo,
 }
 
-export interface ILostUberAdvantageEvent extends IEvent{
+export interface ILostUberAdvantageEvent extends IEvent {
     player: PlayerInfo,
     time: number
 }
@@ -250,7 +253,7 @@ export interface IBuildEvent extends IEvent {
     position: string | null
 }
 
-export interface IObjectDestroyedEvent extends IEvent{
+export interface IObjectDestroyedEvent extends IEvent {
     attacker: PlayerInfo
     builtObject: Building
     objectOwner: PlayerInfo
@@ -260,8 +263,8 @@ export interface IObjectDestroyedEvent extends IEvent{
     assistPositon: string | null
 }
 
-export interface IPauseEvent extends IEvent {}
-export interface IUnpauseEvent extends IEvent {}
+export interface IPauseEvent extends IEvent { }
+export interface IUnpauseEvent extends IEvent { }
 export interface IMapLoadEvent extends IEvent {
     mapName: string
 }

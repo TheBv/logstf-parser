@@ -1,6 +1,5 @@
-import * as events from '../events'
+import * as events from '../interfaces/events'
 import { IGameState, PlayerInfo } from '../Game'
-
 
 
 interface IClassStats {
@@ -81,9 +80,9 @@ class PlayerClassStatsModule implements events.IStats {
         return weaponMap.get(weapon)!
     }
 
-    private getMean(input: number[]): number{
+    private getMean(input: number[]): number {
         if (input.length != 0)
-            return input.reduce((a,b) => a+b) /input.length
+            return input.reduce((a, b) => a + b) / input.length
         return 0
     }
 
@@ -100,7 +99,7 @@ class PlayerClassStatsModule implements events.IStats {
 
     onKill(event: events.IKillEvent) {
         if (!this.gameState.isLive) return
-
+        if (event.feignDeath) return
         const attackerRole = this.currentRoles.get(event.attacker.id)
         if (attackerRole) {
             const attackerStats = this.getClassStats(event.attacker.id, attackerRole)
@@ -110,37 +109,38 @@ class PlayerClassStatsModule implements events.IStats {
         }
 
         const victimRole = this.currentRoles.get(event.victim.id)
+
         if (victimRole) {
             const victimStats = this.getClassStats(event.victim.id, victimRole)
-            victimStats.deaths += 1
+            victimStats.deaths++
         }
     }
 
-    onAssist(event: events.IAssistEvent){
+    onAssist(event: events.IAssistEvent) {
         if (!this.gameState.isLive) return
         const assisterRole = this.currentRoles.get(event.assister.id)
         if (!assisterRole) return
-        const assisterStats = this.getClassStats(event.assister.id,assisterRole)
+        const assisterStats = this.getClassStats(event.assister.id, assisterRole)
         assisterStats.assists += 1
     }
-    
+
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
 
         const attackerRole = this.currentRoles.get(event.attacker.id)
-        
+
         if (!attackerRole) return
         const attackerStats = this.getClassStats(event.attacker.id, attackerRole)
         attackerStats.damage += event.damage
 
         const weaponStats = this.getWeaponStats(attackerStats.weapons, event.weapon!)
         weaponStats.damage += event.damage
-        weaponStats.avgDamages.push(event.damage);
+        weaponStats.avgDamages.push(event.damage)
 
-        if (event.victim != null){
+        if (event.victim != null) {
             const victimRole = this.currentRoles.get(event.victim.id)
             if (!victimRole) return
-            const victimStats = this.getClassStats(event.victim.id,victimRole)
+            const victimStats = this.getClassStats(event.victim.id, victimRole)
             victimStats.damageTaken += event.damage
         }
     }
@@ -154,17 +154,17 @@ class PlayerClassStatsModule implements events.IStats {
             targetStats.healsReceived += event.healing
         }
         if (!healerRole) return
-        const healerStats = this.getClassStats(event.healer.id,healerRole)
+        const healerStats = this.getClassStats(event.healer.id, healerRole)
         healerStats.healsDistributed += event.healing
     }
-    
+
     onShot(event: events.IShotEvent) {
         if (!this.gameState.isLive) return
         const playerRole = this.currentRoles.get(event.player.id)
         if (playerRole) {
-        const playerStats = this.getClassStats(event.player.id, playerRole)
-        const weaponStats = this.getWeaponStats(playerStats.weapons, event.weapon)
-        weaponStats.shots += 1
+            const playerStats = this.getClassStats(event.player.id, playerRole)
+            const weaponStats = this.getWeaponStats(playerStats.weapons, event.weapon)
+            weaponStats.shots += 1
         }
     }
 
@@ -194,6 +194,15 @@ class PlayerClassStatsModule implements events.IStats {
         this.currentSpawntimes.set(event.player.id, event.timestamp)
     }
 
+    onSuicide(event: events.ISuicideEvent) {
+        if (!this.gameState.isLive) return
+        const victimRole = this.currentRoles.get(event.player.id)
+        if (victimRole) {
+            const victimStats = this.getClassStats(event.player.id, victimRole)
+            victimStats.deaths++
+        }
+    }
+
     onRoundEnd(event: events.IRoundEndEvent) {
         for (let playerId of this.currentRoles.keys()) {
             this.trackingStop(playerId, event.timestamp)
@@ -211,12 +220,11 @@ class PlayerClassStatsModule implements events.IStats {
     }
 
     finish() {
-        const self = this;
         //calculate average damage done on finish
-        this.players.forEach(function(playerStats,key){
-            playerStats.forEach(function(classStarts,key){
-                classStarts.weapons.forEach(function(weaponStats,key){
-                    weaponStats.avgDamage = self.getMean(weaponStats.avgDamages);
+        this.players.forEach((playerStats, key) => {
+            playerStats.forEach((classStats, key) => {
+                classStats.weapons.forEach((weaponStats, key) => {
+                    weaponStats.avgDamage = this.getMean(weaponStats.avgDamages)
                 })
             })
         })

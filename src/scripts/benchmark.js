@@ -1,6 +1,6 @@
 const axios = require('axios');
 const JSZip = require('jszip');
-const parserCJS = require("./lib/cjs/LogParser");
+const parserCJS = require("../../lib/cjs/LogParser");
 
 const LogParserCJS = new parserCJS.LogParser();
 for (const module of Object.values(parserCJS.defaultModules)){
