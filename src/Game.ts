@@ -715,7 +715,7 @@ export class Game {
             name: groups.name,
             team: groups.team
         }
-        this.playerCache.set(playerString,player)
+        this.playerCache.set(playerString, player)
         return player
     }
 
@@ -765,7 +765,7 @@ export class Game {
     }
 
     private makeTimestamp(line: string): number | null {
-        line = line.slice(0,25)
+        line = line.slice(0, 25)
         const timeStampCached = this.timeStampCache.get(line);
         if (timeStampCached) {
             return timeStampCached
@@ -779,7 +779,7 @@ export class Game {
         const minutes = parseInt(t[5])
         const seconds = parseInt(t[6])
         const time = new Date(year, month, day, hours, minutes, seconds).getTime() / 1000
-        this.timeStampCache.set(line,time);
+        this.timeStampCache.set(line, time);
         return time
     }
 

@@ -31,11 +31,11 @@ describe("logs-parser", () => {
     });
 
     it("will not duplicate modules", () => {
-        expect(logParser.modules.length).toBe(10);
+        const length = logParser.modules.length;
 
         logParser.addModule(defaultModules.ChatModule);
 
-        expect(logParser.modules.length).toBe(10);
+        expect(logParser.modules.length).toBe(length);
     });
 
     it("can use a custom game state", async () => {

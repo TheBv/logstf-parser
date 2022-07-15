@@ -318,7 +318,7 @@ class GameStateModule implements events.IStats {
         const output = { length: 1, rounds: new Array<LogstfRound>() }
         output.length = this.totalLengthInSeconds
         for (const gameRound of this.rounds) {
-            const round: LogstfRound = renameObjectKeys(gameRound, new Map<string, any>([
+            const round: LogstfRound = renameObjectKeys(gameRound, new Map([
                 ["firstCap", "firstcap"],
                 ["players", "players"],
                 ["team", "team"],
@@ -328,7 +328,7 @@ class GameStateModule implements events.IStats {
             ]))
             round.events = []
             for (const gameEvent of gameRound.events) {
-                const roundEvent: RoundEvent = renameObjectKeys(gameEvent, new Map<string, any>([
+                const roundEvent: RoundEvent = renameObjectKeys(gameEvent, new Map([
                     ["medigun", "medigun"],
                     ["pointId", "point"],
                     ["team", "team"],

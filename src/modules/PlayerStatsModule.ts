@@ -1,7 +1,7 @@
 import * as events from '../interfaces/events'
 import { IGameState, PlayerInfo } from '../Game'
 import { renameObjectKeys } from "../Utilities"
-import { ClassStat, Medicstats, Player, Players, WeaponStats } from "../interfaces/LogstfInterfaces"
+import { ClassStat, Medicstats, Players } from "../interfaces/LogstfInterfaces"
 import PlayerClassStatsModule from "./PlayerClassStatsModule"
 import RealDamageModule from "./RealDamageModule"
 
@@ -48,8 +48,8 @@ interface IPlayerStats {
     medkits: number
     medkitsHp: number
     backstabs: number
-    capturesPoint: number
-    capturesIntel: number
+    pointCaptures: number
+    intelCaptures: number
     longestKillStreak: number
     currentKillStreak: number
     medicstats: IMedicStats | null
@@ -89,8 +89,8 @@ class PlayerStatsModule implements events.IStats {
         medkits: 0,
         medkitsHp: 0,
         backstabs: 0,
-        capturesPoint: 0,
-        capturesIntel: 0,
+        pointCaptures: 0,
+        intelCaptures: 0,
         longestKillStreak: 0,
         currentKillStreak: 0,
         medicstats: null,
@@ -153,7 +153,7 @@ class PlayerStatsModule implements events.IStats {
 
         if (event.headshot) attacker.headshotKills++
         if (event.backstab) attacker.backstabs++
-        
+
         victim.deaths++
         victim.longestKillStreak = Math.max(victim.currentKillStreak, victim.longestKillStreak)
         attacker.longestKillStreak = Math.max(attacker.currentKillStreak, attacker.longestKillStreak);
@@ -181,7 +181,7 @@ class PlayerStatsModule implements events.IStats {
         if (!this.gameState.isLive) return
         for (const playerInfo of event.players) {
             const player: IPlayerStats = this.getOrCreatePlayer(playerInfo)
-            player.capturesPoint += 1
+            player.pointCaptures += 1
         }
     }
 
@@ -189,7 +189,7 @@ class PlayerStatsModule implements events.IStats {
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
         if (event.type == events.FlagEvent.Captured) {
-            player.capturesIntel += 1
+            player.intelCaptures += 1
         }
     }
 
@@ -355,12 +355,12 @@ class PlayerStatsModule implements events.IStats {
         const players: Players = {}
         for (const playerKey of Object.keys(this.players)) {
             const playerValue = this.players[playerKey]
-            players[playerKey] = renameObjectKeys(playerValue, new Map<string, any>([
+            players[playerKey] = renameObjectKeys(playerValue, new Map([
                 ["airshots", "as"],
                 ["assists", "assists"],
                 ["backstabs", "backstabs"],
                 //CLASS STATS
-                ["capturesPoint", "cpc"],
+                ["pointCaptures", "cpc"],
                 //dapd, dapm
                 ["deaths", "deaths"],
                 ["damage", "dmg"],
@@ -371,7 +371,7 @@ class PlayerStatsModule implements events.IStats {
                 ["headshotKills", "headshots"],
                 ["healing", "heal"],
                 ["healingReceived", "hr"],
-                ["capturesIntel", "ic"],
+                ["intelCaptures", "ic"],
                 //KAPD
                 ["kills", "kills"],
                 ["longestKillStreak", "lks"],
@@ -390,7 +390,7 @@ class PlayerStatsModule implements events.IStats {
                 for (const [classKey, classValue] of (playerClasses.toJSON().get(playerKey) || [])) {
                     if (classValue.damage + classValue.kills + classValue.assists + classValue.deaths == 0 && classValue.playtimeInSeconds <= 20)
                         continue;
-                    const classStat: ClassStat = renameObjectKeys(classValue, new Map<string, any>([
+                    const classStat: ClassStat = renameObjectKeys(classValue, new Map([
                         ["assists", "assists"],
                         ["deaths", "deaths"],
                         ["damage", "dmg"],
@@ -402,7 +402,7 @@ class PlayerStatsModule implements events.IStats {
                     classStat.weapon = {}
                     //WEAPONSTATS
                     for (const [weaponKey, weaponValue] of classValue.weapons) {
-                        classStat.weapon[weaponKey] = renameObjectKeys(weaponValue, new Map<string, any>([
+                        classStat.weapon[weaponKey] = renameObjectKeys(weaponValue, new Map([
                             ["avgDamage", "avg_dmg"],
                             ["damage", "dmg"],
                             ["hits", "hits"],
@@ -427,7 +427,7 @@ class PlayerStatsModule implements events.IStats {
             }
             //MEDICSTATS
             if (playerValue.medicstats)
-                players[playerKey].medicstats = renameObjectKeys(playerValue.medicstats, new Map<string, any>([
+                players[playerKey].medicstats = renameObjectKeys<Medicstats, IMedicStats>(playerValue.medicstats, new Map([
                     ["advantagesLost", "advantages_lost"],
                     ["avgTimeBeforeFirstHealing", "avg_time_before_healing"],
                     ["avgTimeToUse", "avg_time_before_using"],

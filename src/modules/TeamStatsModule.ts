@@ -138,7 +138,7 @@ class TeamStatsModule implements events.IStats {
     }
 
     toLogstf(): Teams {
-        const transformMap = new Map<string, any>([
+        const transformMap = new Map<keyof ITeamStats, keyof Team>([
             ["captures", "caps"],
             ["charges", "charges"],
             ["deaths", "deaths"],
