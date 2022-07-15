@@ -11,7 +11,8 @@ import PlayerClassStatsModule from "./modules/PlayerClassStatsModule"
 import RealDamageModule from "./modules/RealDamageModule"
 import PvCModule from "./modules/PvCModule"
 import { Log } from "./interfaces/LogstfInterfaces"
- 
+import InfoModule from "./modules/InfoModule"
+
 const PLAYER_EXPRESSION: RegExp = /^(?<name>.{1,80}?)<\d{1,4}><(?<steamid>(?!STEAM_\d).{1,40}?)><(?<team>(Red|Blue|Spectator|Console|Unassigned))>/
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
 const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}?) "([^"]{1,60}?)"\)/g
@@ -811,6 +812,7 @@ export class Game {
 
     toLogstf(): Log {
         const gameModule = this.modules.find(a => a instanceof GameStateModule)
+        const infoModule = this.modules.find(a => a instanceof InfoModule)
         const playerModule = this.modules.find(a => a instanceof PlayerStatsModule)
         const chatModule = this.modules.find(a => a instanceof ChatModule)
         const teamModule = this.modules.find(a => a instanceof TeamStatsModule)
@@ -842,6 +844,9 @@ export class Game {
                     logstfFormat.length
                 )
             }
+        }
+        if (infoModule instanceof InfoModule) {
+            output.info = infoModule.toLogstf(output.length)
         }
         if (chatModule instanceof ChatModule) {
             output.chat = chatModule.toLogstf()

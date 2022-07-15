@@ -153,13 +153,13 @@ export interface Chat {
 }
 
 export interface Uploader {
-    id: string;
-    name: string;
-    info: string;
+    id: string | undefined;
+    name: string | undefined;
+    info: string | undefined;
 }
 
 export interface Info {
-    map: string;
+    map: string | undefined;
     supplemental: boolean;
     total_length: number;
     hasRealDamage: boolean;
@@ -178,8 +178,8 @@ export interface Info {
     hasIntel: boolean;
     AD_scoring: boolean;
     notifications: any[];
-    title: string;
-    date: number;
+    title: string | undefined;
+    date: number | undefined;
     uploader: Uploader;
 }
 

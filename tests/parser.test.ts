@@ -103,7 +103,7 @@ describe("logs-parser", () => {
             const game = logParser.parseLines(lines.split("\n"));
             expect(game.toJSON()).toMatchObject(bballJson);
         });
-        it ("a log that goes backwards in time", async() => {
+        it("a log that goes backwards in time", async () => {
             const lines = await fs.readFile("./tests/logs/log_negTimes.log", {
                 encoding: "utf-8",
             });
@@ -121,7 +121,6 @@ describe("logs-parser", () => {
             const logLines = await fetchLog(logid);
             const game = logParser.parseLines(logLines);
             const gameData = game.toLogstf()
-            delete json.info;
             // Team death data seems to be mostly broken; don't compare against it
             if (gameData.teams) {
                 gameData.teams.Blue.deaths = 0;
@@ -146,11 +145,24 @@ describe("logs-parser", () => {
                         player.class_stats = player.class_stats.filter((stat) => stat.kills + stat.deaths + stat.assists > 0);
                 }
             }
+            if (json.info && gameData.info) {
+                // All of these get set when uploading a log to logs.tf
+                gameData.info.date = undefined; json.info.date = undefined;
+                gameData.info.map = undefined; json.info.map = undefined;
+                gameData.info.title = undefined; json.info.title = undefined;
+                gameData.info.uploader.id = undefined; json.info.uploader.id = undefined;
+                gameData.info.uploader.name = undefined; json.info.uploader.name = undefined;
+                gameData.info.uploader.info = undefined; json.info.uploader.info = undefined;
+                // This most likely refers to incrementially updating logs, which we can't check for
+                gameData.info.supplemental = false; json.info.supplemental = false;
+                // Seems to be broken
+                gameData.info.hasSB = false; json.info.hasSB = false;
+            }
             // Killstreak algorithm isn't a 100% match right now
             gameData.killstreaks = undefined; json.killstreaks = undefined;
             expect(gameData).toMatchObject(json)
             //TODO: handle round.players where team = null
-            
+
         })
     });
 });
