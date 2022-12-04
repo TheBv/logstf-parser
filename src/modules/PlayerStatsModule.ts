@@ -353,6 +353,8 @@ class PlayerStatsModule implements events.IStats {
     // Function to transform all of the data to the json format used on logs.tf if a module is missing the stat will be omitted
     toLogstf(realDamage: RealDamageModule | null, playerClasses: PlayerClassStatsModule | null, totalLength: number | null): Players {
         const players: Players = {}
+        const realDamageJson = realDamage? realDamage.toJSON() : null
+        const playerClassesJson = playerClasses? playerClasses.toJSON() : null
         for (const playerKey of Object.keys(this.players)) {
             const playerValue = this.players[playerKey]
             players[playerKey] = renameObjectKeys(playerValue, new Map([
@@ -385,9 +387,9 @@ class PlayerStatsModule implements events.IStats {
                 ["chargesByType", "ubertypes"]
             ]))
             //CLASSSTATS
-            if (playerClasses) {
+            if (playerClassesJson) {
                 players[playerKey].class_stats = []
-                for (const [classKey, classValue] of (playerClasses.toJSON().get(playerKey) || [])) {
+                for (const [classKey, classValue] of (playerClassesJson.get(playerKey) || [])) {
                     if (classValue.damage + classValue.kills + classValue.assists + classValue.deaths == 0 && classValue.playtimeInSeconds <= 20)
                         continue;
                     const classStat: ClassStat = renameObjectKeys(classValue, new Map([
@@ -421,9 +423,17 @@ class PlayerStatsModule implements events.IStats {
                 players[playerKey].dapm = Math.floor(playerValue.damage * 60 / totalLength)
             players[playerKey].kapd = ((playerValue.kills + playerValue.assists) / playerValue.deaths).toFixed(1)
             players[playerKey].kpd = (playerValue.kills / playerValue.deaths).toFixed(1)
-            if (realDamage) {
-                players[playerKey].dmg_real = realDamage.toJSON()[playerKey].damageDealt
-                players[playerKey].dt_real = realDamage.toJSON()[playerKey].damageTaken
+            // REALDAMAGE
+            if (realDamageJson) {
+                const realDamagePlayer = realDamageJson[playerKey]
+                if (realDamagePlayer) {
+                    players[playerKey].dmg_real = realDamagePlayer.damageDealt
+                    players[playerKey].dt_real = realDamagePlayer.damageTaken
+                }
+                else {
+                    players[playerKey].dmg_real = 0
+                    players[playerKey].dt_real = 0
+                }
             }
             //MEDICSTATS
             if (playerValue.medicstats)

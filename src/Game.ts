@@ -100,7 +100,7 @@ export class Game {
                     victim = self.getFromPlayerString(regexpMatches.victim)
                 let damage = parseInt(props.get('damage') || '0')
                 if (damage < 0) damage = 0
-                // Fully buffed heavy hp = 450 knife deals 6-times that + some leeway
+                // Fully buffed heavy hp = 450
                 if (damage > 450) damage = 450
 
                 const weapon = props.get('weapon')

@@ -77,7 +77,8 @@ class PvCModule implements events.IStats {
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
         const attackerRole = this.currentRoles.get(event.attacker.id)
-        const victimRole = this.currentRoles.get(event.victim!.id)
+
+        const victimRole = event.victim ? this.currentRoles.get(event.victim.id) : null
 
         if (!attackerRole) return
         const attacker = this.getStats(event.attacker.id, victimRole!)
