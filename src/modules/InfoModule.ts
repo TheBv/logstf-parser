@@ -88,7 +88,7 @@ class InfoModule implements events.IStats {
         if (!this.gameState.isLive) return
         if (event.airshot) this.info.hasAirshot = true
         if (event.realDamage) this.info.hasRealDamage = true
-        if (event.headshot) this.info.hasHeadshot = true
+        if (event.headshot) this.info.hasHeadshotHit = true
         if (event.damage) {
             this.info.hasWeaponDamage = true
             this.info.hasDamageTaken = true
@@ -128,7 +128,7 @@ class InfoModule implements events.IStats {
         if (!this.gameState.isLive) return
         if (event.feignDeath) return
         if (event.backstab) this.info.hasBackstab = true
-        if (event.headshot) this.info.hasHeadshotHit = true
+        if (event.headshot) this.info.hasHeadshot = true
         if (event.airshot) this.info.hasAirshot = true
     }
 
