@@ -159,7 +159,7 @@ class PlayerStatsModule implements events.IStats {
         attacker.longestKillStreak = Math.max(attacker.currentKillStreak, attacker.longestKillStreak);
         victim.currentKillStreak = 0
     }
-
+    // TODO: airshots can now have a height
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)

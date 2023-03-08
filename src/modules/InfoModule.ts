@@ -88,6 +88,7 @@ class InfoModule implements events.IStats {
         if (!this.gameState.isLive) return
         if (event.airshot) this.info.hasAirshot = true
         if (event.realDamage) this.info.hasRealDamage = true
+        //TODO: Some logs are weird and should have both but only have one 3265990
         if (event.headshot) this.info.hasHeadshotHit = true
         if (event.damage) {
             this.info.hasWeaponDamage = true
@@ -129,7 +130,6 @@ class InfoModule implements events.IStats {
         if (event.feignDeath) return
         if (event.backstab) this.info.hasBackstab = true
         if (event.headshot) this.info.hasHeadshot = true
-        if (event.airshot) this.info.hasAirshot = true
     }
 
     onMiniRoundWin(event: events.IMiniRoundWin) {

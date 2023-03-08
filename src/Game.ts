@@ -110,6 +110,11 @@ export class Game {
                 const airshot = props.get("airshot") === '1' ? true : false
                 const realDamage = parseInt(props.get('realdamage') || '0')
                 const healing = self.useDamageHealing ? parseInt(props.get('healing') || '0') : 0
+                let height = undefined
+                if (props.has("height")) {
+                    height = parseInt(props.get("height")!)
+                }
+
                 return {
                     timestamp: time,
                     attacker,
@@ -119,7 +124,8 @@ export class Game {
                     healing,
                     weapon,
                     headshot,
-                    airshot
+                    airshot,
+                    height
                 }
             }
         });
@@ -506,7 +512,10 @@ export class Game {
                 const weapon = regexpMatches.weapon
                 let isHeadshot = props.get("headshot") === '1' ? true : false
                 let isBackstab = false
-                const isAirshot = props.get("airshot") === '1' ? true : false
+                let height = undefined
+                if (props.has("height")) {
+                    height = parseInt(props.get("height")!)
+                }
                 let feignDeath = false
                 if (props.has("customkill")) {
                     if (props.get("customkill") == "feign_death")
@@ -520,11 +529,11 @@ export class Game {
                     timestamp: time,
                     headshot: isHeadshot,
                     backstab: isBackstab,
-                    airshot: isAirshot,
                     feignDeath: feignDeath,
                     attacker,
                     victim,
                     weapon,
+                    height,
                 }
             }
         });
