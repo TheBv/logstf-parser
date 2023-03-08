@@ -308,7 +308,7 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChargeEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 if (!player) return null
-                const medigunType = props.get("medigun") || "medigun"
+                const medigunType = props.get("medigun") || "unknown"
                 return {
                     timestamp: time,
                     player,

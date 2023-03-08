@@ -24,7 +24,6 @@ class HealSpreadModule implements events.IStats {
 
     onHeal(event: events.IHealEvent) {
         if (!this.gameState.isLive) return
-        const healingTargets = this.getOrCreateHealer(event.healer)
         const healer = this.getOrCreateHealer(event.healer)
         if (!(event.target.id in healer)) {
             healer[event.target.id] = 0
