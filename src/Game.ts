@@ -44,6 +44,7 @@ interface ITimeState {
 export interface IGameState {
     isLive: boolean
     mapName: string | null
+    additionalData: any
 }
 
 export class Game {
@@ -60,10 +61,11 @@ export class Game {
     playerCache: Map<string, PlayerInfo | null>
     useDamageHealing: boolean
 
-    constructor(useSteam64: boolean, useDamageHealing: boolean) {
+    constructor(useSteam64: boolean, useDamageHealing: boolean, additionalData: any) {
         this.gameState = {
             isLive: false,
-            mapName: null
+            mapName: null,
+            additionalData: additionalData
         }
         this.useSteam64 = useSteam64
         this.timeStampCache = new Map<string, number>()

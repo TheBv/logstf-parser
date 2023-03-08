@@ -9,6 +9,8 @@ export class LogParser {
   private useCustom: boolean;
   private useSteam64: boolean;
   private applyDamageHealing: boolean;
+  private additionalData: any;
+  
   constructor() {
     this.useCustom = false;
     this.useSteam64 = false;
@@ -28,7 +30,7 @@ export class LogParser {
   }
 
   parseLines(lines: string[]): Game {
-    const game = new Game(this.useSteam64, this.applyDamageHealing);
+    const game = new Game(this.useSteam64, this.applyDamageHealing, this.additionalData);
 
     if (!this.useCustom) {
       game.modules.push(new GameStateModule(game.gameState));
@@ -42,6 +44,14 @@ export class LogParser {
     game.finish();
 
     return game;
+  }
+
+  setAdditionalData(data: any) {
+    this.additionalData = data;
+  }
+
+  getAdditionalData(): any {
+    return this.additionalData;
   }
 
   addModule(moduleClass: GameModule) {
