@@ -86,7 +86,7 @@ export interface IKillEvent extends IEvent {
     feignDeath: boolean
     headshot: boolean
     backstab: boolean
-    airshot: boolean
+    height: number | undefined
 }
 
 export interface IDamageEvent extends IEvent {
@@ -98,6 +98,7 @@ export interface IDamageEvent extends IEvent {
     weapon: string | undefined
     headshot: boolean
     airshot: boolean
+    height: number | undefined
 }
 
 export interface IHealEvent extends IEvent {

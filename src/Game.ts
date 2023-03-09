@@ -11,7 +11,8 @@ import PlayerClassStatsModule from "./modules/PlayerClassStatsModule"
 import RealDamageModule from "./modules/RealDamageModule"
 import PvCModule from "./modules/PvCModule"
 import { Log } from "./interfaces/LogstfInterfaces"
- 
+import InfoModule from "./modules/InfoModule"
+
 const PLAYER_EXPRESSION: RegExp = /^(?<name>.{1,80}?)<\d{1,4}><(?<steamid>(?!STEAM_\d).{1,40}?)><(?<team>(Red|Blue|Spectator|Console|Unassigned))>/
 const TIMESTAMP_EXPRESSION: RegExp = /^L (\1\d{2})\/(\2\d{2})\/(\3\d{4}) - (\4\d{2}):(\5\d{2}):(\6\d{2})/
 const PROPERTIES_EXPRESSION: RegExp = /\((\w{1,60}?) "([^"]{1,60}?)"\)/g
@@ -43,6 +44,7 @@ interface ITimeState {
 export interface IGameState {
     isLive: boolean
     mapName: string | null
+    additionalData: any
 }
 
 export class Game {
@@ -59,10 +61,11 @@ export class Game {
     playerCache: Map<string, PlayerInfo | null>
     useDamageHealing: boolean
 
-    constructor(useSteam64: boolean, useDamageHealing: boolean) {
+    constructor(useSteam64: boolean, useDamageHealing: boolean, additionalData: any) {
         this.gameState = {
             isLive: false,
-            mapName: null
+            mapName: null,
+            additionalData: additionalData
         }
         this.useSteam64 = useSteam64
         this.timeStampCache = new Map<string, number>()
@@ -99,7 +102,7 @@ export class Game {
                     victim = self.getFromPlayerString(regexpMatches.victim)
                 let damage = parseInt(props.get('damage') || '0')
                 if (damage < 0) damage = 0
-                // Fully buffed heavy hp = 450 knife deals 6-times that + some leeway
+                // Fully buffed heavy hp = 450
                 if (damage > 450) damage = 450
 
                 const weapon = props.get('weapon')
@@ -107,6 +110,11 @@ export class Game {
                 const airshot = props.get("airshot") === '1' ? true : false
                 const realDamage = parseInt(props.get('realdamage') || '0')
                 const healing = self.useDamageHealing ? parseInt(props.get('healing') || '0') : 0
+                let height = undefined
+                if (props.has("height")) {
+                    height = parseInt(props.get("height")!)
+                }
+
                 return {
                     timestamp: time,
                     attacker,
@@ -116,7 +124,8 @@ export class Game {
                     healing,
                     weapon,
                     headshot,
-                    airshot
+                    airshot,
+                    height
                 }
             }
         });
@@ -299,7 +308,7 @@ export class Game {
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IChargeEvent | null {
                 const player = self.getFromPlayerString(regexpMatches.player)
                 if (!player) return null
-                const medigunType = props.get("medigun") || "medigun"
+                const medigunType = props.get("medigun") || "unknown"
                 return {
                     timestamp: time,
                     player,
@@ -503,7 +512,10 @@ export class Game {
                 const weapon = regexpMatches.weapon
                 let isHeadshot = props.get("headshot") === '1' ? true : false
                 let isBackstab = false
-                const isAirshot = props.get("airshot") === '1' ? true : false
+                let height = undefined
+                if (props.has("height")) {
+                    height = parseInt(props.get("height")!)
+                }
                 let feignDeath = false
                 if (props.has("customkill")) {
                     if (props.get("customkill") == "feign_death")
@@ -517,11 +529,11 @@ export class Game {
                     timestamp: time,
                     headshot: isHeadshot,
                     backstab: isBackstab,
-                    airshot: isAirshot,
                     feignDeath: feignDeath,
                     attacker,
                     victim,
                     weapon,
+                    height,
                 }
             }
         });
@@ -715,7 +727,7 @@ export class Game {
             name: groups.name,
             team: groups.team
         }
-        this.playerCache.set(playerString,player)
+        this.playerCache.set(playerString, player)
         return player
     }
 
@@ -765,7 +777,7 @@ export class Game {
     }
 
     private makeTimestamp(line: string): number | null {
-        line = line.slice(0,25)
+        line = line.slice(0, 25)
         const timeStampCached = this.timeStampCache.get(line);
         if (timeStampCached) {
             return timeStampCached
@@ -779,7 +791,7 @@ export class Game {
         const minutes = parseInt(t[5])
         const seconds = parseInt(t[6])
         const time = new Date(year, month, day, hours, minutes, seconds).getTime() / 1000
-        this.timeStampCache.set(line,time);
+        this.timeStampCache.set(line, time);
         return time
     }
 
@@ -811,6 +823,7 @@ export class Game {
 
     toLogstf(): Log {
         const gameModule = this.modules.find(a => a instanceof GameStateModule)
+        const infoModule = this.modules.find(a => a instanceof InfoModule)
         const playerModule = this.modules.find(a => a instanceof PlayerStatsModule)
         const chatModule = this.modules.find(a => a instanceof ChatModule)
         const teamModule = this.modules.find(a => a instanceof TeamStatsModule)
@@ -842,6 +855,9 @@ export class Game {
                     logstfFormat.length
                 )
             }
+        }
+        if (infoModule instanceof InfoModule) {
+            output.info = infoModule.toLogstf(output.length)
         }
         if (chatModule instanceof ChatModule) {
             output.chat = chatModule.toLogstf()

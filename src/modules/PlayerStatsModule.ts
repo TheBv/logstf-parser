@@ -1,7 +1,7 @@
 import * as events from '../interfaces/events'
 import { IGameState, PlayerInfo } from '../Game'
 import { renameObjectKeys } from "../Utilities"
-import { ClassStat, Medicstats, Player, Players, WeaponStats } from "../interfaces/LogstfInterfaces"
+import { ClassStat, Medicstats, Players } from "../interfaces/LogstfInterfaces"
 import PlayerClassStatsModule from "./PlayerClassStatsModule"
 import RealDamageModule from "./RealDamageModule"
 
@@ -48,8 +48,8 @@ interface IPlayerStats {
     medkits: number
     medkitsHp: number
     backstabs: number
-    capturesPoint: number
-    capturesIntel: number
+    pointCaptures: number
+    intelCaptures: number
     longestKillStreak: number
     currentKillStreak: number
     medicstats: IMedicStats | null
@@ -89,8 +89,8 @@ class PlayerStatsModule implements events.IStats {
         medkits: 0,
         medkitsHp: 0,
         backstabs: 0,
-        capturesPoint: 0,
-        capturesIntel: 0,
+        pointCaptures: 0,
+        intelCaptures: 0,
         longestKillStreak: 0,
         currentKillStreak: 0,
         medicstats: null,
@@ -153,13 +153,13 @@ class PlayerStatsModule implements events.IStats {
 
         if (event.headshot) attacker.headshotKills++
         if (event.backstab) attacker.backstabs++
-        
+
         victim.deaths++
         victim.longestKillStreak = Math.max(victim.currentKillStreak, victim.longestKillStreak)
         attacker.longestKillStreak = Math.max(attacker.currentKillStreak, attacker.longestKillStreak);
         victim.currentKillStreak = 0
     }
-
+    // TODO: airshots can now have a height
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
         const attacker: IPlayerStats = this.getOrCreatePlayer(event.attacker)
@@ -181,7 +181,7 @@ class PlayerStatsModule implements events.IStats {
         if (!this.gameState.isLive) return
         for (const playerInfo of event.players) {
             const player: IPlayerStats = this.getOrCreatePlayer(playerInfo)
-            player.capturesPoint += 1
+            player.pointCaptures += 1
         }
     }
 
@@ -189,7 +189,7 @@ class PlayerStatsModule implements events.IStats {
         if (!this.gameState.isLive) return
         const player: IPlayerStats = this.getOrCreatePlayer(event.player)
         if (event.type == events.FlagEvent.Captured) {
-            player.capturesIntel += 1
+            player.intelCaptures += 1
         }
     }
 
@@ -353,14 +353,16 @@ class PlayerStatsModule implements events.IStats {
     // Function to transform all of the data to the json format used on logs.tf if a module is missing the stat will be omitted
     toLogstf(realDamage: RealDamageModule | null, playerClasses: PlayerClassStatsModule | null, totalLength: number | null): Players {
         const players: Players = {}
+        const realDamageJson = realDamage? realDamage.toJSON() : null
+        const playerClassesJson = playerClasses? playerClasses.toJSON() : null
         for (const playerKey of Object.keys(this.players)) {
             const playerValue = this.players[playerKey]
-            players[playerKey] = renameObjectKeys(playerValue, new Map<string, any>([
+            players[playerKey] = renameObjectKeys(playerValue, new Map([
                 ["airshots", "as"],
                 ["assists", "assists"],
                 ["backstabs", "backstabs"],
                 //CLASS STATS
-                ["capturesPoint", "cpc"],
+                ["pointCaptures", "cpc"],
                 //dapd, dapm
                 ["deaths", "deaths"],
                 ["damage", "dmg"],
@@ -371,7 +373,7 @@ class PlayerStatsModule implements events.IStats {
                 ["headshotKills", "headshots"],
                 ["healing", "heal"],
                 ["healingReceived", "hr"],
-                ["capturesIntel", "ic"],
+                ["intelCaptures", "ic"],
                 //KAPD
                 ["kills", "kills"],
                 ["longestKillStreak", "lks"],
@@ -385,12 +387,12 @@ class PlayerStatsModule implements events.IStats {
                 ["chargesByType", "ubertypes"]
             ]))
             //CLASSSTATS
-            if (playerClasses) {
+            if (playerClassesJson) {
                 players[playerKey].class_stats = []
-                for (const [classKey, classValue] of (playerClasses.toJSON().get(playerKey) || [])) {
+                for (const [classKey, classValue] of (playerClassesJson.get(playerKey) || [])) {
                     if (classValue.damage + classValue.kills + classValue.assists + classValue.deaths == 0 && classValue.playtimeInSeconds <= 20)
                         continue;
-                    const classStat: ClassStat = renameObjectKeys(classValue, new Map<string, any>([
+                    const classStat: ClassStat = renameObjectKeys(classValue, new Map([
                         ["assists", "assists"],
                         ["deaths", "deaths"],
                         ["damage", "dmg"],
@@ -402,7 +404,7 @@ class PlayerStatsModule implements events.IStats {
                     classStat.weapon = {}
                     //WEAPONSTATS
                     for (const [weaponKey, weaponValue] of classValue.weapons) {
-                        classStat.weapon[weaponKey] = renameObjectKeys(weaponValue, new Map<string, any>([
+                        classStat.weapon[weaponKey] = renameObjectKeys(weaponValue, new Map([
                             ["avgDamage", "avg_dmg"],
                             ["damage", "dmg"],
                             ["hits", "hits"],
@@ -421,13 +423,21 @@ class PlayerStatsModule implements events.IStats {
                 players[playerKey].dapm = Math.floor(playerValue.damage * 60 / totalLength)
             players[playerKey].kapd = ((playerValue.kills + playerValue.assists) / playerValue.deaths).toFixed(1)
             players[playerKey].kpd = (playerValue.kills / playerValue.deaths).toFixed(1)
-            if (realDamage) {
-                players[playerKey].dmg_real = realDamage.toJSON()[playerKey].damageDealt
-                players[playerKey].dt_real = realDamage.toJSON()[playerKey].damageTaken
+            // REALDAMAGE
+            if (realDamageJson) {
+                const realDamagePlayer = realDamageJson[playerKey]
+                if (realDamagePlayer) {
+                    players[playerKey].dmg_real = realDamagePlayer.damageDealt
+                    players[playerKey].dt_real = realDamagePlayer.damageTaken
+                }
+                else {
+                    players[playerKey].dmg_real = 0
+                    players[playerKey].dt_real = 0
+                }
             }
             //MEDICSTATS
             if (playerValue.medicstats)
-                players[playerKey].medicstats = renameObjectKeys(playerValue.medicstats, new Map<string, any>([
+                players[playerKey].medicstats = renameObjectKeys<Medicstats, IMedicStats>(playerValue.medicstats, new Map([
                     ["advantagesLost", "advantages_lost"],
                     ["avgTimeBeforeFirstHealing", "avg_time_before_healing"],
                     ["avgTimeToUse", "avg_time_before_using"],

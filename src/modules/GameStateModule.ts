@@ -1,7 +1,7 @@
 import * as events from '../interfaces/events'
 import { IGameState, PlayerInfo } from '../Game'
 import { renameObjectKeys } from "../Utilities"
-import { Round as LogstfRound, RoundEvent} from "../interfaces/LogstfInterfaces"
+import { Round as LogstfRound, RoundEvent } from "../interfaces/LogstfInterfaces"
 
 interface IPlayerStats {
     team: string | null
@@ -205,17 +205,21 @@ class GameStateModule implements events.IStats {
     }
 
     onPause(event: events.IPauseEvent) {
-        this.gameState.isLive = false
-        this.paused = true
-        this.currentRoundPausedStart = event.timestamp
+        if (this.gameState.isLive) {
+            this.gameState.isLive = false
+            this.paused = true
+            this.currentRoundPausedStart = event.timestamp
+        }
     }
 
     onUnpause(event: events.IUnpauseEvent) {
-        this.gameState.isLive = true
-        this.paused = false
-        if (this.currentRoundPausedStart > 0 && event.timestamp > this.currentRoundPausedStart) {
-            this.currentRoundPausedTime += event.timestamp - this.currentRoundPausedStart
-            this.currentRoundPausedStart = 0
+        if (this.paused) {
+            this.gameState.isLive = true
+            this.paused = false
+            if (this.currentRoundPausedStart > 0 && event.timestamp > this.currentRoundPausedStart) {
+                this.currentRoundPausedTime += event.timestamp - this.currentRoundPausedStart
+                this.currentRoundPausedStart = 0
+            }
         }
     }
     // Added to fix pause/unpause desync issues 
@@ -310,11 +314,11 @@ class GameStateModule implements events.IStats {
         }
     }
 
-    toLogstf() : {length: number, rounds: LogstfRound[]} {
-        const output = {length: 1, rounds: new Array<LogstfRound>()}
+    toLogstf(): { length: number, rounds: LogstfRound[] } {
+        const output = { length: 1, rounds: new Array<LogstfRound>() }
         output.length = this.totalLengthInSeconds
         for (const gameRound of this.rounds) {
-            const round: LogstfRound = renameObjectKeys(gameRound, new Map<string, any>([
+            const round: LogstfRound = renameObjectKeys(gameRound, new Map([
                 ["firstCap", "firstcap"],
                 ["players", "players"],
                 ["team", "team"],
@@ -324,7 +328,7 @@ class GameStateModule implements events.IStats {
             ]))
             round.events = []
             for (const gameEvent of gameRound.events) {
-                const roundEvent : RoundEvent = renameObjectKeys(gameEvent, new Map<string, any>([
+                const roundEvent: RoundEvent = renameObjectKeys(gameEvent, new Map([
                     ["medigun", "medigun"],
                     ["pointId", "point"],
                     ["team", "team"],

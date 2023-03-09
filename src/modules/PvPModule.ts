@@ -65,7 +65,9 @@ class PvPModule implements events.IStats {
 
     onDamage(event: events.IDamageEvent) {
         if (!this.gameState.isLive) return
-        const attacker = this.getStats(event.attacker.id, event.victim!.id)
+        // TODO: Figure out what to do when the victim is null
+        if (!event.victim) return
+        const attacker = this.getStats(event.attacker.id, event.victim.id)
         attacker.damage += event.damage
     }
     onHeal(event: events.IHealEvent) {
