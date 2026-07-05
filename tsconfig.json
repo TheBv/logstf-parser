@@ -1,15 +1,18 @@
 {
     "compilerOptions": {
-        "target": "es2015",
+        "target": "es2020",
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "module": "commonjs",
         "moduleResolution": "Node",
+        "ignoreDeprecations": "6.0",
         "lib": ["es2020"],
         "strict": true,
+        "skipLibCheck": true,
+        "rootDir": "./src",
         "outDir": "./lib/esm",
         "sourceMap": true,
         "declaration": true
     },
-    "files": ["src/LogParser.ts"]
+    "include": ["src/**/*.ts"]
 }
