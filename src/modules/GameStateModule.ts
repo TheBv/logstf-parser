@@ -40,6 +40,7 @@ class GameStateModule implements events.IStats {
     private totalLengthInSeconds: number
     private firstCap: string
     private paused: boolean
+    private hadSetupPhase: boolean
 
     constructor(gameState: IGameState) {
         this.identifier = 'game'
@@ -55,6 +56,7 @@ class GameStateModule implements events.IStats {
         this.totalLengthInSeconds = 0
         this.rounds = []
         this.paused = false
+        this.hadSetupPhase = false
     }
 
     private defaultTeamStats = (score: number): ITeamRoundStats => ({
@@ -175,6 +177,19 @@ class GameStateModule implements events.IStats {
 
     onRoundStart(event: events.IRoundStartEvent) {
         this.newRound(event.timestamp)
+    }
+
+    onRoundSetupBegin(event: events.IRoundSetupBegin) {
+        this.hadSetupPhase = true
+    }
+
+    // Stopwatch maps run a setup phase and are decided by two rounds (one attack per team),
+    // with the faster round length winning the match rather than round wins/captures
+    getStopwatchWinner(): events.Team | null {
+        if (!this.hadSetupPhase || this.rounds.length !== 2) return null
+        const [first, second] = this.rounds
+        if (first.lengthInSeconds === second.lengthInSeconds) return null
+        return first.lengthInSeconds < second.lengthInSeconds ? first.winner : second.winner
     }
 
     onMiniRoundStart(event: events.IRoundStartEvent) {

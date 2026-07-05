@@ -865,6 +865,13 @@ export class Game {
         }
         if (teamModule instanceof TeamStatsModule) {
             output.teams = teamModule.toLogstf()
+            if (gameModule instanceof GameStateModule && output.teams) {
+                const stopwatchWinner = gameModule.getStopwatchWinner()
+                if (stopwatchWinner) {
+                    output.teams.Red.score = stopwatchWinner === events.Team.Red ? 1 : 0
+                    output.teams.Blue.score = stopwatchWinner === events.Team.Blue ? 1 : 0
+                }
+            }
         }
         if (nameModule instanceof NamesModule) {
             output.names = nameModule.toLogstf()

@@ -112,6 +112,17 @@ describe("logs-parser", () => {
 
             expect(game.toJSON()).toMatchObject(negTimes);
         });
+        
+        it("calculates score for a stopwatch game correctly", async () => {
+            const logid = 3843656
+            logParser.useDamageHealing();
+            const logLines = await fetchLog(logid);
+            const game = logParser.parseLines(logLines);
+            const gameData = game.toLogstf()
+            if (gameData.teams?.Blue.score !== 0 || gameData.teams?.Red.score !== 1) {
+                throw new Error(`Expected Blue score to be 0 and Red score to be 1, but got Blue: ${gameData.teams?.Blue.score}, Red: ${gameData.teams?.Red.score}`);
+            }
+        })
 
         it("produces same results as logstf", async () => {
             const logid = 3056639//3025115//Difference: 3024932//Fine: 3024930//Damage difference: 3024929
