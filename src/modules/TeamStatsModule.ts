@@ -98,6 +98,7 @@ class TeamStatsModule implements events.IStats {
     }
 
     onScore(event: events.IRoundScoreEvent) {
+        if (event.isFinal) return
         if (event.team == events.Team.Red) {
             this.teams.Red.score = event.score
         } else if (event.team == events.Team.Blue) {

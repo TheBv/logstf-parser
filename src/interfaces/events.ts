@@ -199,6 +199,7 @@ export interface IRoundLengthEvent extends IEvent {
 export interface IRoundScoreEvent extends IEvent {
     team: Team
     score: number
+    isFinal: boolean
 }
 
 export interface IGameOverEvent extends IEvent {

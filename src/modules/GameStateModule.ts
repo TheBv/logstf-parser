@@ -163,6 +163,7 @@ class GameStateModule implements events.IStats {
     }
 
     onScore(event: events.IRoundScoreEvent) {
+        if (event.isFinal) return
         const lastRound = this.getLastRound()
         if (!lastRound) return
         if (event.team == events.Team.Red) {

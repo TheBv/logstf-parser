@@ -679,12 +679,13 @@ export class Game {
         });
 
         this.events.set("onScore", {
-            regexp: /^Team "(?<team>(Red|Blue))" (current|final) score "(?<score>\d+?)"/,
+            regexp: /^Team "(?<team>(Red|Blue))" (?<scoreType>current|final) score "(?<score>\d+?)"/,
             createEvent: function (regexpMatches: any, props: Map<string, string>, time: number): events.IRoundScoreEvent | null {
                 return {
                     timestamp: time,
                     team: regexpMatches.team,
                     score: parseInt(regexpMatches.score),
+                    isFinal: regexpMatches.scoreType === "final",
                 }
             }
         });
